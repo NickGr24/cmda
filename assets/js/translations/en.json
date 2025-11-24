@@ -1,0 +1,252 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About CMDA",
+    "programs": "Programs",
+    "infrastructure": "Infrastructure",
+    "partners": "Partners",
+    "contacts": "Contacts",
+    "apply": "Apply to programs",
+    "menu_toggle": "Open menu"
+  },
+  "hero": {
+    "title": "Support for entrepreneurs in Chisinau",
+    "subtitle": "Transforming ideas into successful businesses",
+    "description": "The Municipal Center for Entrepreneurship Development (CMDA) offers consulting, training, financing and infrastructure for young entrepreneurs, migrants and SMEs.",
+    "cta_programs": "View CMDA programs",
+    "cta_contact": "Contact us"
+  },
+  "impact": {
+    "title": "Concrete results (2023 - present)",
+    "consultations": "individual consultations",
+    "beneficiaries": "trained beneficiaries",
+    "mentors": "specialized mentors",
+    "mentors_description": "Network of mentors in accounting, marketing, legal, finance and business development.",
+    "hackathons": "hackathons & AI Summer School 'Next Gen'",
+    "youth": "young people involved in hackathons and innovation programs",
+    "incubator": "Municipal Business Incubator",
+    "growth": "Increase in residents' turnover by",
+    "startup": "STARTUP Program for YOUTH and MIGRANTS",
+    "applications": "processed applications",
+    "projects": "funded projects (2024)",
+    "investments": "million lei investments attracted",
+    "jobs": "jobs created",
+    "pending": "applications under evaluation (2025)"
+  },
+  "programs": {
+    "title": "CMDA Programs",
+    "education": {
+      "title": "Municipal Entrepreneurial Education Program",
+      "item1": "Modular courses and practical workshops",
+      "item2": "15 specialized mentors",
+      "item3": "Webinars and Q&A sessions"
+    },
+    "startup": {
+      "title": "Municipal STARTUP Program for YOUTH and MIGRANTS",
+      "item1": "Non-reimbursable grants",
+      "item2": "Entrepreneurial consulting and assistance",
+      "item3": "Free training courses"
+    },
+    "infrastructure_support": {
+      "title": "Business Support Infrastructure",
+      "item1": "Municipal Business Incubator",
+      "item2": "Multifunctional Industrial Platform",
+      "item3": "Workspaces and modern facilities"
+    },
+    "learn_more": "Learn more"
+  },
+  "gallery": {
+    "title": "Photo Gallery"
+  },
+  "footer": {
+    "organization": "I.P. Municipal Center for Entrepreneurship Development (CMDA)",
+    "quick_links": "Quick Links",
+    "contact_platform": "Application Platform",
+    "rights": "© 2025 CMDA – Municipal Center for Entrepreneurship Development. All rights reserved."
+  },
+  "partners": {
+    "title": "Partners and projects",
+    "description": "CMDA collaborates with national and international partners to connect entrepreneurs to resources and opportunities.",
+    "count": "partners from",
+    "countries": "European countries",
+    "projects": "Projects and proposals of",
+    "million": "million lei",
+    "european_programs": "European programs:",
+    "european_list": "EUroBRIDGE_UA_MD, UNDP – Resilient Communities, SOCIALCAP, DIGICROSS, CEDDI, GrowthUP Chisinau, GEN-E, etc.",
+    "internal_partners": "Internal partners:",
+    "internal_list": "TIKA, CCI Moldova, UN Women, Startup Moldova, ALT Foundation, FINEDU."
+  },
+  "cta": {
+    "title": "Want to launch or develop a business in Chisinau?",
+    "button": "Complete the STARTUP application for YOUTH and MIGRANTS"
+  },
+  "about_page": {
+    "title": "About CMDA",
+    "subtitle": "Municipal Center for Entrepreneurship Development",
+    "mission": "Mission",
+    "mission_text": "CMDA's mission is to develop and implement support programs and tools for the small and medium-sized enterprise sector in Chisinau municipality, in order to increase its performance and competitiveness, contributing to the sustainable socio-economic development of the municipality and creating new jobs.",
+    "objectives": "Objectives",
+    "objective1": "Building entrepreneurial skills and culture among youth and migrants.",
+    "objective2": "Facilitating SME access to financing and support tools.",
+    "objective3": "Developing municipal business support infrastructure.",
+    "objective4": "Promoting innovations and entrepreneurial initiatives with local impact.",
+    "objective5": "Supporting startup entrepreneurs through consulting, mentoring and integrated programs.",
+    "beneficiaries": "Who are the beneficiaries?",
+    "beneficiary1": "Young people aged 18-40 from Chisinau municipality.",
+    "beneficiary2": "Returned migrants who want to start a business.",
+    "beneficiary3": "Refugees settled in Chisinau municipality.",
+    "beneficiary4": "Existing SMEs needing support for development, innovation and digitalization.",
+    "how_it_works": "How does CMDA work?",
+    "public_institution": "Public Institution",
+    "public_institution_text": "CMDA is a public institution of Chisinau municipality, subordinated to the City Hall.",
+    "strategic_collaboration": "Strategic Collaboration",
+    "strategic_collaboration_text": "Works in close collaboration with Chisinau City Hall and the General Directorate of Economy, Trade and Tourism.",
+    "transparent_implementation": "Transparent Implementation",
+    "transparent_implementation_text": "Program implementation is done through project calls and selection of applications submitted through the startup.chisinau.md platform.",
+    "ready": "Are you ready to develop your business?",
+    "join": "Join the community of entrepreneurs supported by CMDA",
+    "see_programs": "See available programs",
+    "contact_us": "Contact us"
+  },
+  "programs_page": {
+    "title": "Programs and Services",
+    "subtitle": "CMDA implements integrated entrepreneurial support programs, from business idea to development and expansion.",
+    "consultation": {
+      "title": "Municipal Business Consulting and Mentoring Program",
+      "badge": "Consulting",
+      "description": "Individual consulting program for entrepreneurs and future entrepreneurs.",
+      "feature1": "Over 4,215 individual consultations provided.",
+      "feature2": "Support for business idea identification, business plan development, access to financing and legal aspects.",
+      "feature3": "Personalized mentoring based on domain and business development stage.",
+      "cta": "Request a consultation"
+    },
+    "education": {
+      "badge": "Education",
+      "stat1_label": "training program beneficiaries",
+      "stat2_label": "specialized mentors",
+      "stat3_label": "youth in hackathons",
+      "feature1": "7,733 beneficiaries of entrepreneurial training programs (online and offline).",
+      "feature2": "15 specialized mentors in accounting, marketing, legal, finance and business development.",
+      "feature4": "4 hackathons and an AI Summer School 'Next Gen', with over 250 young participants.",
+      "cta": "Enroll in courses"
+    },
+    "startup": {
+      "badge": "Grants",
+      "highlight": "Grants for launching and developing businesses",
+      "offers_title": "The program offers:",
+      "cta": "Apply to program"
+    },
+    "additional_services": {
+      "title": "Additional Services",
+      "badge": "Support",
+      "mentoring": {
+        "title": "Specialized Mentoring",
+        "description": "Domain-specific mentoring with industry experts."
+      },
+      "networking": {
+        "title": "Networking and Events",
+        "description": "Regular events for entrepreneurs and networking opportunities."
+      },
+      "funding": {
+        "title": "Funding Guidance",
+        "description": "Guidance towards European or international programs and funds."
+      }
+    },
+    "cta": {
+      "title": "Don't know where to start?",
+      "description": "The CMDA team will guide you to choose the right program for you",
+      "button": "Contact us for consultation"
+    }
+  },
+  "infrastructure_page": {
+    "title": "Support Infrastructure",
+    "subtitle": "Modern spaces and complete facilities for developing your business",
+    "ima": {
+      "title": "Municipal Business Incubator (IMA)",
+      "badge": "Incubator",
+      "description": "The Municipal Business Incubator provides the necessary infrastructure for newly established enterprises from cultural, creative industries and the IT sector, including workspaces, consulting services, mentoring and networking opportunities, for a period of up to 24 months.",
+      "growth": "Increase in residents' turnover",
+      "growth_detail": "from 247,896 to 1,863,878 lei",
+      "residents": "Active residents",
+      "applications": "Applications received",
+      "offers_title": "What we offer:",
+      "offer1": "Intensive support for micro, small and medium enterprises",
+      "offer2": "Access to modular workspaces and utilities",
+      "offer3": "Innovation, technological and management consulting",
+      "offer4": "Incubation period up to 24 months",
+      "offer5": "Networking and professional development events",
+      "priority_sectors": "Priority sectors:",
+      "sector1": "Creative Industries",
+      "sector2": "Cultural Industries",
+      "sector3": "IT Sector",
+      "sector4": "Innovation"
+    },
+    "pim": {
+      "title": "Chisinau Multifunctional Industrial Platform (PIM)",
+      "badge": "Industrial Platform",
+      "description": "The Chisinau Multifunctional Industrial Platform (PIM) is a strategic infrastructure project, with a total investment of 27.8 million lei, which aims to create a favorable environment for the development of industrial enterprises.",
+      "investment": "Total investment",
+      "jobs": "Estimated jobs",
+      "features_title": "Features:",
+      "feature1": "Modern infrastructure for production and services",
+      "feature2": "Access to complete utilities and communication networks",
+      "feature3": "Optimized logistics and transport facilities",
+      "feature4": "Support for industrial enterprise development",
+      "feature5": "Collaborative and sustainable business environment"
+    },
+    "how_to_apply": {
+      "title": "How can you become a resident?",
+      "step1_title": "Complete the form",
+      "step1_desc": "Access the online platform and fill in the application form with all the necessary information about your business.",
+      "step2_title": "File evaluation",
+      "step2_desc": "The CMDA team evaluates the file and business proposal according to eligibility criteria.",
+      "step3_title": "Residence contract",
+      "step3_desc": "After approval, you sign the residence contract and benefit from facilities for up to 24 months.",
+      "cta": "Apply for residence"
+    },
+    "benefits": {
+      "title": "Resident benefits",
+      "modern_spaces": "Modern workspaces",
+      "modern_spaces_desc": "Modular offices, conference rooms and modern equipped common spaces",
+      "utilities": "Utilities included",
+      "utilities_desc": "High-speed internet, utilities, cleaning and maintenance services",
+      "networking": "Networking",
+      "networking_desc": "Regular events, collaboration opportunities with other residents",
+      "consulting": "Continuous consulting",
+      "consulting_desc": "Access to mentors and consultants specialized in various fields"
+    }
+  },
+  "partners_page": {
+    "title": "Partnerships",
+    "subtitle": "CMDA develops strategic partnerships at local, national and international levels to connect entrepreneurs from Chisinau to resources, expertise and funding.",
+    "international": {
+      "title": "International Partners",
+      "subtitle": "We collaborate with institutions and organizations from all over Europe to bring the best practices and opportunities for entrepreneurs from Chisinau."
+    },
+    "projects": {
+      "title": "European projects and programs",
+      "subtitle": "CMDA actively implements and participates in multiple European entrepreneurial development programs.",
+      "eu_support": "With the support of the European Union"
+    },
+    "internal": {
+      "title": "Internal Partners",
+      "subtitle": "We work closely with national institutions and organizations to provide comprehensive support to entrepreneurs."
+    },
+    "become_partner": {
+      "title": "Become a CMDA partner",
+      "description": "Together we can develop the entrepreneurial ecosystem in Chisinau",
+      "cta": "Contact us for partnership"
+    }
+  },
+  "contact_page": {
+    "title": "Contact the CMDA team",
+    "subtitle": "We are here to help you develop your business",
+    "contact_info": "Contact Information",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "schedule": "Working Hours",
+    "platform": "Online Platform",
+    "send_message": "Send us a message"
+  }
+}

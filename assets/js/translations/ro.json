@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "about": "Despre CMDA",
+    "programs": "Programe",
+    "infrastructure": "Infrastructură",
+    "partners": "Parteneri",
+    "contacts": "Contacte",
+    "apply": "Aplică la programe",
+    "menu_toggle": "Deschide meniul"
+  },
+  "hero": {
+    "title": "Sprijin pentru antreprenorii din Chișinău",
+    "subtitle": "Transformăm ideile în afaceri de succes",
+    "description": "Centrul Municipal pentru Dezvoltarea Antreprenoriatului (CMDA) oferă consultanță, instruire, finanțare și infrastructură pentru tinerii antreprenori, migranți și IMM-uri.",
+    "cta_programs": "Vezi programele CMDA",
+    "cta_contact": "Contactează-ne"
+  },
+  "impact": {
+    "title": "Rezultate concrete (2023 - prezent)",
+    "consultations": "consultații individuale",
+    "beneficiaries": "beneficiari instruiți",
+    "mentors": "mentori specializați",
+    "mentors_description": "Rețea de mentori în contabilitate, marketing, juridic, finanțe și dezvoltare afaceri.",
+    "hackathons": "hackathoane & Școala de vară AI 'Next Gen'",
+    "youth": "de tineri implicați în hackathoane și programe de inovație",
+    "incubator": "Incubator Municipal de Afaceri",
+    "growth": "Creșterea cifrei de afaceri a rezidenților cu",
+    "startup": "Program STARTUP pentru TINERI și MIGRANȚI",
+    "applications": "dosare procesate",
+    "projects": "proiecte finanțate (2024)",
+    "investments": "mil. lei investiții atrase",
+    "jobs": "locuri de muncă create",
+    "pending": "cereri în evaluare (2025)"
+  },
+  "programs": {
+    "title": "Programele CMDA",
+    "education": {
+      "title": "Program municipal de educație antreprenorială",
+      "item1": "Cursuri modulare și ateliere practice",
+      "item2": "15 mentori specializați",
+      "item3": "Webinarii și sesiuni Q&A"
+    },
+    "startup": {
+      "title": "Program municipal STARTUP pentru TINERI și MIGRANȚI",
+      "item1": "Granturi nerambursabile",
+      "item2": "Consultanță și asistență antreprenorială",
+      "item3": "Cursuri gratuite de instruire"
+    },
+    "infrastructure_support": {
+      "title": "Infrastructură de suport în afaceri",
+      "item1": "Incubator Municipal de Afaceri",
+      "item2": "Platformă Industrială Multifuncțională",
+      "item3": "Spații de lucru și facilități moderne"
+    },
+    "learn_more": "Află mai mult"
+  },
+  "gallery": {
+    "title": "Galerie foto"
+  },
+  "footer": {
+    "organization": "I.P. Centrul Municipal pentru Dezvoltarea Antreprenoriatului (CMDA)",
+    "quick_links": "Linkuri rapide",
+    "contact_platform": "Platforma de aplicare",
+    "rights": "© 2025 CMDA – Centrul Municipal pentru Dezvoltarea Antreprenoriatului. Toate drepturile rezervate."
+  },
+  "partners": {
+    "title": "Parteneri și proiecte",
+    "description": "CMDA colaborează cu parteneri naționali și internaționali pentru a conecta antreprenorii la resurse și oportunități.",
+    "count": "parteneri din",
+    "countries": "țări europene",
+    "projects": "Proiecte și propuneri de",
+    "million": "milioane lei",
+    "european_programs": "Programe europene:",
+    "european_list": "EUroBRIDGE_UA_MD, PNUD – Comunități reziliente, SOCIALCAP, DIGICROSS, CEDDI, GrowthUP Chișinău, GEN-E, ș.a.",
+    "internal_partners": "Parteneri interni:",
+    "internal_list": "TIKA, CCI Moldova, UN Women, Startup Moldova, Fundația ALT, FINEDU."
+  },
+  "cta": {
+    "title": "Vrei să lansezi sau să dezvolți o afacere în Chișinău?",
+    "button": "Completează dosarul STARTUP pentru TINERI și MIGRANȚI"
+  },
+  "about_page": {
+    "title": "Despre CMDA",
+    "subtitle": "Centrul Municipal pentru Dezvoltarea Antreprenoriatului",
+    "mission": "Misiune",
+    "mission_text": "Misiunea CMDA este de a dezvolta și implementa programe și instrumente de suport pentru sectorul întreprinderilor mici și mijlocii din municipiul Chișinău, în scopul creșterii performanței și competitivității acestuia, contribuind la dezvoltarea socio-economică durabilă a municipiului și la crearea de noi locuri de muncă.",
+    "objectives": "Obiective",
+    "objective1": "Formarea competențelor și culturii antreprenoriale în rândul tinerilor și migranților.",
+    "objective2": "Facilitarea accesului IMM-urilor la finanțare și instrumente de suport.",
+    "objective3": "Dezvoltarea infrastructurii municipale de suport în afaceri.",
+    "objective4": "Promovarea inovațiilor și a inițiativelor antreprenoriale cu impact local.",
+    "objective5": "Susținerea antreprenorilor la început de drum prin consultanță, mentorat și programe integrate.",
+    "beneficiaries": "Cine sunt beneficiarii?",
+    "beneficiary1": "Tineri cu vârsta între 18 și 40 de ani din municipiul Chișinău.",
+    "beneficiary2": "Migranți reîntorși în țară care vor să lanseze o afacere.",
+    "beneficiary3": "Refugiați stabiliți în municipiul Chișinău.",
+    "beneficiary4": "IMM-uri existente care au nevoie de sprijin pentru dezvoltare, inovare și digitalizare.",
+    "how_it_works": "Cum funcționează CMDA?",
+    "public_institution": "Instituție publică",
+    "public_institution_text": "CMDA este o instituție publică a municipiului Chișinău, subordonată Primăriei.",
+    "strategic_collaboration": "Colaborare strategică",
+    "strategic_collaboration_text": "Lucrează în strânsă colaborare cu Primăria municipiului Chișinău și Direcția generală economie, comerț și turism.",
+    "transparent_implementation": "Implementare transparentă",
+    "transparent_implementation_text": "Implementarea programelor se face prin apeluri de proiecte și selecția dosarelor depuse prin platforma startup.chisinau.md.",
+    "ready": "Ești pregătit să-ți dezvolți afacerea?",
+    "join": "Alătură-te comunității de antreprenori susținuți de CMDA",
+    "see_programs": "Vezi programele disponibile",
+    "contact_us": "Contactează-ne"
+  },
+  "programs_page": {
+    "title": "Programe și Servicii",
+    "subtitle": "CMDA implementează programe integrate de suport antreprenorial, de la idee de afacere până la dezvoltare și extindere.",
+    "consultation": {
+      "title": "Program municipal de consultanță și mentorat în afaceri",
+      "badge": "Consultanță",
+      "description": "Program de consultanță individuală pentru antreprenori și viitori antreprenori.",
+      "feature1": "Peste 4 215 consultații individuale oferite.",
+      "feature2": "Sprijin pentru identificarea ideii de afaceri, elaborarea planului de business, acces la finanțare și aspecte juridice.",
+      "feature3": "Mentorat personalizat în funcție de domeniu și etapa de dezvoltare a afacerii.",
+      "cta": "Solicită o consultație"
+    },
+    "education": {
+      "badge": "Educație",
+      "stat1_label": "beneficiari ai programelor de formare",
+      "stat2_label": "mentori specializați",
+      "stat3_label": "tineri în hackathoane",
+      "feature1": "7 733 beneficiari ai programelor de formare antreprenorială (online și offline).",
+      "feature2": "15 mentori specializați în contabilitate, marketing, juridic, finanțe și dezvoltare afaceri.",
+      "feature4": "4 hackathoane și o școală de vară AI 'Next Gen', cu peste 250 de tineri participanți.",
+      "cta": "Înscrie-te la cursuri"
+    },
+    "startup": {
+      "badge": "Granturi",
+      "highlight": "Granturi pentru lansarea și dezvoltarea afacerilor",
+      "offers_title": "Programul oferă:",
+      "cta": "Aplică la program"
+    },
+    "additional_services": {
+      "title": "Servicii suplimentare",
+      "badge": "Suport",
+      "mentoring": {
+        "title": "Mentorat specializat",
+        "description": "Mentorat specializat pe domenii cu experți din industrie."
+      },
+      "networking": {
+        "title": "Networking și evenimente",
+        "description": "Evenimente regulate pentru antreprenori și oportunități de networking."
+      },
+      "funding": {
+        "title": "Orientare către fonduri",
+        "description": "Orientare către programe și fonduri europene sau internaționale."
+      }
+    },
+    "cta": {
+      "title": "Nu știi de unde să începi?",
+      "description": "Echipa CMDA te va ghida să alegi programul potrivit pentru tine",
+      "button": "Contactează-ne pentru consultanță"
+    }
+  },
+  "infrastructure_page": {
+    "title": "Infrastructura de Suport",
+    "subtitle": "Spații moderne și facilități complete pentru dezvoltarea afacerii tale",
+    "ima": {
+      "title": "Incubatorul Municipal de Afaceri (IMA)",
+      "badge": "Incubator",
+      "description": "Incubatorul Municipal de Afaceri oferă infrastructura necesară pentru întreprinderile nou-înființate din industrii culturale, creative și sectorul IT, inclusiv spații de lucru, servicii de consultanță, mentorat și oportunități de networking, pentru o perioadă de până la 24 de luni.",
+      "growth": "Creșterea cifrei de afaceri a rezidenților",
+      "growth_detail": "de la 247 896 la 1 863 878 lei",
+      "residents": "Rezidenți activi",
+      "applications": "Aplicații primite",
+      "offers_title": "Ce oferim:"
+    },
+    "pim": {
+      "title": "Platforma Industrială Multifuncțională Chișinău (PIM)",
+      "badge": "Platformă Industrială"
+    }
+  },
+  "partners_page": {
+    "title": "Parteneriate",
+    "subtitle": "CMDA dezvoltă parteneriate strategice la nivel local, național și internațional pentru a conecta antreprenorii din Chișinău la resurse, expertiză și finanțare.",
+    "become_partner": {
+      "title": "Devino partener CMDA",
+      "description": "Împreună putem dezvolta ecosistemul antreprenorial din Chișinău",
+      "cta": "Contactează-ne pentru parteneriat"
+    }
+  },
+  "contact_page": {
+    "title": "Contactează echipa CMDA",
+    "subtitle": "Suntem aici să te ajutăm să-ți dezvolți afacerea",
+    "contact_info": "Informații de contact",
+    "address": "Adresă",
+    "phone": "Telefon",
+    "email": "Email",
+    "schedule": "Program de lucru",
+    "platform": "Platforma online",
+    "send_message": "Trimite-ne un mesaj"
+  }
+}
