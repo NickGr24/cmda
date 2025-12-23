@@ -25,7 +25,7 @@
     "hackathons": "hackathoane & Școala de vară AI 'Next Gen'",
     "youth": "de tineri implicați în hackathoane și programe de inovație",
     "incubator": "Incubator Municipal de Afaceri",
-    "growth": "Creșterea cifrei de afaceri a rezidenților cu",
+    "growth": "Creșterea cifrei de afaceri a rezidenților",
     "startup": "Program STARTUP pentru TINERI și MIGRANȚI",
     "applications": "dosare procesate",
     "projects": "proiecte finanțate (2024)",
@@ -173,12 +173,57 @@
     },
     "pim": {
       "title": "Platforma Industrială Multifuncțională Chișinău (PIM)",
-      "badge": "Platformă Industrială"
+      "badge": "Platformă Industrială",
+      "description": "Platforma Industrială Multifuncțională Chișinău (PIM) reprezintă un proiect strategic de infrastructură, cu o investiție totală de 27,8 milioane lei, care își propune să creeze un mediu favorabil pentru dezvoltarea întreprinderilor industriale.",
+      "investment": "Investiție totală",
+      "residents": "Rezidenți industriali",
+      "jobs": "Locuri de muncă estimate",
+      "features_title": "Caracteristici:",
+      "feature1": "Infrastructură modernă pentru producție și servicii",
+      "feature2": "Acces la utilități complete și rețele de comunicații",
+      "feature3": "Facilități logistice și de transport optimizate",
+      "feature4": "Suport pentru dezvoltarea întreprinderilor industriale",
+      "feature5": "Mediu de afaceri colaborativ și sustenabil"
+    },
+    "how_to_apply": {
+      "title": "Cum poți deveni rezident?",
+      "step1_title": "Completezi formularul",
+      "step1_desc": "Accesează platforma online și completează formularul de aplicare cu toate informațiile necesare despre afacerea ta.",
+      "step2_title": "Evaluare dosar",
+      "step2_desc": "Echipa CMDA evaluează dosarul și propunerea de afaceri conform criteriilor de eligibilitate.",
+      "step3_title": "Contract de rezidență",
+      "step3_desc": "După aprobare, semnezi contractul de rezidență și beneficiezi de facilități până la 24 de luni.",
+      "cta": "Aplică pentru rezidență"
+    },
+    "benefits": {
+      "title": "Beneficiile rezidenților",
+      "modern_spaces": "Spații de lucru moderne",
+      "modern_spaces_desc": "Birouri modulare, săli de conferință și spații comune amenajate modern",
+      "utilities": "Utilități incluse",
+      "utilities_desc": "Internet de mare viteză, utilități, servicii de curățenie și mentenanță",
+      "networking": "Networking",
+      "networking_desc": "Evenimente regulate, oportunități de colaborare cu alți rezidenți",
+      "consulting": "Consultanță continuă",
+      "consulting_desc": "Acces la mentori și consultanți specializați pe diverse domenii"
     }
   },
   "partners_page": {
     "title": "Parteneriate",
     "subtitle": "CMDA dezvoltă parteneriate strategice la nivel local, național și internațional pentru a conecta antreprenorii din Chișinău la resurse, expertiză și finanțare.",
+    "active_programs": "Programe active",
+    "international": {
+      "title": "Parteneri internaționali",
+      "subtitle": "Colaborăm cu instituții și organizații din întreaga Europă pentru a aduce cele mai bune practici și oportunități pentru antreprenorii din Chișinău."
+    },
+    "projects": {
+      "title": "Proiecte și programe europene",
+      "subtitle": "CMDA implementează și participă activ în multiple programe europene de dezvoltare antreprenorială.",
+      "eu_support": "Cu sprijinul Uniunii Europene"
+    },
+    "internal": {
+      "title": "Parteneri interni",
+      "subtitle": "Colaborăm strâns cu instituții și organizații naționale pentru a oferi suport comprehensiv antreprenorilor."
+    },
     "become_partner": {
       "title": "Devino partener CMDA",
       "description": "Împreună putem dezvolta ecosistemul antreprenorial din Chișinău",
@@ -193,7 +238,31 @@
     "phone": "Telefon",
     "email": "Email",
     "schedule": "Program de lucru",
+    "schedule_hours": "Luni – Vineri: 08:00 – 17:00",
     "platform": "Platforma online",
-    "send_message": "Trimite-ne un mesaj"
+    "send_message": "Trimite-ne un mesaj",
+    "form": {
+      "full_name": "Nume complet",
+      "email": "Email",
+      "phone": "Telefon",
+      "request_type": "Tip solicitare",
+      "select_type": "Selectează tipul solicitării",
+      "consulting": "Consultanță",
+      "startup_program": "Program STARTUP",
+      "incubator": "Incubator",
+      "partnerships": "Parteneriate",
+      "other": "Altele",
+      "message": "Mesaj",
+      "send_button": "Trimite mesajul",
+      "success_message": "Mesajul tău a fost trimis cu succes! Te vom contacta în curând."
+    },
+    "location": "Locație",
+    "useful_links": "Linkuri utile",
+    "available_programs": "Programe disponibile",
+    "all_programs_desc": "Vezi toate programele de suport",
+    "infrastructure": "Infrastructură",
+    "infrastructure_desc": "Incubator și platformă industrială",
+    "apply_online": "Aplică online",
+    "apply_online_desc": "Completează dosarul pe platformă"
   }
 }

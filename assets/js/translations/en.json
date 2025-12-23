@@ -186,6 +186,7 @@
       "badge": "Industrial Platform",
       "description": "The Chisinau Multifunctional Industrial Platform (PIM) is a strategic infrastructure project, with a total investment of 27.8 million lei, which aims to create a favorable environment for the development of industrial enterprises.",
       "investment": "Total investment",
+      "residents": "Industrial residents",
       "jobs": "Estimated jobs",
       "features_title": "Features:",
       "feature1": "Modern infrastructure for production and services",
@@ -219,6 +220,7 @@
   "partners_page": {
     "title": "Partnerships",
     "subtitle": "CMDA develops strategic partnerships at local, national and international levels to connect entrepreneurs from Chisinau to resources, expertise and funding.",
+    "active_programs": "Active programs",
     "international": {
       "title": "International Partners",
       "subtitle": "We collaborate with institutions and organizations from all over Europe to bring the best practices and opportunities for entrepreneurs from Chisinau."
@@ -246,7 +248,31 @@
     "phone": "Phone",
     "email": "Email",
     "schedule": "Working Hours",
+    "schedule_hours": "Monday – Friday: 08:00 – 17:00",
     "platform": "Online Platform",
-    "send_message": "Send us a message"
+    "send_message": "Send us a message",
+    "form": {
+      "full_name": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "request_type": "Request type",
+      "select_type": "Select the type of request",
+      "consulting": "Consulting",
+      "startup_program": "STARTUP Program",
+      "incubator": "Incubator",
+      "partnerships": "Partnerships",
+      "other": "Other",
+      "message": "Message",
+      "send_button": "Send message",
+      "success_message": "Your message has been sent successfully! We will contact you soon."
+    },
+    "location": "Location",
+    "useful_links": "Useful links",
+    "available_programs": "Available programs",
+    "all_programs_desc": "See all support programs",
+    "infrastructure": "Infrastructure",
+    "infrastructure_desc": "Incubator and industrial platform",
+    "apply_online": "Apply online",
+    "apply_online_desc": "Complete the application on the platform"
   }
 }
