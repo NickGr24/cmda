@@ -21,6 +21,12 @@
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
+
+    /* Gradient background colors */
+    --gradient-bg-1: #fff5f0;
+    --gradient-bg-2: #e8f4f8;
+    --gradient-bg-3: #f0e8f5;
+    --gradient-bg-4: #fef9f3;
 }
 
 * {
@@ -38,6 +44,18 @@
     }
 }
 
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -47,7 +65,16 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: var(--text-dark);
-    background-color: var(--bg-white);
+    background: linear-gradient(
+        135deg,
+        var(--gradient-bg-1),
+        var(--gradient-bg-2),
+        var(--gradient-bg-3),
+        var(--gradient-bg-4),
+        var(--gradient-bg-1)
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
     overflow-x: hidden;
     width: 100%;
 }

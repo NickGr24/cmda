@@ -1,0 +1,110 @@
+.infrastructure-section {
+    padding: 4rem 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.infrastructure-block {
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    margin-bottom: 3rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.infrastructure-header {
+    background: var(--bg-light);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.infrastructure-badge {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.infrastructure-content {
+    padding: 2rem;
+}
+
+.infrastructure-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.infrastructure-industries {
+    margin-top: 2rem;
+}
+
+.industry-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    background: var(--bg-gray);
+    color: var(--text-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.infrastructure-image {
+    position: relative;
+    margin-bottom: 2rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--bg-gray);
+    min-height: 300px;
+}
+
+.infrastructure-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.how-to-apply {
+    background: var(--bg-light);
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 3rem;
+}
+
+.how-to-apply h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.benefits-section {
+    padding-bottom: 4rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.apply-action {
+    text-align: center;
+}

@@ -1,0 +1,30 @@
+/* ============================================
+   LANGUAGE SWITCHER UTILITY
+   ============================================ */
+
+/* Language Switcher Container */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+/* Language Selector Dropdown */
+/* Note: Base .lang-selector styles are in components/forms.css */
+/* This file contains navigation-specific overrides and responsive styles */
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .language-switcher {
+        margin-left: 0;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .lang-selector {
+        width: 100%;
+        max-width: 200px;
+    }
+}

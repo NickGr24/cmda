@@ -1,0 +1,62 @@
+/* ============================================
+   CMDA MAIN STYLESHEET
+   Modular CSS Architecture - Django Ready
+   ============================================ */
+
+/* ===========================================
+   BASE STYLES - Load First
+   Foundation styles that everything depends on
+   =========================================== */
+@import url('base/variables.css');
+@import url('base/reset.css');
+@import url('base/typography.css');
+@import url('base/animations.css');
+
+/* ===========================================
+   COMPONENTS - Reusable UI Elements
+   Used across multiple pages
+   =========================================== */
+@import url('components/navigation.css');
+@import url('components/footer.css');
+@import url('components/buttons.css');
+@import url('components/cards.css');
+@import url('components/forms.css');
+
+/* ===========================================
+   UTILITIES - Helper Components
+   Small, specialized utilities
+   =========================================== */
+@import url('utilities/language-switcher.css');
+
+/* ===========================================
+   PAGES - Page-Specific Styles
+
+   NOTE: In current vanilla version, all pages are loaded.
+   When migrating to Django, each template will load only
+   its specific page CSS using {% block extra_css %}
+   =========================================== */
+@import url('pages/index.css');
+@import url('pages/despre.css');
+@import url('pages/programe.css');
+@import url('pages/infrastructura.css');
+@import url('pages/parteneri.css');
+@import url('pages/contacte.css');
+
+/* ===========================================
+   DJANGO MIGRATION NOTES:
+
+   In Django templates, structure will be:
+
+   base.html:
+   - Loads base/* and components/* and utilities/*
+   - Has {% block extra_css %}{% endblock %}
+
+   index.html:
+   - {% extends "base.html" %}
+   - {% block extra_css %}
+     <link rel="stylesheet" href="{% static 'css/pages/index.css' %}">
+     {% endblock %}
+
+   This ensures optimal performance by loading only
+   the CSS needed for each specific page.
+   =========================================== */
