@@ -92,60 +92,389 @@
 
 /* PROGRAMS PREVIEW */
 .programs-preview {
-    padding: 4rem 0;
+    padding: 5rem 0 6rem;
     width: 100%;
     overflow: hidden;
+    position: relative;
+}
+
+.programs-preview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    border-radius: 2px;
 }
 
 .programs-preview h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
+    letter-spacing: -0.02em;
 }
 
 .programs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
     width: 100%;
+}
+
+/* Card base — override the component-level styles */
+.programs-grid .program-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 0;
+    min-height: auto;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+                box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+                border-color 0.3s ease;
+    opacity: 1;
+    animation: none;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Background image area */
+.programs-grid .program-card::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 14px 14px 0 0;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.programs-grid .program-card:nth-child(1)::before {
+    background-image: url('../../img/programeducatieantreprenoriala.webp');
+}
+
+.programs-grid .program-card:nth-child(2)::before {
+    background-image: url('../../img/programstartup.webp');
+}
+
+.programs-grid .program-card:nth-child(3)::before {
+    background-image: url('../../img/incubatorul.webp');
+}
+
+.programs-grid .program-card:hover::before {
+    transform: scale(1.05);
+}
+
+/* Accent bar under image */
+.programs-grid .program-card::after {
+    content: '';
+    position: absolute;
+    top: 180px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    transition: height 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 2;
+}
+
+.programs-grid .program-card:nth-child(1)::after {
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+}
+
+.programs-grid .program-card:nth-child(2)::after {
+    background: linear-gradient(90deg, var(--secondary-color), var(--secondary-light));
+}
+
+.programs-grid .program-card:nth-child(3)::after {
+    background: linear-gradient(90deg, #059669, #34d399);
+}
+
+/* Hover states */
+.programs-grid .program-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.12);
+    border-color: transparent;
+}
+
+.programs-grid .program-card:hover::after {
+    height: 6px;
+}
+
+/* Hover states — uniform for all cards */
+
+/* Card inner content */
+.programs-grid .program-card h3 {
+    padding: 2rem 2rem 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: var(--text-dark);
+    font-weight: 700;
+    background: none;
+    border-radius: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.programs-grid .program-card ul {
+    padding: 0 2rem;
+    margin: 0 0 1.5rem;
+    background: none;
+    border-radius: 0;
+    flex: 1;
+}
+
+.programs-grid .program-card ul li {
+    padding: 0.4rem 0 0.4rem 1.75rem;
+    margin-bottom: 0;
+    color: var(--text-medium);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    border-bottom: 1px solid var(--bg-gray);
+    position: relative;
+}
+
+.programs-grid .program-card ul li:last-child {
+    border-bottom: none;
+}
+
+.programs-grid .program-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.85rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-light);
+    background: transparent;
+}
+
+.programs-grid .program-card:nth-child(2) ul li::before {
+    border-color: var(--secondary-light);
+}
+
+.programs-grid .program-card:nth-child(3) ul li::before {
+    border-color: #34d399;
+}
+
+.programs-grid .program-card .card-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.25rem 2rem;
+    margin: 0;
+    background: var(--bg-light);
+    border-radius: 0 0 14px 14px;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.88rem;
+    letter-spacing: 0.02em;
+    transition: background 0.3s ease, padding-left 0.3s ease;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+    margin-top: auto;
+}
+
+.programs-grid .program-card .card-link::after {
+    display: none;
+}
+
+.programs-grid .program-card .card-link:hover {
+    background: var(--bg-gray);
+    padding-left: 2.5rem;
+    color: var(--primary-dark);
 }
 
 /* IMPACT SECTION */
 .impact {
-    padding: 4rem 0;
+    padding: 6rem 0;
     background: var(--bg-light);
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .impact h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
+    letter-spacing: -0.02em;
 }
 
+/* Override component-level card styles inside .impact */
+.impact .impact-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.25rem 1.75rem;
+    text-align: center;
+    opacity: 1;
+    animation: none;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.impact .impact-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.impact .impact-card:hover {
+    transform: translateY(-4px);
+    border-color: transparent;
+    box-shadow: 0 16px 40px -12px rgba(30, 64, 175, 0.15);
+}
+
+.impact .impact-card:hover::before {
+    opacity: 1;
+}
+
+/* Override the primary gradient — use clean white */
+.impact .impact-card.primary {
+    background: var(--bg-white);
+    color: var(--text-dark);
+}
+
+.impact .impact-card .impact-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-light);
+    opacity: 0.85;
+}
+
+.impact .impact-card.primary h3 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin: 0.5rem 0 0.75rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.impact .impact-card.primary p {
+    color: var(--text-medium);
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+}
+
+.impact .impact-card.primary .impact-icon {
+    color: var(--primary-light);
+}
+
+/* Top grid */
 .impact-grid-top {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Featured card — the STARTUP highlight */
+.impact-featured {
+    margin: 1.5rem 0;
+}
+
+.impact .impact-card.featured {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    border: none;
+    padding: 2.5rem 3rem;
+    border-radius: 20px;
+    color: #ffffff;
+}
+
+.impact .impact-card.featured::before {
+    display: none;
+}
+
+.impact .impact-card.featured:hover {
+    box-shadow: 0 20px 50px -15px rgba(30, 64, 175, 0.35);
+}
+
+.impact .featured-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     margin-bottom: 2rem;
 }
 
-.impact-grid-bottom {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
+.impact .featured-header .impact-icon {
+    font-size: 1.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
 }
 
-.impact-featured {
-    margin: 2rem 0;
+.impact .featured-header h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
-.impact-stats {
+.impact .impact-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
-    margin-top: 1rem;
+    margin-top: 0;
     width: 100%;
+}
+
+.impact .stat-item {
+    padding: 1.25rem 0.75rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.impact .stat-item:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.impact .stat-item strong {
+    display: block;
+    font-size: 2.25rem;
+    color: #ffffff;
+    margin-bottom: 0.4rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.impact .stat-item span {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+/* Bottom grid */
+.impact-grid-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 /* GALLERY SECTION */
@@ -229,14 +558,10 @@
     width: auto;
     height: auto;
     object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.7;
     transition: all 0.3s ease;
 }
 
 .slide:hover img {
-    filter: grayscale(0%);
-    opacity: 1;
     transform: scale(1.1);
 }
 
@@ -277,7 +602,32 @@
         width: 100%;
     }
 
-    .impact-stats {
+    .programs-grid {
+        gap: 1.25rem;
+    }
+
+    .programs-grid .program-card h3 {
+        font-size: 1rem;
+        padding: 1.5rem 1.5rem 0;
+    }
+
+    .programs-grid .program-card ul {
+        padding: 0 1.5rem;
+    }
+
+    .programs-grid .program-card .card-link {
+        padding: 1rem 1.5rem;
+    }
+
+    .programs-grid .program-card::before {
+        height: 140px;
+    }
+
+    .programs-grid .program-card::after {
+        top: 140px;
+    }
+
+    .impact .impact-stats {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.25rem;
     }
@@ -285,7 +635,15 @@
     .impact-grid-top,
     .impact-grid-bottom {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+        gap: 1.25rem;
+    }
+
+    .impact .impact-card.primary h3 {
+        font-size: 2.5rem;
+    }
+
+    .impact .impact-card.featured {
+        padding: 2rem 1.5rem;
     }
 }
 
@@ -299,7 +657,12 @@
         width: 100%;
     }
 
-    .programs-grid,
+    .programs-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 1.25rem;
+    }
+
     .partners-highlights,
     .quick-links-grid {
         grid-template-columns: 1fr;
@@ -312,9 +675,22 @@
         gap: 1rem;
     }
 
-    .impact-stats {
+    .impact .impact-stats {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
+    }
+
+    .impact .impact-card.primary h3 {
+        font-size: 2.25rem;
+    }
+
+    .impact .featured-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .impact .featured-header h3 {
+        font-size: 1.15rem;
     }
 
     .slide {
@@ -337,7 +713,7 @@
         padding: 3rem 0;
     }
 
-    .impact-stats {
+    .impact .impact-stats {
         grid-template-columns: 1fr;
         gap: 0.75rem;
     }

@@ -6,14 +6,15 @@
     "infrastructure": "Infrastructură",
     "partners": "Parteneri",
     "contacts": "Contacte",
-    "apply": "Aplică la programe",
+    "apply": "Accesează programele",
     "menu_toggle": "Deschide meniul"
   },
   "hero": {
-    "title": "Sprijin pentru antreprenorii din Chișinău",
+    "title": "CMDA – infrastructura municipală care susține antreprenoriatul",
     "subtitle": "Transformăm ideile în afaceri de succes",
     "description": "Centrul Municipal pentru Dezvoltarea Antreprenoriatului (CMDA) oferă consultanță, instruire, finanțare și infrastructură pentru tinerii antreprenori, migranți și IMM-uri.",
-    "cta_programs": "Vezi programele CMDA",
+    "cta_programs": "Accesează programele",
+    "cta_impact": "Vezi impactul",
     "cta_contact": "Contactează-ne"
   },
   "impact": {

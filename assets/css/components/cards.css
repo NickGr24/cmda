@@ -128,18 +128,6 @@
     width: 100%;
 }
 
-.program-card:nth-child(1) {
-    background-image: url('../img/booklet.webp');
-}
-
-.program-card:nth-child(2) {
-    background-image: url('../img/teamwork.webp');
-}
-
-.program-card:nth-child(3) {
-    background-image: url('../img/incubatorul.webp');
-}
-
 /* IMPACT CARDS */
 .impact-card {
     background: var(--bg-white);

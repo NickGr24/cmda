@@ -16,9 +16,10 @@
     <header class="site-header">
         <div class="container">
             <nav class="navbar">
-                <a href="index.html" class="logo">
-                    <img src="assets/img/logo.webp" alt="CMDA Logo" height="100">
-                </a>
+                <div class="logo">
+                    <a href="https://www.chisinau.md/ro" target="_blank"><img src="assets/img/primaria.webp" alt="Primăria Chișinău" height="100"></a>
+                    <a href="index.html"><img src="assets/img/logo.webp" alt="CMDA Logo" height="100"></a>
+                </div>
                 <button class="mobile-menu-toggle" aria-label="Deschide meniul">
                     <span></span>
                     <span></span>
@@ -33,7 +34,7 @@
                         <li><a href="parteneri.html" data-translate="nav.partners">Parteneri</a></li>
                         <li><a href="contacte.html" data-translate="nav.contacts">Contacte</a></li>
                     </ul>
-                    <a href="https://startup.chisinau.md" target="_blank" class="cta-button" data-translate="nav.apply">Aplică la programe</a>
+                    <a href="https://startup.chisinau.md" target="_blank" class="cta-button" data-translate="nav.apply">Accesează programele</a>
                 </div>
             </nav>
         </div>
@@ -48,11 +49,10 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text" data-aos="fade-up">
-                        <h1 data-translate="hero.title">Sprijin pentru antreprenorii din Chișinău</h1>
-                        <p class="hero-subtitle" data-translate="hero.description">Centrul Municipal pentru Dezvoltarea Antreprenoriatului (CMDA) oferă consultanță, instruire, finanțare și infrastructură pentru tinerii antreprenori, migranți și IMM-uri.</p>
+                        <h1 data-translate="hero.title">CMDA – infrastructura municipală care susține antreprenoriatul</h1>
                         <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
-                            <a href="https://startup.chisinau.md" target="_blank" class="btn btn-primary" data-translate="nav.apply">Aplică la programe</a>
-                            <a href="programe.html" class="btn btn-secondary" data-translate="hero.cta_programs">Vezi programele CMDA</a>
+                            <a href="programe.html" class="btn btn-primary" data-translate="hero.cta_programs">Accesează programele</a>
+                            <a href="#impact" class="btn btn-secondary" data-translate="hero.cta_impact">Vezi impactul</a>
                         </div>
                     </div>
                 </div>
@@ -60,9 +60,42 @@
         </section>
 
 
-        
+         <section class="programs-preview" data-aos="fade-up">
+            <div class="container">
+                <h2 data-aos="fade-down" data-translate="programs.title">Programele CMDA</h2>
+                <div class="programs-grid">
+                    <article class="program-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3 data-translate="programs.education.title">Program municipal de educație antreprenorială</h3>
+                        <ul>
+                            <li data-translate="programs.education.item1">Cursuri modulare și ateliere practice</li>
+                            <li data-translate="programs.education.item2">15 mentori specializați</li>
+                            <li data-translate="programs.education.item3">Webinarii și sesiuni Q&A</li>
+                        </ul>
+                        <a href="https://startup.chisinau.md/curs/" target="_blank" class="card-link"><span data-translate="programs.learn_more">Află mai mult</span> →</a>
+                    </article>
+                    <article class="program-card" data-aos="fade-up" data-aos-delay="200">
+                        <h3 data-translate="programs.startup.title">Program municipal STARTUP pentru TINERI și MIGRANȚI</h3>
+                        <ul>
+                            <li data-translate="programs.startup.item1">Granturi nerambursabile</li>
+                            <li data-translate="programs.startup.item2">Consultanță și asistență antreprenorială</li>
+                            <li data-translate="programs.startup.item3">Cursuri gratuite de instruire</li>
+                        </ul>
+                        <a href="https://startup.chisinau.md/finantarea/" target="_blank" class="card-link"><span data-translate="programs.learn_more">Află mai mult</span> →</a>
+                    </article>
+                    <article class="program-card" data-aos="fade-up" data-aos-delay="300">
+                        <h3 data-translate="programs.infrastructure_support.title">Infrastructură de suport în afaceri</h3>
+                        <ul>
+                            <li data-translate="programs.infrastructure_support.item1">Incubator Municipal de Afaceri</li>
+                            <li data-translate="programs.infrastructure_support.item2">Platformă Industrială Multifuncțională</li>
+                            <li data-translate="programs.infrastructure_support.item3">Spații de lucru și facilități moderne</li>
+                        </ul>
+                        <a href="https://startup.chisinau.md/incubator/" target="_blank" class="card-link"><span data-translate="programs.learn_more">Află mai mult</span> →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-        <section class="impact" data-aos="fade-up">
+        <section id="impact" class="impact" data-aos="fade-up">
             <div class="container">
                 <h2 data-aos="fade-down" data-translate="impact.title">Rezultate concrete (2023 - prezent)</h2>
                 
@@ -134,40 +167,7 @@
             </div>
         </section>
 
-        <section class="programs-preview" data-aos="fade-up">
-            <div class="container">
-                <h2 data-aos="fade-down" data-translate="programs.title">Programele CMDA</h2>
-                <div class="programs-grid">
-                    <article class="program-card" data-aos="fade-up" data-aos-delay="100">
-                        <h3 data-translate="programs.education.title">Program municipal de educație antreprenorială</h3>
-                        <ul>
-                            <li data-translate="programs.education.item1">Cursuri modulare și ateliere practice</li>
-                            <li data-translate="programs.education.item2">15 mentori specializați</li>
-                            <li data-translate="programs.education.item3">Webinarii și sesiuni Q&A</li>
-                        </ul>
-                        <a href="programe.html#educatie" class="card-link"><span data-translate="programs.learn_more">Află mai mult</span> →</a>
-                    </article>
-                    <article class="program-card" data-aos="fade-up" data-aos-delay="200">
-                        <h3 data-translate="programs.startup.title">Program municipal STARTUP pentru TINERI și MIGRANȚI</h3>
-                        <ul>
-                            <li data-translate="programs.startup.item1">Granturi nerambursabile</li>
-                            <li data-translate="programs.startup.item2">Consultanță și asistență antreprenorială</li>
-                            <li data-translate="programs.startup.item3">Cursuri gratuite de instruire</li>
-                        </ul>
-                        <a href="programe.html#startup" class="card-link"><span data-translate="programs.learn_more">Află mai mult</span> →</a>
-                    </article>
-                    <article class="program-card" data-aos="fade-up" data-aos-delay="300">
-                        <h3 data-translate="programs.infrastructure_support.title">Infrastructură de suport în afaceri</h3>
-                        <ul>
-                            <li data-translate="programs.infrastructure_support.item1">Incubator Municipal de Afaceri</li>
-                            <li data-translate="programs.infrastructure_support.item2">Platformă Industrială Multifuncțională</li>
-                            <li data-translate="programs.infrastructure_support.item3">Spații de lucru și facilități moderne</li>
-                        </ul>
-                        <a href="infrastructura.html" class="card-link"><span data-translate="programs.learn_more">Află mai mult</span> →</a>
-                    </article>
-                </div>
-            </div>
-        </section>
+       
 
 
         <section class="gallery-section" data-aos="fade-up">
