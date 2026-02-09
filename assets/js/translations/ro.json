@@ -11,7 +11,7 @@
   },
   "hero": {
     "title": "CMDA – infrastructura municipală care susține antreprenoriatul",
-    "subtitle": "Transformăm ideile în afaceri de succes",
+    "subtitle": "Programe, finanțări, incubare și comunitate",
     "description": "Centrul Municipal pentru Dezvoltarea Antreprenoriatului (CMDA) oferă consultanță, instruire, finanțare și infrastructură pentru tinerii antreprenori, migranți și IMM-uri.",
     "cta_programs": "Accesează programele",
     "cta_impact": "Vezi impactul",
@@ -80,6 +80,15 @@
   "cta": {
     "title": "Vrei să lansezi sau să dezvolți o afacere în Chișinău?",
     "button": "Completează dosarul STARTUP pentru TINERI și MIGRANȚI"
+  },
+  "about_sidebar": {
+    "about": "Centrul Municipal pentru Dezvoltarea Antreprenoriatului",
+    "team": "Echipa CMDA",
+    "structure": "Structura CMDA",
+    "career": "Carieră",
+    "procurement": "Achiziții",
+    "budget": "Bugetul CMDA",
+    "placeholder": "Pagina este în curs de dezvoltare."
   },
   "about_page": {
     "title": "Despre CMDA",

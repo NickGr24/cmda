@@ -11,7 +11,7 @@
   },
   "hero": {
     "title": "CMDA – municipal infrastructure supporting entrepreneurship",
-    "subtitle": "Transforming ideas into successful businesses",
+    "subtitle": "Programs, funding, incubation and community",
     "description": "The Municipal Center for Entrepreneurship Development (CMDA) offers consulting, training, financing and infrastructure for young entrepreneurs, migrants and SMEs.",
     "cta_programs": "Access the programs",
     "cta_impact": "See the impact",
@@ -80,6 +80,15 @@
   "cta": {
     "title": "Want to launch or develop a business in Chisinau?",
     "button": "Complete the STARTUP application for YOUTH and MIGRANTS"
+  },
+  "about_sidebar": {
+    "about": "Municipal Center for Entrepreneurship Development",
+    "team": "CMDA Team",
+    "structure": "CMDA Structure",
+    "career": "Career",
+    "procurement": "Procurement",
+    "budget": "CMDA Budget",
+    "placeholder": "This page is under development."
   },
   "about_page": {
     "title": "About CMDA",
