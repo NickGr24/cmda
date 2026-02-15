@@ -3,8 +3,19 @@
     "home": "Acasă",
     "about": "Despre CMDA",
     "programs": "Programe",
-    "infrastructure": "Infrastructură",
+    "infrastructure": "IMA",
     "partners": "Parteneri",
+    "media": "Media",
+    "media_success": "Istorii de succes",
+    "media_press": "Comunicate",
+    "media_gallery": "Galerie",
+    "transparency": "Transparența",
+    "transparency_plans": "Planuri și strategii",
+    "transparency_reports": "Rapoarte",
+    "transparency_procurement": "Achiziții",
+    "transparency_vacancies": "Funcții vacante",
+    "transparency_travel": "Deplasări de serviciu",
+    "transparency_integrity": "Integritate",
     "contacts": "Contacte",
     "apply": "Accesează programele",
     "menu_toggle": "Deschide meniul"
@@ -49,12 +60,16 @@
       "item3": "Cursuri gratuite de instruire"
     },
     "infrastructure_support": {
-      "title": "Infrastructură de suport în afaceri",
+      "title": "Incubatorul Municipal de Afaceri",
       "item1": "Incubator Municipal de Afaceri",
-      "item2": "Platformă Industrială Multifuncțională",
-      "item3": "Spații de lucru și facilități moderne"
+      "item2": "Spații de lucru și facilități moderne",
+      "item3": "Consultanță și mentorat pentru rezidenți"
     },
     "learn_more": "Află mai mult"
+  },
+  "success_preview": {
+    "title": "Istorii de succes",
+    "view_all": "Toate istoriile →"
   },
   "gallery": {
     "title": "Galerie foto"
@@ -63,7 +78,7 @@
     "organization": "I.P. Centrul Municipal pentru Dezvoltarea Antreprenoriatului (CMDA)",
     "quick_links": "Linkuri rapide",
     "contact_platform": "Platforma de aplicare",
-    "rights": "© 2025 CMDA – Centrul Municipal pentru Dezvoltarea Antreprenoriatului. Toate drepturile rezervate."
+    "rights": "© 2026 CMDA – Centrul Municipal pentru Dezvoltarea Antreprenoriatului. Toate drepturile rezervate."
   },
   "partners": {
     "title": "Parteneri și proiecte",
@@ -169,7 +184,7 @@
     }
   },
   "infrastructure_page": {
-    "title": "Infrastructura de Suport",
+    "title": "Incubatorul Municipal de Afaceri",
     "subtitle": "Spații moderne și facilități complete pentru dezvoltarea afacerii tale",
     "ima": {
       "title": "Incubatorul Municipal de Afaceri (IMA)",
@@ -180,20 +195,6 @@
       "residents": "Rezidenți activi",
       "applications": "Aplicații primite",
       "offers_title": "Ce oferim:"
-    },
-    "pim": {
-      "title": "Platforma Industrială Multifuncțională Chișinău (PIM)",
-      "badge": "Platformă Industrială",
-      "description": "Platforma Industrială Multifuncțională Chișinău (PIM) reprezintă un proiect strategic de infrastructură, cu o investiție totală de 27,8 milioane lei, care își propune să creeze un mediu favorabil pentru dezvoltarea întreprinderilor industriale.",
-      "investment": "Investiție totală",
-      "residents": "Rezidenți industriali",
-      "jobs": "Locuri de muncă estimate",
-      "features_title": "Caracteristici:",
-      "feature1": "Infrastructură modernă pentru producție și servicii",
-      "feature2": "Acces la utilități complete și rețele de comunicații",
-      "feature3": "Facilități logistice și de transport optimizate",
-      "feature4": "Suport pentru dezvoltarea întreprinderilor industriale",
-      "feature5": "Mediu de afaceri colaborativ și sustenabil"
     },
     "how_to_apply": {
       "title": "Cum poți deveni rezident?",
@@ -270,8 +271,8 @@
     "useful_links": "Linkuri utile",
     "available_programs": "Programe disponibile",
     "all_programs_desc": "Vezi toate programele de suport",
-    "infrastructure": "Infrastructură",
-    "infrastructure_desc": "Incubator și platformă industrială",
+    "infrastructure": "IMA",
+    "infrastructure_desc": "Incubatorul Municipal de Afaceri",
     "apply_online": "Aplică online",
     "apply_online_desc": "Completează dosarul pe platformă"
   }

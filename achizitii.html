@@ -11,16 +11,27 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/utilities/language-switcher.css">
     <link rel="stylesheet" href="assets/css/pages/despre.css">
 </head>
 <body>
     <header class="site-header">
+        <div class="pre-header">
+            <div class="container">
+                <div class="pre-header-inner">
+                    <div class="pre-header-logos">
+                        <a href="https://www.chisinau.md/ro" target="_blank"><img src="assets/img/primaria-small.webp" alt="Primăria Chișinău" width="112" height="28" decoding="async"></a>
+                        <a href="index.html"><img src="assets/img/logo-small.webp" alt="CMDA Logo" width="154" height="28" decoding="async"></a>
+                    </div>
+                    <div class="pre-header-right">
+                        <a href="tel:+37360314141" class="pre-header-phone"><i class="fas fa-phone"></i> <span>+373 (60) 31-41-41</span></a>
+                        <a href="https://startup.chisinau.md" target="_blank" class="cta-button" data-translate="nav.apply">Accesează programele</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <nav class="navbar">
-                <div class="logo">
-                    <a href="https://www.chisinau.md/ro" target="_blank"><img src="assets/img/primaria.webp" alt="Primăria Chișinău" width="400" height="100"></a>
-                    <a href="index.html"><img src="assets/img/logo.webp" alt="CMDA Logo" width="430" height="78"></a>
-                </div>
                 <button class="mobile-menu-toggle" aria-label="Deschide meniul">
                     <span></span>
                     <span></span>
@@ -31,12 +42,28 @@
                         <li><a href="index.html" data-translate="nav.home">Acasă</a></li>
                         <li><a href="despre.html" class="active" data-translate="nav.about">Despre CMDA</a></li>
                         <li><a href="programe.html" data-translate="nav.programs">Programe</a></li>
-                        <li><a href="infrastructura.html" data-translate="nav.infrastructure">Infrastructură</a></li>
-                        <li><a href="parteneri.html" data-translate="nav.partners">Parteneri</a></li>
+                        <li><a href="ima.html" data-translate="nav.infrastructure">IMA</a></li>
+                        <li class="nav-dropdown">
+                            <a href="#" class="nav-dropdown-toggle" data-translate="nav.media">Media <i class="fas fa-chevron-down nav-dropdown-arrow"></i></a>
+                            <ul class="nav-dropdown-menu">
+                                <li><a href="istorii-de-succes.html" data-translate="nav.media_success">Istorii de succes</a></li>
+                                <li><a href="comunicate.html" data-translate="nav.media_press">Comunicate</a></li>
+                                <li><a href="galerie.html" data-translate="nav.media_gallery">Galerie</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="#" class="nav-dropdown-toggle" data-translate="nav.transparency">Transparența <i class="fas fa-chevron-down nav-dropdown-arrow"></i></a>
+                            <ul class="nav-dropdown-menu">
+                                <li><a href="planuri.html" data-translate="nav.transparency_plans">Planuri și strategii</a></li>
+                                <li><a href="rapoarte.html" data-translate="nav.transparency_reports">Rapoarte</a></li>
+                                <li><a href="achizitii.html" data-translate="nav.transparency_procurement">Achiziții</a></li>
+                                <li><a href="cariera.html" data-translate="nav.transparency_vacancies">Funcții vacante</a></li>
+                                <li><a href="deplasari.html" data-translate="nav.transparency_travel">Deplasări de serviciu</a></li>
+                                <li><a href="integritate.html" data-translate="nav.transparency_integrity">Integritate</a></li>
+                            </ul>
+                        </li>
                         <li><a href="contacte.html" data-translate="nav.contacts">Contacte</a></li>
                     </ul>
-                    <a href="tel:+37360314141" class="nav-phone" aria-label="Telefon: +373 60 31-41-41"><i class="fas fa-phone"></i></a>
-                    <a href="https://startup.chisinau.md" target="_blank" class="cta-button" data-translate="nav.apply">Accesează programele</a>
                 </div>
             </nav>
         </div>
@@ -102,7 +129,7 @@
                     <ul>
                         <li><a href="index.html" data-translate="nav.home">Acasă</a></li>
                         <li><a href="programe.html" data-translate="nav.programs">Programe</a></li>
-                        <li><a href="infrastructura.html" data-translate="nav.infrastructure">Infrastructură</a></li>
+                        <li><a href="ima.html" data-translate="nav.infrastructure">IMA</a></li>
                         <li><a href="parteneri.html" data-translate="nav.partners">Parteneri</a></li>
                         <li><a href="contacte.html" data-translate="nav.contacts">Contacte</a></li>
                     </ul>

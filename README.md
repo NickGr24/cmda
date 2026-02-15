@@ -20,7 +20,7 @@ cmda/
 ├── index.html              # Pagina principală
 ├── despre.html             # Despre CMDA
 ├── programe.html           # Programe și servicii
-├── infrastructura.html     # Infrastructura de suport
+├── ima.html                # Incubatorul Municipal de Afaceri
 ├── parteneri.html          # Parteneriate
 ├── contacte.html           # Contact
 ├── assets/

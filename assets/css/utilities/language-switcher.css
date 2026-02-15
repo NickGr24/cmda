@@ -1,30 +1,264 @@
 /* ============================================
-   LANGUAGE SWITCHER UTILITY
+   CUSTOM LANGUAGE SWITCHER DROPDOWN
    ============================================ */
 
-/* Language Switcher Container */
 .language-switcher {
-    display: flex;
-    align-items: center;
-    margin-left: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 100;
 }
 
-/* Language Selector Dropdown */
-/* Note: Base .lang-selector styles are in components/forms.css */
-/* This file contains navigation-specific overrides and responsive styles */
+/* ---- Trigger button ---- */
+.lang-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.65rem;
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-dark);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  line-height: 1;
+}
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .language-switcher {
-        margin-left: 0;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        justify-content: center;
-        width: 100%;
-    }
+.lang-trigger:hover {
+  background: rgba(30, 64, 175, 0.06);
+  border-color: rgba(30, 64, 175, 0.25);
+}
 
-    .lang-selector {
-        width: 100%;
-        max-width: 200px;
-    }
+.lang-trigger-globe {
+  flex-shrink: 0;
+  color: var(--primary-color);
+  opacity: 0.85;
+  transition: opacity 0.25s ease;
+}
+
+.lang-trigger:hover .lang-trigger-globe {
+  opacity: 1;
+}
+
+.lang-trigger-code {
+  min-width: 1.2em;
+  text-align: center;
+}
+
+.lang-trigger-chevron {
+  flex-shrink: 0;
+  opacity: 0.45;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+}
+
+.lang-trigger:hover .lang-trigger-chevron {
+  opacity: 0.7;
+}
+
+/* Chevron rotation when open */
+.lang-open .lang-trigger-chevron {
+  transform: rotate(180deg);
+  opacity: 0.8;
+}
+
+.lang-open .lang-trigger {
+  background: rgba(30, 64, 175, 0.08);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.08);
+}
+
+/* ---- Dropdown panel ---- */
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 170px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  /* Animation */
+  opacity: 0;
+  transform: scaleY(0.85) translateY(-4px);
+  transform-origin: top right;
+  pointer-events: none;
+  transition:
+    opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.lang-open .lang-dropdown {
+  opacity: 1;
+  transform: scaleY(1) translateY(0);
+  pointer-events: auto;
+}
+
+.lang-dropdown-inner {
+  padding: 4px;
+}
+
+/* ---- Individual options ---- */
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  border: none;
+  background: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.82rem;
+  color: var(--text-dark);
+  transition: all 0.18s ease;
+  position: relative;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.lang-option:hover {
+  background: rgba(30, 64, 175, 0.06);
+}
+
+.lang-option--active {
+  background: rgba(30, 64, 175, 0.08);
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.lang-option--active:hover {
+  background: rgba(30, 64, 175, 0.12);
+}
+
+.lang-option-label {
+  flex: 1;
+  font-weight: inherit;
+}
+
+.lang-option-code {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+
+.lang-option--active .lang-option-code {
+  color: var(--primary-color);
+  opacity: 0.7;
+}
+
+.lang-option-check {
+  color: var(--primary-color);
+  flex-shrink: 0;
+  animation: langCheckIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes langCheckIn {
+  0% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Option dividers */
+.lang-option + .lang-option {
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* ---- Mobile language buttons (inside mobile menu) ---- */
+.mobile-menu-extras {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  /* Hide desktop language switcher on mobile */
+  .pre-header .language-switcher {
+    display: none;
+  }
+
+  /* Show mobile extras inside nav-menu */
+  .mobile-menu-extras {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1.25rem;
+    margin-top: 0.75rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .mobile-menu-phone {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--text-medium);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+  }
+
+  .mobile-menu-phone i {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+  }
+
+  .mobile-menu-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--primary-color);
+    color: #fff !important;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.25s ease;
+  }
+
+  .mobile-menu-cta:hover {
+    background: var(--primary-dark);
+  }
+
+  .mobile-lang-row {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .mobile-lang-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+  }
+
+  .mobile-lang-btn:hover {
+    background: rgba(30, 64, 175, 0.04);
+    border-color: rgba(30, 64, 175, 0.2);
+  }
+
+  .mobile-lang-btn--active {
+    background: rgba(30, 64, 175, 0.08);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+
 }

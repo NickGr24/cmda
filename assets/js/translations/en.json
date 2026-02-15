@@ -3,8 +3,19 @@
     "home": "Home",
     "about": "About CMDA",
     "programs": "Programs",
-    "infrastructure": "Infrastructure",
+    "infrastructure": "IMA",
     "partners": "Partners",
+    "media": "Media",
+    "media_success": "Success Stories",
+    "media_press": "Press Releases",
+    "media_gallery": "Gallery",
+    "transparency": "Transparency",
+    "transparency_plans": "Plans & Strategies",
+    "transparency_reports": "Reports",
+    "transparency_procurement": "Procurement",
+    "transparency_vacancies": "Job Vacancies",
+    "transparency_travel": "Business Travel",
+    "transparency_integrity": "Integrity",
     "contacts": "Contacts",
     "apply": "Access the programs",
     "menu_toggle": "Open menu"
@@ -49,12 +60,16 @@
       "item3": "Free training courses"
     },
     "infrastructure_support": {
-      "title": "Business Support Infrastructure",
+      "title": "Municipal Business Incubator",
       "item1": "Municipal Business Incubator",
-      "item2": "Multifunctional Industrial Platform",
-      "item3": "Workspaces and modern facilities"
+      "item2": "Workspaces and modern facilities",
+      "item3": "Consulting and mentoring for residents"
     },
     "learn_more": "Learn more"
+  },
+  "success_preview": {
+    "title": "Success Stories",
+    "view_all": "All stories →"
   },
   "gallery": {
     "title": "Photo Gallery"
@@ -63,7 +78,7 @@
     "organization": "I.P. Municipal Center for Entrepreneurship Development (CMDA)",
     "quick_links": "Quick Links",
     "contact_platform": "Application Platform",
-    "rights": "© 2025 CMDA – Municipal Center for Entrepreneurship Development. All rights reserved."
+    "rights": "© 2026 CMDA – Municipal Center for Entrepreneurship Development. All rights reserved."
   },
   "partners": {
     "title": "Partners and projects",
@@ -169,7 +184,7 @@
     }
   },
   "infrastructure_page": {
-    "title": "Support Infrastructure",
+    "title": "Municipal Business Incubator",
     "subtitle": "Modern spaces and complete facilities for developing your business",
     "ima": {
       "title": "Municipal Business Incubator (IMA)",
@@ -190,20 +205,6 @@
       "sector2": "Cultural Industries",
       "sector3": "IT Sector",
       "sector4": "Innovation"
-    },
-    "pim": {
-      "title": "Chisinau Multifunctional Industrial Platform (PIM)",
-      "badge": "Industrial Platform",
-      "description": "The Chisinau Multifunctional Industrial Platform (PIM) is a strategic infrastructure project, with a total investment of 27.8 million lei, which aims to create a favorable environment for the development of industrial enterprises.",
-      "investment": "Total investment",
-      "residents": "Industrial residents",
-      "jobs": "Estimated jobs",
-      "features_title": "Features:",
-      "feature1": "Modern infrastructure for production and services",
-      "feature2": "Access to complete utilities and communication networks",
-      "feature3": "Optimized logistics and transport facilities",
-      "feature4": "Support for industrial enterprise development",
-      "feature5": "Collaborative and sustainable business environment"
     },
     "how_to_apply": {
       "title": "How can you become a resident?",
@@ -280,8 +281,8 @@
     "useful_links": "Useful links",
     "available_programs": "Available programs",
     "all_programs_desc": "See all support programs",
-    "infrastructure": "Infrastructure",
-    "infrastructure_desc": "Incubator and industrial platform",
+    "infrastructure": "IMA",
+    "infrastructure_desc": "Municipal Business Incubator",
     "apply_online": "Apply online",
     "apply_online_desc": "Complete the application on the platform"
   }
