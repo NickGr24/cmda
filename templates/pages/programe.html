@@ -1,0 +1,273 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Programe și Servicii - CMDA Chișinău{% endblock %}
+{% block meta_description %}Programe integrate de suport antreprenorial CMDA: consultanță, mentorat, educație, granturi și infrastructură pentru dezvoltarea afacerilor.{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/programe.css' %}">{% endblock %}
+{% block aos_config %}{ duration: 800, easing: 'ease-out', once: true, offset: 50 }{% endblock %}
+{% block content %}
+        <!-- Hero Section -->
+        <section class="programs-hero">
+            <div class="programs-hero-bg">
+                <div class="programs-hero-img" style="background-image: url('{% static 'img/photo_5_2026-02-08_01-46-56.webp' %}');"></div>
+                <div class="programs-hero-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="programs-hero-content">
+                    <span class="programs-hero-label" data-aos="fade-down" data-translate="programs_page.hero_label">Suport antreprenorial integrat</span>
+                    <h1 data-aos="fade-up" data-translate="programs_page.title">Programe și Servicii</h1>
+                    <p class="programs-hero-subtitle" data-aos="fade-up" data-aos-delay="100" data-translate="programs_page.subtitle">CMDA implementează programe integrate de suport antreprenorial, de la idee de afacere până la dezvoltare și extindere.</p>
+                    {% if stats.consultations or stats.beneficiaries or stats.funded_projects %}
+                    <div class="programs-hero-stats" data-aos="fade-up" data-aos-delay="200">
+                        {% if stats.consultations %}
+                        <div class="hero-stat-item">
+                            <span class="hero-stat-num" data-count="{{ stats.consultations.value }}"{% if stats.consultations.decimal_places %} data-decimal="{{ stats.consultations.decimal_places }}"{% endif %}>0</span>
+                            <span class="hero-stat-label" data-translate="impact.consultations">{{ stats.consultations.label }}</span>
+                        </div>
+                        {% endif %}
+                        {% if stats.beneficiaries %}
+                        {% if stats.consultations %}<div class="hero-stat-divider"></div>{% endif %}
+                        <div class="hero-stat-item">
+                            <span class="hero-stat-num" data-count="{{ stats.beneficiaries.value }}"{% if stats.beneficiaries.decimal_places %} data-decimal="{{ stats.beneficiaries.decimal_places }}"{% endif %}>0</span>
+                            <span class="hero-stat-label" data-translate="impact.beneficiaries">{{ stats.beneficiaries.label }}</span>
+                        </div>
+                        {% endif %}
+                        {% if stats.funded_projects %}
+                        {% if stats.consultations or stats.beneficiaries %}<div class="hero-stat-divider"></div>{% endif %}
+                        <div class="hero-stat-item">
+                            <span class="hero-stat-num" data-count="{{ stats.funded_projects.value }}"{% if stats.funded_projects.decimal_places %} data-decimal="{{ stats.funded_projects.decimal_places }}"{% endif %}>0</span>
+                            <span class="hero-stat-label" data-translate="impact.projects">{{ stats.funded_projects.label }}</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Pills -->
+        <nav class="programs-nav" data-aos="fade-up">
+            <div class="container">
+                <div class="programs-nav-inner">
+                    <a href="#consultanta" class="programs-nav-pill">
+                        <i class="fas fa-comments"></i>
+                        <span data-translate="programs_page.consultation.badge">Consultanță</span>
+                    </a>
+                    <a href="#educatie" class="programs-nav-pill">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span data-translate="programs_page.education.badge">Educație</span>
+                    </a>
+                    <a href="#startup" class="programs-nav-pill active">
+                        <i class="fas fa-rocket"></i>
+                        <span data-translate="programs_page.startup.badge">Granturi</span>
+                    </a>
+                    <a href="#servicii" class="programs-nav-pill">
+                        <i class="fas fa-hands-helping"></i>
+                        <span data-translate="programs_page.additional_services.badge">Suport</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Programs Section -->
+        <section class="programs-section">
+            <div class="container">
+
+                <!-- Program 1: Consultanta -->
+                <article class="program-block" id="consultanta" data-aos="fade-up">
+                    <div class="program-block-visual">
+                        <img src="{% static 'img/program-educatie.webp' %}" alt="Consultanță antreprenorială CMDA" loading="lazy">
+                        <div class="program-block-badge" data-translate="programs_page.consultation.badge">Consultanță</div>
+                    </div>
+                    <div class="program-block-content">
+                        <h2 data-translate="programs_page.consultation.title">Program municipal de consultanță și mentorat în afaceri</h2>
+                        <p class="program-block-lead" data-translate="programs_page.consultation.description">Program de consultanță individuală pentru antreprenori și viitori antreprenori.</p>
+
+                        <div class="program-block-highlight">
+                            <div class="program-highlight-number" data-count="{{ stats.consultations.value|default:'4215' }}">0</div>
+                            <div class="program-highlight-text" data-translate="programs_page.consultation.feature1">consultații individuale oferite</div>
+                        </div>
+
+                        <ul class="program-block-features">
+                            <li data-translate="programs_page.consultation.feature2">Sprijin pentru identificarea ideii de afaceri, elaborarea planului de business, acces la finanțare și aspecte juridice.</li>
+                            <li data-translate="programs_page.consultation.feature3">Mentorat personalizat în funcție de domeniu și etapa de dezvoltare a afacerii.</li>
+                        </ul>
+                        <a href="{% url 'pages:contacte' %}" class="btn btn-primary" data-translate="programs_page.consultation.cta">Solicită o consultație</a>
+                    </div>
+                </article>
+
+                <!-- Program 2: Educatie -->
+                <article class="program-block reverse" id="educatie" data-aos="fade-up">
+                    <div class="program-block-visual">
+                        <img src="{% static 'img/programeducatieantreprenoriala.webp' %}" alt="Educație antreprenorială CMDA" loading="lazy">
+                        <div class="program-block-badge education" data-translate="programs_page.education.badge">Educație</div>
+                    </div>
+                    <div class="program-block-content">
+                        <h2 data-translate="programs.education.title">Program municipal de educație antreprenorială</h2>
+
+                        <div class="program-block-stats">
+                            <div class="mini-stat" data-aos="zoom-in" data-aos-delay="100">
+                                <span class="mini-stat-value" data-count="{{ stats.beneficiaries.value|default:'7733' }}">0</span>
+                                <span class="mini-stat-label" data-translate="programs_page.education.stat1_label">beneficiari ai programelor de formare</span>
+                            </div>
+                            <div class="mini-stat" data-aos="zoom-in" data-aos-delay="200">
+                                <span class="mini-stat-value" data-count="{{ stats.mentors.value|default:'15' }}">0</span>
+                                <span class="mini-stat-label" data-translate="programs_page.education.stat2_label">mentori specializați</span>
+                            </div>
+                            <div class="mini-stat" data-aos="zoom-in" data-aos-delay="300">
+                                <span class="mini-stat-value">250+</span>
+                                <span class="mini-stat-label" data-translate="programs_page.education.stat3_label">tineri în hackathoane</span>
+                            </div>
+                        </div>
+
+                        <ul class="program-block-features">
+                            <li data-translate="programs_page.education.feature1"><strong>7 733 beneficiari</strong> ai programelor de formare antreprenorială (online și offline).</li>
+                            <li data-translate="programs_page.education.feature2"><strong>15 mentori specializați</strong> în contabilitate, marketing, juridic, finanțe și dezvoltare afaceri.</li>
+                            <li data-translate="programs.education.item1">Cursuri modulare, ateliere practice, webinarii și sesiuni Q&A.</li>
+                            <li data-translate="programs_page.education.feature4">4 hackathoane și o școală de vară AI 'Next Gen', cu peste 250 de tineri participanți.</li>
+                        </ul>
+                        <a href="https://startup.chisinau.md" target="_blank" class="btn btn-primary" data-translate="programs_page.education.cta">Înscrie-te la cursuri</a>
+                    </div>
+                </article>
+
+                <!-- Program 3: STARTUP - Featured -->
+                <article class="program-block featured" id="startup" data-aos="fade-up">
+                    <div class="program-featured-header">
+                        <div class="program-featured-img" style="background-image: url('{% static 'img/programstartup.webp' %}');"></div>
+                        <div class="program-featured-overlay"></div>
+                        <div class="program-featured-content">
+                            <span class="program-featured-badge" data-translate="programs_page.startup.badge">Granturi</span>
+                            <h2 data-translate="programs.startup.title">Program Municipal STARTUP pentru TINERI și MIGRANȚI</h2>
+                            <p class="program-featured-lead" data-translate="programs_page.startup.highlight">Granturi pentru lansarea și dezvoltarea afacerilor</p>
+                        </div>
+                    </div>
+                    <div class="program-featured-body">
+                        <div class="startup-stats-grid">
+                            <div class="startup-stat-card" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="startup-stat-icon"><i class="fas fa-folder-open"></i></div>
+                                <h3>82+</h3>
+                                <p data-translate="impact.applications">dosare procesate</p>
+                            </div>
+                            <div class="startup-stat-card" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="startup-stat-icon"><i class="fas fa-check-circle"></i></div>
+                                <h3>16</h3>
+                                <p data-translate="impact.projects">proiecte finanțate (2024)</p>
+                            </div>
+                            <div class="startup-stat-card" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="startup-stat-icon"><i class="fas fa-coins"></i></div>
+                                <h3>33,3 mil. lei</h3>
+                                <p data-translate="impact.investments">investiții atrase</p>
+                            </div>
+                            <div class="startup-stat-card" data-aos="zoom-in" data-aos-delay="400">
+                                <div class="startup-stat-icon"><i class="fas fa-briefcase"></i></div>
+                                <h3>~450</h3>
+                                <p data-translate="impact.jobs">locuri de muncă create</p>
+                            </div>
+                            <div class="startup-stat-card" data-aos="zoom-in" data-aos-delay="500">
+                                <div class="startup-stat-icon"><i class="fas fa-hourglass-half"></i></div>
+                                <h3>69</h3>
+                                <p data-translate="impact.pending">cereri în evaluare (2025)</p>
+                            </div>
+                        </div>
+
+                        <div class="startup-offers">
+                            <h3 data-translate="programs_page.startup.offers_title">Programul oferă:</h3>
+                            <div class="startup-offers-grid">
+                                <div class="startup-offer-item">
+                                    <div class="startup-offer-icon"><i class="fas fa-user-tie"></i></div>
+                                    <span>Consultanță și asistență antreprenorială.</span>
+                                </div>
+                                <div class="startup-offer-item">
+                                    <div class="startup-offer-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                                    <span>Cursuri gratuite de instruire antreprenorială.</span>
+                                </div>
+                                <div class="startup-offer-item">
+                                    <div class="startup-offer-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                                    <span>Suport financiar nerambursabil (granturi) pentru proiecte investiționale.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="startup-cta">
+                            <a href="https://startup.chisinau.md" target="_blank" class="btn btn-primary btn-large" data-translate="programs_page.startup.cta">Aplică la program</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Program 4: Servicii -->
+                <article class="program-block" id="servicii" data-aos="fade-up">
+                    <div class="program-block-visual">
+                        <img src="{% static 'img/incubatorul.webp' %}" alt="Servicii suplimentare CMDA" loading="lazy">
+                        <div class="program-block-badge support" data-translate="programs_page.additional_services.badge">Suport</div>
+                    </div>
+                    <div class="program-block-content">
+                        <h2 data-translate="programs_page.additional_services.title">Servicii suplimentare</h2>
+                        <div class="services-cards">
+                            <div class="service-mini-card" data-aos="fade-up" data-aos-delay="100">
+                                <div class="service-mini-icon"><i class="fas fa-user-graduate"></i></div>
+                                <h3 data-translate="programs_page.additional_services.mentoring.title">Mentorat specializat</h3>
+                                <p data-translate="programs_page.additional_services.mentoring.description">Mentorat specializat pe domenii cu experți din industrie.</p>
+                            </div>
+                            <div class="service-mini-card" data-aos="fade-up" data-aos-delay="200">
+                                <div class="service-mini-icon"><i class="fas fa-network-wired"></i></div>
+                                <h3 data-translate="programs_page.additional_services.networking.title">Networking și evenimente</h3>
+                                <p data-translate="programs_page.additional_services.networking.description">Evenimente regulate pentru antreprenori și oportunități de networking.</p>
+                            </div>
+                            <div class="service-mini-card" data-aos="fade-up" data-aos-delay="300">
+                                <div class="service-mini-icon"><i class="fas fa-globe-europe"></i></div>
+                                <h3 data-translate="programs_page.additional_services.funding.title">Orientare către fonduri</h3>
+                                <p data-translate="programs_page.additional_services.funding.description">Orientare către programe și fonduri europene sau internaționale.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="programs-cta">
+            <div class="container">
+                <h2 data-aos="fade-down" data-translate="programs_page.cta.title">Nu știi de unde să începi?</h2>
+                <p data-aos="fade-up" data-aos-delay="100" data-translate="programs_page.cta.description">Echipa CMDA te va ghida să alegi programul potrivit pentru tine</p>
+                <a href="{% url 'pages:contacte' %}" class="btn btn-primary" data-aos="zoom-in" data-aos-delay="200" data-translate="programs_page.cta.button">Contactează-ne pentru consultanță</a>
+            </div>
+        </section>
+{% endblock %}
+{% block extra_js %}
+<script>
+    // Smooth scroll for nav pills
+    document.querySelectorAll('.programs-nav-pill').forEach(pill => {
+        pill.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const headerHeight = document.querySelector('.site-header').offsetHeight;
+                const navHeight = document.querySelector('.programs-nav').offsetHeight;
+                window.scrollTo({
+                    top: target.offsetTop - headerHeight - navHeight - 20,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Active pill on scroll
+    const sections = document.querySelectorAll('.program-block, .program-block.featured');
+    const pills = document.querySelectorAll('.programs-nav-pill');
+
+    window.addEventListener('scroll', () => {
+        const headerHeight = document.querySelector('.site-header').offsetHeight + 100;
+        let current = '';
+        sections.forEach(section => {
+            if (window.scrollY >= section.offsetTop - headerHeight - 80) {
+                current = section.getAttribute('id');
+            }
+        });
+        pills.forEach(pill => {
+            pill.classList.remove('active');
+            if (pill.getAttribute('href') === '#' + current) {
+                pill.classList.add('active');
+            }
+        });
+    });
+</script>
+{% endblock %}

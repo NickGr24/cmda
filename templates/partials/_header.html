@@ -1,0 +1,54 @@
+{% load static %}
+<header class="site-header">
+    <div class="pre-header">
+        <div class="container">
+            <div class="pre-header-inner">
+                <div class="pre-header-logos">
+                    <a href="https://www.chisinau.md/ro" target="_blank"><img src="{% static 'img/primaria-small.webp' %}" alt="Primăria Chișinău" width="112" height="28" decoding="async"></a>
+                    <a href="{% url 'pages:index' %}"><img src="{% static 'img/logo-small.webp' %}" alt="CMDA Logo" width="154" height="28" decoding="async"></a>
+                </div>
+                <div class="pre-header-right">
+                    <a href="tel:+37360314141" class="pre-header-phone"><i class="fas fa-phone"></i> <span>+373 (60) 31-41-41</span></a>
+                    <a href="https://startup.chisinau.md" target="_blank" class="cta-button" data-translate="nav.apply">Accesează programele</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <nav class="navbar">
+            <button class="mobile-menu-toggle" aria-label="Deschide meniul">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="{% url 'pages:index' %}" {% if active_page == 'index' %}class="active"{% endif %} data-translate="nav.home">Acasă</a></li>
+                    <li><a href="{% url 'pages:despre' %}" {% if active_page == 'despre' or active_page == 'echipa' or active_page == 'structura' %}class="active"{% endif %} data-translate="nav.about">Despre CMDA</a></li>
+                    <li><a href="{% url 'pages:programe' %}" {% if active_page == 'programe' %}class="active"{% endif %} data-translate="nav.programs">Programe</a></li>
+                    <li><a href="{% url 'pages:ima' %}" {% if active_page == 'ima' %}class="active"{% endif %} data-translate="nav.infrastructure">IMA</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-dropdown-toggle" data-translate="nav.media">Media <i class="fas fa-chevron-down nav-dropdown-arrow"></i></a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="{% url 'pages:istorii-de-succes' %}" data-translate="nav.media_success">Istorii de succes</a></li>
+                            <li><a href="{% url 'pages:comunicate' %}" data-translate="nav.media_press">Comunicate</a></li>
+                            <li><a href="{% url 'pages:galerie' %}" data-translate="nav.media_gallery">Galerie</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-dropdown-toggle" data-translate="nav.transparency">Transparența <i class="fas fa-chevron-down nav-dropdown-arrow"></i></a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="{% url 'pages:planuri' %}" data-translate="nav.transparency_plans">Planuri și strategii</a></li>
+                            <li><a href="{% url 'pages:rapoarte' %}" data-translate="nav.transparency_reports">Rapoarte</a></li>
+                            <li><a href="{% url 'pages:achizitii' %}" data-translate="nav.transparency_procurement">Achiziții</a></li>
+                            <li><a href="{% url 'pages:cariera' %}" data-translate="nav.transparency_vacancies">Funcții vacante</a></li>
+                            <li><a href="{% url 'pages:deplasari' %}" data-translate="nav.transparency_travel">Deplasări de serviciu</a></li>
+                            <li><a href="{% url 'pages:integritate' %}" data-translate="nav.transparency_integrity">Integritate</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'pages:contacte' %}" {% if active_page == 'contacte' %}class="active"{% endif %} data-translate="nav.contacts">Contacte</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

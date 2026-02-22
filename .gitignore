@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+
+# Django
+db.sqlite3
+staticfiles/
+*.log
+
+# Environment
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Media uploads
+media/
+
+# Backup
+_html_backup/
+
+# Test screenshots
+*.png
+.playwright-mcp/

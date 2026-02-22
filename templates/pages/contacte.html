@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Contact - CMDA Chișinău{% endblock %}
+{% block meta_description %}Contactează echipa CMDA pentru consultanță, informații despre programe și suport în dezvoltarea afacerii tale.{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/contacte.css' %}">{% endblock %}
+{% block content %}
+        <section class="page-header">
+            <div class="container">
+                <h1 data-aos="fade-down" data-translate="contact_page.title">Contactează echipa CMDA</h1>
+                <p class="page-subtitle" data-aos="fade-down" data-aos-delay="200" data-translate="contact_page.subtitle">Suntem aici să te ajutăm să-ți dezvolți afacerea</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info" data-aos="fade-right">
+                        <h2 data-aos="fade-down" data-aos-delay="100" data-translate="contact_page.contact_info">Informații de contact</h2>
+
+                        <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-details">
+                                <h3 data-translate="contact_page.address">Adresă</h3>
+                                <address>
+                                    bd. Ștefan cel Mare și Sfânt, 132<br>
+                                    MD-2012, mun. Chișinău<br>
+                                    Republica Moldova
+                                </address>
+                            </div>
+                        </div>
+
+                        <div class="contact-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div class="contact-details">
+                                <h3 data-translate="contact_page.phone">Telefon</h3>
+                                <a href="tel:+37360314141">+373 (60) 31-41-41</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-details">
+                                <h3 data-translate="contact_page.email">Email</h3>
+                                <a href="mailto:ipcmda@gmail.com">ipcmda@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item" data-aos="fade-up" data-aos-delay="500">
+                            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                            <div class="contact-details">
+                                <h3 data-translate="contact_page.schedule">Program de lucru</h3>
+                                <p data-translate="contact_page.schedule_hours">Luni – Vineri: 08:00 – 17:00</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item" data-aos="fade-up" data-aos-delay="600">
+                            <div class="contact-icon"><i class="fas fa-laptop"></i></div>
+                            <div class="contact-details">
+                                <h3 data-translate="contact_page.platform">Platforma online</h3>
+                                <a href="https://startup.chisinau.md" target="_blank" class="platform-link">
+                                    startup.chisinau.md
+                                    <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-cta">
+                            <a href="https://startup.chisinau.md" target="_blank" class="btn btn-primary" data-aos="zoom-in" data-aos-delay="700" data-translate="nav.apply">Accesează programele</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper" data-aos="fade-left">
+                        <h2 data-aos="fade-down" data-aos-delay="100" data-translate="contact_page.send_message">Trimite-ne un mesaj</h2>
+                        <form id="contact-form" class="contact-form" data-aos="fade-up" data-aos-delay="200">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="name"><span data-translate="contact_page.form.full_name">Nume complet</span> *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email"><span data-translate="contact_page.form.email">Email</span> *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" data-translate="contact_page.form.phone">Telefon</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="request-type" data-translate="contact_page.form.request_type">Tip solicitare</label>
+                                <select id="request-type" name="request-type">
+                                    <option value="" data-translate="contact_page.form.select_type">Selectează tipul solicitării</option>
+                                    <option value="consultanta" data-translate="contact_page.form.consulting">Consultanță</option>
+                                    <option value="startup" data-translate="contact_page.form.startup_program">Program STARTUP</option>
+                                    <option value="incubator" data-translate="contact_page.form.incubator">Incubator</option>
+                                    <option value="parteneriate" data-translate="contact_page.form.partnerships">Parteneriate</option>
+                                    <option value="altele" data-translate="contact_page.form.other">Altele</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message"><span data-translate="contact_page.form.message">Mesaj</span> *</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" data-translate="contact_page.form.send_button">Trimite mesajul</button>
+                            </div>
+                        </form>
+
+                        <div id="form-message" class="form-message" style="display: none;">
+                            <div class="success-message">
+                                <span class="success-icon">&#10003;</span>
+                                <p data-translate="contact_page.form.success_message">Mesajul tău a fost trimis cu succes! Te vom contacta în curând.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-section">
+                    <h2 data-aos="fade-down" data-aos-delay="100" data-translate="contact_page.location">Locație</h2>
+                    <div class="map-container" data-aos="zoom-in" data-aos-delay="200">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.2815!2d28.836038405024823!3d47.02306431222359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDAxJzIzLjAiTiAyOMKwNTAnMDkuNyJF!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+                            width="100%"
+                            height="450"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

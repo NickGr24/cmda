@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Istorii de succes - CMDA Chișinău{% endblock %}
+{% block meta_description %}Descoperă poveștile antreprenorilor care au reușit cu sprijinul programelor CMDA – de la idee la afacere de succes.{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/istorii-de-succes.css' %}">{% endblock %}
+{% block content %}
+        <section class="page-header">
+            <div class="container">
+                <h1 data-aos="fade-down">Istorii de succes</h1>
+                <p class="page-subtitle" data-aos="fade-down" data-aos-delay="200">Antreprenori care au transformat ideile în afaceri de succes cu sprijinul CMDA</p>
+            </div>
+        </section>
+
+        <section class="success-stories">
+            <div class="container">
+                <div class="stories-grid">
+                    {% for story in stories %}
+                    <article class="story-card" data-aos="fade-up">
+                        <div class="story-image">
+                            <img src="{{ story.image.url }}" alt="{{ story.company_name }}">
+                        </div>
+                        <div class="story-content">
+                            <span class="success-preview-tag">{{ story.category }}</span>
+                            <h2>{{ story.title }}</h2>
+                            {{ story.short_description|linebreaksbr }}
+                            <a href="{% url 'pages:story-detail' story.slug %}" class="btn btn-outline">Citește mai mult</a>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="container">
+                <h2>Vrei să scrii propria poveste de succes?</h2>
+                <a href="https://startup.chisinau.md/finantarea/" target="_blank" class="btn btn-primary btn-large">Aplică la program</a>
+            </div>
+        </section>
+{% endblock %}

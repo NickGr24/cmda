@@ -1,0 +1,318 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}CMDA - Centrul Municipal pentru Dezvoltarea Antreprenoriatului Chișinău{% endblock %}
+{% block meta_description %}Sprijin pentru antreprenorii din Chișinău. Consultanță, instruire, finanțare și infrastructură pentru tinerii antreprenori, migranți și IMM-uri.{% endblock %}
+{% block preload %}<link rel="preload" href="{% static 'video/background.mp4' %}" as="video" type="video/mp4">{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/index.css' %}">{% endblock %}
+{% block critical_css %}
+<style>
+.hero{color:#fff;position:relative;width:100%;overflow:hidden;height:75vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1e40af 0,#1e3a8a 100%)}
+.hero-video{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;object-fit:cover;object-position:center 20%}
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.3);z-index:1}
+.hero-content{display:flex;align-items:center;justify-content:center;width:100%;text-align:center;position:relative;z-index:2;margin-top:-6vh}
+.hero-text h1{font-size:2.5rem;margin-bottom:1.5rem;color:#fff}
+.hero-subtitle{font-size:1.25rem;margin-bottom:2rem;opacity:.95}
+.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+</style>
+{% endblock %}
+{% block aos_config %}{ duration: 800, easing: 'ease-out', once: true, offset: 50 }{% endblock %}
+{% block content %}
+        <section class="hero">
+            <video autoplay muted loop playsinline class="hero-video" preload="auto" poster="{% static 'img/hero-poster.webp' %}">
+                <source src="{% static 'video/background.mp4' %}" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text" data-aos="fade-up">
+                        <h1 data-translate="hero.title">CMDA – infrastructura municipală care susține antreprenoriatul</h1>
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100" data-translate="hero.subtitle">Programe, finanțări, incubare și comunitate</p>
+                        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
+                            <a href="{% url 'pages:programe' %}" class="btn btn-primary" data-translate="hero.cta_programs">Accesează programele</a>
+                            <a href="{% url 'pages:istorii-de-succes' %}" class="btn btn-secondary" data-translate="hero.cta_impact">Vezi impactul</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="success-preview" data-aos="fade-up">
+            <div class="container">
+                <div class="success-preview-header">
+                    <h2 data-aos="fade-down" data-translate="success_preview.title">Istorii de succes</h2>
+                    <a href="{% url 'pages:istorii-de-succes' %}" class="success-preview-all" data-aos="fade-down" data-aos-delay="100" data-translate="success_preview.view_all">Toate istoriile →</a>
+                </div>
+                <div class="success-preview-track">
+                    {% for story in featured_stories %}
+                    <article class="success-preview-card" data-aos="fade-up" data-aos-delay="{{ forloop.counter }}00">
+                        <a href="{% url 'pages:story-detail' story.slug %}">
+                            <div class="success-preview-img">
+                                <img src="{{ story.image.url }}" alt="{{ story.company_name }}" loading="lazy" decoding="async">
+                                <span class="success-preview-tag">{{ story.category }}</span>
+                            </div>
+                            <div class="success-preview-body">
+                                <h3>{{ story.company_name }}</h3>
+                                <p>{{ story.short_description }}</p>
+                            </div>
+                        </a>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="news-preview" data-aos="fade-up">
+            <div class="container">
+                <div class="news-preview-header">
+                    <h2 data-aos="fade-down" data-translate="news_preview.title">Comunicate și noutăți</h2>
+                    <a href="{% url 'pages:comunicate' %}" class="news-preview-all" data-aos="fade-down" data-aos-delay="100" data-translate="news_preview.view_all">Toate comunicatele →</a>
+                </div>
+                <div class="news-preview-grid">
+                    {% for article in latest_news %}
+                    <article class="news-preview-card" data-aos="fade-up" data-aos-delay="{{ forloop.counter }}00">
+                        <a href="{% url 'pages:news-detail' article.slug %}">
+                            {% if article.image %}
+                            <div class="news-preview-img">
+                                <img src="{{ article.image.url }}" alt="{{ article.title }}" loading="lazy" decoding="async">
+                                <span class="news-preview-date"><i class="far fa-calendar-alt"></i> {{ article.published_date|date:"d.m.Y" }}</span>
+                            </div>
+                            {% else %}
+                            <div class="news-preview-img news-preview-placeholder">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                            {% endif %}
+                            <div class="news-preview-body">
+                                <h3>{{ article.title }}</h3>
+                                <p>{{ article.excerpt|truncatewords:20 }}</p>
+                                <span class="news-preview-link">Citește mai mult <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+         <section class="programs-preview" data-aos="fade-up">
+            <div class="container">
+                <h2 data-aos="fade-down" data-translate="programs.title">Programele CMDA</h2>
+                <div class="programs-grid">
+                    {% for program in programs %}
+                    <article class="program-card" data-aos="fade-up" data-aos-delay="{{ forloop.counter }}00">
+                        <h3>{{ program.title }}</h3>
+                        {{ program.short_description|safe }}
+                        {% if program.cta_url %}
+                        <a href="{{ program.cta_url }}" target="_blank" class="card-link"><span data-translate="programs.learn_more">Află mai mult</span> →</a>
+                        {% endif %}
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="impact" data-aos="fade-up">
+            <div class="container">
+                <h2 data-aos="fade-down" data-translate="impact.title">Rezultate concrete (2023 - prezent)</h2>
+
+                <!-- First row - 3 main stats -->
+                <div class="impact-grid-top">
+                    {% if stats.consultations %}
+                    <div class="impact-card primary" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="impact-icon"><i class="{{ stats.consultations.icon_class|default:'fas fa-chart-line' }}"></i></div>
+                        <h3><span data-count="{{ stats.consultations.value }}"{% if stats.consultations.decimal_places %} data-decimal="{{ stats.consultations.decimal_places }}"{% endif %}>0</span><span style="white-space: nowrap;">{{ stats.consultations.suffix }}</span></h3>
+                        <p data-translate="impact.consultations">{{ stats.consultations.label }}</p>
+                    </div>
+                    {% endif %}
+                    {% if stats.beneficiaries %}
+                    <div class="impact-card primary" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="impact-icon"><i class="{{ stats.beneficiaries.icon_class|default:'fas fa-graduation-cap' }}"></i></div>
+                        <h3><span data-count="{{ stats.beneficiaries.value }}"{% if stats.beneficiaries.decimal_places %} data-decimal="{{ stats.beneficiaries.decimal_places }}"{% endif %}>0</span><span style="white-space: nowrap;">{{ stats.beneficiaries.suffix }}</span></h3>
+                        <p data-translate="impact.beneficiaries">{{ stats.beneficiaries.label }}</p>
+                    </div>
+                    {% endif %}
+                    {% if stats.investments %}
+                    <div class="impact-card primary" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="impact-icon"><i class="{{ stats.investments.icon_class|default:'fas fa-rocket' }}"></i></div>
+                        <h3><span data-count="{{ stats.investments.value }}" data-decimal="{{ stats.investments.decimal_places|default:'1' }}">0</span> {{ stats.investments.suffix }}</h3>
+                        <p data-translate="impact.investments">{{ stats.investments.label }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Second row - featured program -->
+                <div class="impact-featured" data-aos="fade-up" data-aos-delay="400">
+                    <div class="impact-card wide featured">
+                        <div class="featured-header">
+                            <div class="impact-icon"><i class="fas fa-rocket"></i></div>
+                            <h3 data-translate="impact.startup">Program STARTUP pentru TINERI și MIGRANȚI</h3>
+                        </div>
+                        <div class="impact-stats">
+                            {% if stats.startup_applications %}
+                            <div class="stat-item">
+                                <strong data-count="{{ stats.startup_applications.value }}">0<span style="white-space: nowrap;">{{ stats.startup_applications.suffix }}</span></strong>
+                                <span data-translate="impact.applications">{{ stats.startup_applications.label }}</span>
+                            </div>
+                            {% endif %}
+                            {% if stats.startup_funded %}
+                            <div class="stat-item">
+                                <strong data-count="{{ stats.startup_funded.value }}">0{{ stats.startup_funded.suffix }}</strong>
+                                <span data-translate="impact.projects">{{ stats.startup_funded.label }}</span>
+                            </div>
+                            {% endif %}
+                            {% if stats.startup_jobs %}
+                            <div class="stat-item">
+                                <strong data-count="{{ stats.startup_jobs.value }}">0<span style="white-space: nowrap;">{{ stats.startup_jobs.suffix }}</span></strong>
+                                <span data-translate="impact.jobs">{{ stats.startup_jobs.label }}</span>
+                            </div>
+                            {% endif %}
+                            {% if stats.startup_pending %}
+                            <div class="stat-item">
+                                <strong data-count="{{ stats.startup_pending.value }}">0{{ stats.startup_pending.suffix }}</strong>
+                                <span data-translate="impact.pending">{{ stats.startup_pending.label }}</span>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third row - supporting stats -->
+                <div class="impact-grid-bottom">
+                    {% if stats.mentors %}
+                    <div class="impact-card primary" data-aos="zoom-in" data-aos-delay="500">
+                        <div class="impact-icon"><i class="{{ stats.mentors.icon_class|default:'fas fa-users' }}"></i></div>
+                        <h3><span data-count="{{ stats.mentors.value }}"{% if stats.mentors.decimal_places %} data-decimal="{{ stats.mentors.decimal_places }}"{% endif %}>0</span>{{ stats.mentors.suffix }}</h3>
+                        <p data-translate="impact.mentors">{{ stats.mentors.label }}</p>
+                    </div>
+                    {% endif %}
+                    {% if stats.hackathons %}
+                    <div class="impact-card primary" data-aos="zoom-in" data-aos-delay="600">
+                        <div class="impact-icon"><i class="{{ stats.hackathons.icon_class|default:'fas fa-lightbulb' }}"></i></div>
+                        <h3><span data-count="{{ stats.hackathons.value }}"{% if stats.hackathons.decimal_places %} data-decimal="{{ stats.hackathons.decimal_places }}"{% endif %}>0</span>{{ stats.hackathons.suffix }}</h3>
+                        <p data-translate="impact.hackathons">{{ stats.hackathons.label }}</p>
+                    </div>
+                    {% endif %}
+                    {% if stats.growth %}
+                    <div class="impact-card primary" data-aos="zoom-in" data-aos-delay="700">
+                        <div class="impact-icon"><i class="{{ stats.growth.icon_class|default:'fas fa-building' }}"></i></div>
+                        <h3>+<span data-count="{{ stats.growth.value }}"{% if stats.growth.decimal_places %} data-decimal="{{ stats.growth.decimal_places }}"{% endif %}>0</span>{{ stats.growth.suffix }}</h3>
+                        <p data-translate="impact.growth">{{ stats.growth.label }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        <section class="partners-preview" data-aos="fade-up">
+            <div class="container">
+                <h2 data-aos="fade-down" data-translate="partners.title">Parteneri și proiecte</h2>
+                <p class="section-text" data-aos="fade-up" data-aos-delay="100" data-translate="partners.description">CMDA colaborează cu parteneri naționali și internaționali pentru a conecta antreprenorii la resurse și oportunități.</p>
+                <div class="partners-highlights" data-aos="fade-up" data-aos-delay="200">
+                    <div class="highlight-card">
+                        <h3><span data-count="25">0</span> <span data-translate="partners.count">parteneri din</span> <span data-count="8">0</span> <span data-translate="partners.countries">țări europene</span></h3>
+                    </div>
+                    <div class="highlight-card">
+                        <h3><span data-translate="partners.projects">Proiecte și propuneri de</span> ~<span data-count="70">0</span> <span data-translate="partners.million">milioane lei</span></h3>
+                    </div>
+                </div>
+
+                <!-- Partners Logo Slider -->
+                <div class="partners-slider-container" data-aos="fade-up" data-aos-delay="400">
+                    <h3 data-translate="partners.internal_partners" style="text-align: center; margin-bottom: 2rem;">Parteneri interni:</h3>
+                    <div class="partners-slider">
+                        <div class="slider-track">
+                            {% for partner in partners %}
+                            <div class="slide">
+                                <img decoding="async" src="{{ partner.logo.url }}" alt="{{ partner.name }}">
+                            </div>
+                            {% endfor %}
+                            {% for partner in partners %}
+                            <div class="slide">
+                                <img decoding="async" src="{{ partner.logo.url }}" alt="{{ partner.name }}">
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta" data-aos="fade-up">
+            <div class="container">
+                <h2 data-aos="zoom-in" data-translate="cta.title">Vrei să lansezi sau să dezvolți o afacere în Chișinău?</h2>
+                <a href="https://startup.chisinau.md/finantarea/" target="_blank" class="btn btn-primary btn-large" data-aos="zoom-in" data-aos-delay="200" data-translate="cta.button">Completează dosarul STARTUP pentru TINERI și MIGRANȚI</a>
+            </div>
+        </section>
+{% endblock %}
+{% block extra_js %}
+<script>
+    // Slider: auto-scroll + drag to manually scroll
+    (function() {
+        const track = document.querySelector('.slider-track');
+        if (!track) return;
+
+        // Set explicit track width so CSS animation -50% works reliably
+        const slides = track.querySelectorAll('.slide');
+        const slideWidth = 180; // matches .slide { flex: 0 0 180px }
+        track.style.width = (slides.length * slideWidth) + 'px';
+
+        let isDown = false, startX, currentTranslate = 0;
+
+        function getTranslateX() {
+            const style = getComputedStyle(track);
+            const matrix = new DOMMatrix(style.transform);
+            return matrix.m41;
+        }
+
+        track.addEventListener('mousedown', (e) => {
+            isDown = true;
+            track.classList.add('dragging');
+            startX = e.pageX;
+            currentTranslate = getTranslateX();
+            track.style.animation = 'none';
+            track.style.transform = `translateX(${currentTranslate}px)`;
+        });
+
+        track.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const dx = e.pageX - startX;
+            track.style.transform = `translateX(${currentTranslate + dx}px)`;
+        });
+
+        function endDrag() {
+            if (!isDown) return;
+            isDown = false;
+            track.classList.remove('dragging');
+            const half = track.scrollWidth / 2;
+            let pos = getTranslateX();
+            if (pos > 0) pos = pos - half;
+            if (pos < -half) pos = pos + half;
+            const progress = Math.abs(pos) / half;
+            track.style.transform = '';
+            track.style.animation = 'slider-scroll 25s linear infinite';
+            track.style.animationDelay = `-${progress * 25}s`;
+        }
+
+        track.addEventListener('mouseup', endDrag);
+        track.addEventListener('mouseleave', endDrag);
+
+        // Touch support
+        track.addEventListener('touchstart', (e) => {
+            isDown = true;
+            track.classList.add('dragging');
+            startX = e.touches[0].pageX;
+            currentTranslate = getTranslateX();
+            track.style.animation = 'none';
+            track.style.transform = `translateX(${currentTranslate}px)`;
+        }, { passive: true });
+
+        track.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            const dx = e.touches[0].pageX - startX;
+            track.style.transform = `translateX(${currentTranslate + dx}px)`;
+        }, { passive: true });
+
+        track.addEventListener('touchend', endDrag);
+    })();
+</script>
+{% endblock %}

@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Parteneriate - CMDA Chișinău{% endblock %}
+{% block meta_description %}CMDA dezvoltă parteneriate strategice la nivel local, național și internațional pentru a conecta antreprenorii din Chișinău la resurse și finanțare.{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/parteneri.css' %}">{% endblock %}
+{% block content %}
+        <section class="page-header">
+            <div class="container">
+                <h1 data-aos="fade-down" data-translate="partners_page.title">Parteneriate</h1>
+                <p class="page-subtitle" data-aos="fade-down" data-aos-delay="200" data-translate="partners_page.subtitle">CMDA dezvoltă parteneriate strategice la nivel local, național și internațional pentru a conecta antreprenorii din Chișinău la resurse, expertiză și finanțare.</p>
+            </div>
+        </section>
+
+        <section class="partners-overview">
+            <div class="container">
+                <div class="partners-stats">
+                    <div class="partner-stat-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="stat-icon"><i class="fas fa-globe"></i></div>
+                        <h2>{{ stats.partners_count.value|default:"25" }}</h2>
+                        <p data-translate="partners.description">{{ stats.partners_count.label|default:"Parteneri din 8 țări europene" }}</p>
+                    </div>
+                    <div class="partner-stat-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+                        <h2>{{ stats.projects_value.value|default:"~70 mil. lei" }}</h2>
+                        <p data-translate="partners.projects">{{ stats.projects_value.label|default:"Proiecte și propuneri" }}</p>
+                    </div>
+                    <div class="partner-stat-card" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="stat-icon"><i class="fas fa-handshake"></i></div>
+                        <h2>{{ stats.active_programs.value|default:"15+" }}</h2>
+                        <p data-translate="partners_page.active_programs">{{ stats.active_programs.label|default:"Programe active" }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners-international">
+            <div class="container">
+                <h2 data-aos="fade-down" data-aos-delay="100" data-translate="partners_page.international.title">Parteneri internaționali</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200" data-translate="partners_page.international.subtitle">Colaborăm cu instituții și organizații din întreaga Europă pentru a aduce cele mai bune practici și oportunități pentru antreprenorii din Chișinău.</p>
+
+                <div class="partners-grid">
+                    {% for partner in partners %}
+                    {% if partner.partner_type == 'international' %}
+                    <div class="partner-card" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:3 }}00">
+                        <div class="partner-icon">
+                            {% if partner.logo %}
+                            <img src="{{ partner.logo.url }}" alt="{{ partner.name }}" style="width: 80px; height: auto;">
+                            {% else %}
+                            <i class="fas fa-globe"></i>
+                            {% endif %}
+                        </div>
+                        <h3>{{ partner.name }}</h3>
+                        <p>{{ partner.description }}</p>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="partners-projects">
+            <div class="container">
+                <h2 data-aos="fade-down" data-aos-delay="100" data-translate="partners_page.projects.title">Proiecte și programe europene</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200" data-translate="partners_page.projects.subtitle">CMDA implementează și participă activ în multiple programe europene de dezvoltare antreprenorială.</p>
+
+                <div class="projects-list">
+                    {% for project in eu_projects %}
+                    <div class="project-item" data-aos="fade-right" data-aos-delay="{{ forloop.counter0|add:3 }}00">
+                        <h3>{{ project.title }}</h3>
+                        <p>{{ project.description }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="partners-internal">
+            <div class="container">
+                <h2 data-aos="fade-down" data-aos-delay="100" data-translate="partners_page.internal.title">Parteneri interni</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200" data-translate="partners_page.internal.subtitle">Colaborăm strâns cu instituții și organizații naționale pentru a oferi suport comprehensiv antreprenorilor.</p>
+
+                <!-- Partners Logo Slider -->
+                <div class="partners-slider-container" data-aos="fade-up" data-aos-delay="300">
+                    <div class="partners-slider">
+                        <div class="slider-track">
+                            {% for partner in partners %}
+                            <div class="slide">
+                                <img src="{{ partner.logo.url }}" alt="{{ partner.name }}">
+                            </div>
+                            {% endfor %}
+                            <!-- Duplicate slides for continuous loop -->
+                            {% for partner in partners %}
+                            <div class="slide">
+                                <img src="{{ partner.logo.url }}" alt="{{ partner.name }}">
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="internal-partners-grid" style="display: none;">
+                    {% for partner in partners %}
+                    {% if partner.partner_type == 'internal' %}
+                    <div class="internal-partner">
+                        <div class="partner-logo">
+                            {% if partner.logo %}
+                            <img src="{{ partner.logo.url }}" alt="{{ partner.name }}" style="width: 60px; height: 60px; object-fit: contain;">
+                            {% else %}
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                <circle cx="30" cy="30" r="30" fill="#f3f4f6"/>
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#1e40af" font-size="14" font-weight="bold">{{ partner.name|truncatechars:4 }}</text>
+                            </svg>
+                            {% endif %}
+                        </div>
+                        <h3>{{ partner.name }}</h3>
+                        <p>{{ partner.description }}</p>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="become-partner">
+            <div class="container">
+                <h2 data-aos="fade-down" data-aos-delay="100" data-translate="partners_page.become_partner.title">Devino partener CMDA</h2>
+                <p data-aos="fade-up" data-aos-delay="200" data-translate="partners_page.become_partner.description">Împreună putem dezvolta ecosistemul antreprenorial din Chișinău</p>
+                <a href="{% url 'pages:contacte' %}" class="btn btn-primary btn-large" data-aos="zoom-in" data-aos-delay="300" data-translate="partners_page.become_partner.cta">Contactează-ne pentru parteneriat</a>
+            </div>
+        </section>
+{% endblock %}

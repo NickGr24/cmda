@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Galerie foto - CMDA Chișinău{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/index.css' %}">{% endblock %}
+{% block content %}
+        <section class="gallery-3d-section">
+            <div class="gallery-3d-heading">
+                <h2 data-translate="gallery.title">Galerie foto</h2>
+            </div>
+            <div class="grid grid--gallery">
+                <div class="grid-wrap">
+                    {% for photo in photos %}
+                    <div class="grid__item"><div class="grid__item-inner" style="background-image: url('{{ photo.image.url }}');"></div></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+{% endblock %}
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js" defer></script>
+<script src="{% static 'js/gallery-3d.js' %}" defer></script>
+{% endblock %}

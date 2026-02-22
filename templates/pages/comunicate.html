@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Comunicate și noutăți - CMDA Chișinău{% endblock %}
+{% block meta_description %}Comunicate de presă, noutăți și evenimente ale Centrului Municipal pentru Dezvoltarea Antreprenoriatului din Chișinău.{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/comunicate.css' %}">{% endblock %}
+{% block content %}
+        <section class="page-header">
+            <div class="container">
+                <h1 data-aos="fade-down" data-translate="nav.media_press">Comunicate și noutăți</h1>
+                <p class="page-subtitle" data-aos="fade-down" data-aos-delay="200">Informații actualizate despre activitățile și proiectele CMDA</p>
+            </div>
+        </section>
+
+        <section class="news-section">
+            <div class="container">
+                <div class="news-grid">
+                    {% for article in news %}
+                    <article class="news-card" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|divisibleby:2|yesno:'0,100' }}">
+                        <a href="{% url 'pages:news-detail' article.slug %}">
+                            {% if article.image %}
+                            <div class="news-image">
+                                <img src="{{ article.image.url }}" alt="{{ article.title }}" loading="lazy" decoding="async">
+                                <span class="news-date"><i class="far fa-calendar-alt"></i> {{ article.published_date|date:"d.m.Y" }}</span>
+                            </div>
+                            {% else %}
+                            <div class="news-image-placeholder">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                            {% endif %}
+                            <div class="news-content">
+                                <h2>{{ article.title }}</h2>
+                                <p>{{ article.excerpt|truncatewords:30 }}</p>
+                                <span class="news-read-more">Citește mai mult <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </article>
+                    {% empty %}
+                    <p style="text-align: center; grid-column: 1 / -1; padding: 3rem 0; color: var(--text-medium);">Nu sunt comunicate disponibile momentan.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+{% endblock %}

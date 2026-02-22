@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ story.company_name }} - Istorii de succes - CMDA{% endblock %}
+{% block meta_description %}{{ story.short_description|truncatewords:30 }}{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages/istorii-de-succes.css' %}">
+<style>
+    /* Breadcrumb */
+    .story-breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1.25rem;
+        font-size: 0.9rem;
+    }
+    .story-breadcrumb a {
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .story-breadcrumb a:hover { color: #fff; }
+    .story-breadcrumb .breadcrumb-sep { color: rgba(255,255,255,0.4); }
+    .story-breadcrumb .breadcrumb-current { color: rgba(255,255,255,0.9); font-weight: 500; }
+
+    /* Header tag */
+    .page-header .success-preview-tag {
+        display: inline-block;
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(4px);
+        padding: 0.35rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Detail section */
+    .story-detail { padding: 3.5rem 0 4rem; }
+
+    .story-detail .container { max-width: 960px; }
+
+    /* Image card */
+    .story-hero-image {
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        margin-bottom: 2.5rem;
+        max-height: 420px;
+    }
+    .story-hero-image img {
+        width: 100%;
+        height: 100%;
+        max-height: 420px;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Content body */
+    .story-body {
+        background: var(--bg-white, #fff);
+        border: 1px solid var(--border-color, #e5e7eb);
+        border-radius: 16px;
+        padding: 2.5rem 3rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .story-body p {
+        color: var(--text-medium, #4b5563);
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 1.25rem;
+    }
+    .story-body p:last-child { margin-bottom: 0; }
+    .story-body p strong {
+        color: var(--text-dark, #1f2937);
+        font-weight: 600;
+    }
+    .story-body ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.5rem;
+    }
+    .story-body ul li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.6rem;
+        color: var(--text-medium, #4b5563);
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+    .story-body ul li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.65rem;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--primary-color, #1e40af);
+    }
+
+    /* Quote */
+    .story-body blockquote,
+    .story-quote-block {
+        border-left: 4px solid var(--primary-color, #1e40af);
+        background: linear-gradient(135deg, var(--bg-light, #f8fafc), #eef2ff);
+        padding: 1.5rem 2rem;
+        margin: 2rem 0;
+        border-radius: 0 12px 12px 0;
+        font-style: italic;
+    }
+    .story-quote-block p {
+        color: var(--text-dark, #1f2937);
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    /* Back nav */
+    .story-back-nav {
+        margin-top: 2.5rem;
+        text-align: center;
+    }
+    .story-back-nav .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.75rem;
+        border: 2px solid var(--primary-color, #1e40af);
+        color: var(--primary-color, #1e40af);
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    .story-back-nav .btn-outline:hover {
+        background: var(--primary-color, #1e40af);
+        color: #fff;
+    }
+
+    @media (max-width: 768px) {
+        .story-body { padding: 1.75rem 1.5rem; }
+        .story-hero-image { max-height: 280px; border-radius: 12px; }
+        .story-hero-image img { max-height: 280px; }
+        .story-detail { padding: 2.5rem 0 3rem; }
+    }
+</style>
+{% endblock %}
+{% block content %}
+        <section class="page-header">
+            <div class="container">
+                <nav class="story-breadcrumb" data-aos="fade-down">
+                    <a href="{% url 'pages:index' %}">CMDA</a>
+                    <span class="breadcrumb-sep">→</span>
+                    <a href="{% url 'pages:istorii-de-succes' %}" data-translate="nav.success_stories">Istorii de succes</a>
+                    <span class="breadcrumb-sep">→</span>
+                    <span class="breadcrumb-current">{{ story.company_name }}</span>
+                </nav>
+                <h1 data-aos="fade-down" data-aos-delay="100">{{ story.title }}</h1>
+                <span class="success-preview-tag" data-aos="fade-down" data-aos-delay="200">{{ story.category }}</span>
+            </div>
+        </section>
+
+        <section class="story-detail">
+            <div class="container">
+                <div class="story-hero-image" data-aos="fade-up">
+                    <img src="{{ story.image.url }}" alt="{{ story.company_name }}">
+                </div>
+
+                <div class="story-body">
+                    {{ story.content|safe }}
+                </div>
+
+                {% if story.quote %}
+                <div class="story-quote-block">
+                    <p>{{ story.quote }}</p>
+                </div>
+                {% endif %}
+
+                <div class="story-back-nav">
+                    <a href="{% url 'pages:istorii-de-succes' %}" class="btn-outline">
+                        <i class="fas fa-arrow-left"></i>
+                        <span data-translate="nav.success_stories">Toate istoriile de succes</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+{% endblock %}

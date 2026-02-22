@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ article.title }} - Comunicate - CMDA{% endblock %}
+{% block meta_description %}{{ article.excerpt|truncatewords:30 }}{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages/comunicate.css' %}">
+<style>
+    /* Breadcrumb */
+    .news-breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1.25rem;
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+    }
+    .news-breadcrumb a {
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .news-breadcrumb a:hover { color: #fff; }
+    .news-breadcrumb .breadcrumb-sep { color: rgba(255,255,255,0.4); }
+    .news-breadcrumb .breadcrumb-current { color: rgba(255,255,255,0.9); font-weight: 500; }
+
+    /* Header date tag */
+    .page-header .news-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(4px);
+        padding: 0.35rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.2);
+        margin-top: 0.75rem;
+    }
+
+    /* Detail section */
+    .news-detail { padding: 3.5rem 0 4rem; }
+    .news-detail .container { max-width: 960px; }
+
+    /* Hero image */
+    .news-hero-image {
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        margin-bottom: 2.5rem;
+        max-height: 480px;
+    }
+    .news-hero-image img {
+        width: 100%;
+        height: 100%;
+        max-height: 480px;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Content body */
+    .news-body {
+        background: var(--bg-white, #fff);
+        border: 1px solid var(--border-color, #e5e7eb);
+        border-radius: 16px;
+        padding: 2.5rem 3rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .news-body p {
+        color: var(--text-medium, #4b5563);
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 1.25rem;
+    }
+    .news-body p:last-child { margin-bottom: 0; }
+    .news-body p strong {
+        color: var(--text-dark, #1f2937);
+        font-weight: 600;
+    }
+    .news-body img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        margin: 1.5rem 0;
+    }
+    .news-body ul, .news-body ol {
+        padding-left: 1.5rem;
+        margin: 0 0 1.5rem;
+        color: var(--text-medium, #4b5563);
+        line-height: 1.8;
+    }
+    .news-body li {
+        margin-bottom: 0.4rem;
+    }
+    .news-body h2, .news-body h3 {
+        color: var(--text-dark, #1f2937);
+        margin: 1.5rem 0 0.75rem;
+    }
+    .news-body blockquote {
+        border-left: 4px solid var(--primary-color, #1e40af);
+        background: linear-gradient(135deg, var(--bg-light, #f8fafc), #eef2ff);
+        padding: 1.5rem 2rem;
+        margin: 2rem 0;
+        border-radius: 0 12px 12px 0;
+        font-style: italic;
+    }
+
+    /* Back nav */
+    .news-back-nav {
+        margin-top: 2.5rem;
+        text-align: center;
+    }
+    .news-back-nav .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.75rem;
+        border: 2px solid var(--primary-color, #1e40af);
+        color: var(--primary-color, #1e40af);
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    .news-back-nav .btn-outline:hover {
+        background: var(--primary-color, #1e40af);
+        color: #fff;
+    }
+
+    @media (max-width: 768px) {
+        .news-body { padding: 1.75rem 1.5rem; }
+        .news-hero-image { max-height: 280px; border-radius: 12px; }
+        .news-hero-image img { max-height: 280px; }
+        .news-detail { padding: 2.5rem 0 3rem; }
+    }
+</style>
+{% endblock %}
+{% block content %}
+        <section class="page-header">
+            <div class="container">
+                <nav class="news-breadcrumb" data-aos="fade-down">
+                    <a href="{% url 'pages:index' %}">CMDA</a>
+                    <span class="breadcrumb-sep">→</span>
+                    <a href="{% url 'pages:comunicate' %}">Comunicate</a>
+                    <span class="breadcrumb-sep">→</span>
+                    <span class="breadcrumb-current">{{ article.title|truncatewords:8 }}</span>
+                </nav>
+                <h1 data-aos="fade-down" data-aos-delay="100">{{ article.title }}</h1>
+                <span class="news-tag" data-aos="fade-down" data-aos-delay="200">
+                    <i class="far fa-calendar-alt"></i> {{ article.published_date|date:"d F Y" }}
+                </span>
+            </div>
+        </section>
+
+        <section class="news-detail">
+            <div class="container">
+                {% if article.image %}
+                <div class="news-hero-image" data-aos="fade-up">
+                    <img src="{{ article.image.url }}" alt="{{ article.title }}">
+                </div>
+                {% endif %}
+
+                <div class="news-body">
+                    {{ article.content|safe }}
+                </div>
+
+                <div class="news-back-nav">
+                    <a href="{% url 'pages:comunicate' %}" class="btn-outline">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Toate comunicatele</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+{% endblock %}

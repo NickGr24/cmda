@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CMDA Chișinău{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    {% include "partials/_head_common.html" %}
+    {% block preload %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/utilities/language-switcher.css' %}">
+    {% block extra_css %}{% endblock %}
+    {% block critical_css %}{% endblock %}
+</head>
+<body>
+    {% include "partials/_header.html" %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include "partials/_footer.html" %}
+    {% include "partials/_scripts_common.html" %}
+    <script>
+        window.STATIC_URL = '{{ STATIC_URL }}';
+        window.addEventListener('load', function() {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({% block aos_config %}{ duration: 800, easing: 'ease-in-out', once: true, offset: 100 }{% endblock %});
+            }
+        });
+    </script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
