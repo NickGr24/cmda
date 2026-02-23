@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Structura CMDA - Centrul Municipal pentru Dezvoltarea Antreprenoriatului{% endblock %}
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/despre.css' %}">{% endblock %}
+{% block meta_description %}Organigrama și structura organizatorică a Centrului Municipal pentru Dezvoltarea Antreprenoriatului din Chișinău.{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages/despre.css' %}">
+<link rel="stylesheet" href="{% static 'css/pages/structura.css' %}">
+{% endblock %}
+{% block aos_config %}{ duration: 800, easing: 'ease-out', once: true, offset: 50 }{% endblock %}
 {% block content %}
 <section class="page-header">
     <div class="container">
@@ -23,11 +28,209 @@
         </nav>
     </aside>
     <div class="despre-content">
-        <div class="placeholder-content" data-aos="fade-up">
-            <i class="fas fa-sitemap"></i>
-            <h2 data-translate="about_sidebar.structure">Structura CMDA</h2>
-            <p data-translate="about_sidebar.placeholder">Pagina este în curs de dezvoltare.</p>
+        <div class="orgchart" id="orgchart">
+            <svg class="orgchart-connectors" id="orgchart-svg" aria-hidden="true"></svg>
+
+            <!-- Director -->
+            <div class="orgchart-director" id="org-director" data-aos="fade-down">
+                <div class="org-card org-card--director">
+                    <div class="org-card__icon"><i class="fas fa-user-tie"></i></div>
+                    <div class="org-card__info">
+                        <span class="org-card__role">Director</span>
+                        <h3 class="org-card__name">Petru GURGUROV</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Departments -->
+            <div class="orgchart-departments" id="org-departments">
+
+                <div class="org-dept" data-aos="fade-up" data-aos-delay="100">
+                    <div class="org-card org-card--dept">
+                        <div class="org-card__dept-header">
+                            <i class="fas fa-calculator"></i>
+                            <h4 class="org-card__dept-name">Direcția contabilitate și managementul administrativ</h4>
+                        </div>
+                        <ul class="org-card__staff">
+                            <li>
+                                <span class="org-staff__role">Contabil</span>
+                                <span class="org-staff__name">Natalia MARTIN</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="org-dept" data-aos="fade-up" data-aos-delay="200">
+                    <div class="org-card org-card--dept">
+                        <div class="org-card__dept-header">
+                            <i class="fas fa-scale-balanced"></i>
+                            <h4 class="org-card__dept-name">Direcția juridică, achiziții și resurse umane</h4>
+                        </div>
+                        <ul class="org-card__staff">
+                            <li>
+                                <span class="org-staff__role">Jurist</span>
+                                <span class="org-staff__name">Nadejda ROȘCA</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="org-dept" data-aos="fade-up" data-aos-delay="300">
+                    <div class="org-card org-card--dept">
+                        <div class="org-card__dept-header">
+                            <i class="fas fa-chart-line"></i>
+                            <h4 class="org-card__dept-name">Direcția de evaluarea și finanțarea proiectelor investiționale</h4>
+                        </div>
+                        <ul class="org-card__staff">
+                            <li>
+                                <span class="org-staff__role">Specialist principal</span>
+                                <span class="org-staff__name">Lilia DEJMARI</span>
+                            </li>
+                            <li>
+                                <span class="org-staff__role">Specialist</span>
+                                <span class="org-staff__name">Mariana BOBEICA</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="org-dept" data-aos="fade-up" data-aos-delay="400">
+                    <div class="org-card org-card--dept">
+                        <div class="org-card__dept-header">
+                            <i class="fas fa-building"></i>
+                            <h4 class="org-card__dept-name">Direcția infrastructura de suport in afaceri (incubatorul de afaceri)</h4>
+                        </div>
+                        <ul class="org-card__staff">
+                            <li>
+                                <span class="org-staff__role">Șef direcție</span>
+                                <span class="org-staff__name">Octavian ZELINSKI</span>
+                            </li>
+                            <li>
+                                <span class="org-staff__role">Specialist</span>
+                                <span class="org-staff__name">Daria KOLOSAI</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="org-dept" data-aos="fade-up" data-aos-delay="500">
+                    <div class="org-card org-card--dept">
+                        <div class="org-card__dept-header">
+                            <i class="fas fa-bullhorn"></i>
+                            <h4 class="org-card__dept-name">Direcția de comunicare și relații cu beneficiarii</h4>
+                        </div>
+                        <ul class="org-card__staff">
+                            <li>
+                                <span class="org-staff__role">Specialist</span>
+                                <span class="org-staff__name">Otilia COTRUȚĂ</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
+{% endblock %}
+{% block extra_js %}
+<script>
+(function() {
+    var svg = document.getElementById('orgchart-svg');
+    var chart = document.getElementById('orgchart');
+    if (!svg || !chart) return;
+
+    function getPos(el) {
+        var cr = chart.getBoundingClientRect();
+        var er = el.getBoundingClientRect();
+        return {
+            cx: er.left + er.width / 2 - cr.left,
+            bottom: er.bottom - cr.top,
+            top: er.top - cr.top
+        };
+    }
+
+    function drawConnectors() {
+        var dirEl = document.getElementById('org-director');
+        var depts = document.querySelectorAll('.org-dept');
+        if (!dirEl || !depts.length) return;
+
+        var cr = chart.getBoundingClientRect();
+        svg.setAttribute('width', cr.width);
+        svg.setAttribute('height', cr.height);
+        svg.style.width = cr.width + 'px';
+        svg.style.height = cr.height + 'px';
+        svg.innerHTML = '';
+
+        var dir = getPos(dirEl);
+        var midY = dir.bottom + 30;
+
+        var pts = [];
+        for (var i = 0; i < depts.length; i++) {
+            pts.push(getPos(depts[i]));
+        }
+
+        // Vertical from director to mid
+        addPath('M ' + dir.cx + ' ' + dir.bottom + ' L ' + dir.cx + ' ' + midY);
+
+        // Horizontal across departments
+        var xs = pts.map(function(p) { return p.cx; });
+        var leftX = Math.min.apply(null, xs);
+        var rightX = Math.max.apply(null, xs);
+        addPath('M ' + leftX + ' ' + midY + ' L ' + rightX + ' ' + midY);
+
+        // Vertical drops to each dept
+        pts.forEach(function(pt) {
+            addPath('M ' + pt.cx + ' ' + midY + ' L ' + pt.cx + ' ' + pt.top);
+        });
+
+        // Set dasharray for animation
+        var paths = svg.querySelectorAll('.org-connector');
+        for (var j = 0; j < paths.length; j++) {
+            var len = paths[j].getTotalLength();
+            paths[j].style.strokeDasharray = len;
+            paths[j].style.strokeDashoffset = len;
+            paths[j].style.animationDelay = (j * 0.15) + 's';
+        }
+    }
+
+    function addPath(d) {
+        var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        p.setAttribute('d', d);
+        p.classList.add('org-connector');
+        svg.appendChild(p);
+    }
+
+    // Trigger animation on scroll
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                svg.classList.add('orgchart-connectors--animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    function init() {
+        drawConnectors();
+        observer.observe(chart);
+    }
+
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            var wasAnimated = svg.classList.contains('orgchart-connectors--animate');
+            drawConnectors();
+            if (wasAnimated) svg.classList.add('orgchart-connectors--animate');
+        }, 150);
+    });
+
+    if (document.readyState === 'complete') {
+        init();
+    } else {
+        window.addEventListener('load', init);
+    }
+})();
+</script>
 {% endblock %}
