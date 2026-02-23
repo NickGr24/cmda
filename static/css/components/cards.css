@@ -276,6 +276,31 @@
     margin-bottom: 1rem;
 }
 
+.info-card h3 i {
+    margin-right: 0.5rem;
+}
+
+.info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-card ul li {
+    padding: 0.4rem 0 0.4rem 1.5rem;
+    position: relative;
+    color: var(--text-medium);
+    line-height: 1.5;
+}
+
+.info-card ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0.25rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
 /* HIGHLIGHT CARDS */
 .highlight-card {
     background: var(--primary-color);
