@@ -1,0 +1,161 @@
+/* ============================================
+   ECHIPA / TEAM PAGE
+   ============================================ */
+
+/* Director Card — prominent, centered */
+.team-director {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.team-card {
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    transition: all var(--transition-normal);
+}
+
+.team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Director variant */
+.team-card--director {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: #fff;
+    border: none;
+    padding: 1.75rem 2.5rem;
+    min-width: 320px;
+}
+
+.team-card--director .team-card__name {
+    color: #fff;
+}
+
+.team-card--director .team-card__role {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.team-card--director:hover {
+    transform: translateY(-4px) scale(1.02);
+}
+
+/* Avatar circle */
+.team-card__avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.team-card--director .team-card__avatar {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+}
+
+/* Info */
+.team-card__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.team-card__name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.team-card__role {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.team-card--director .team-card__role {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.team-card__dept {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+    line-height: 1.4;
+}
+
+.team-card__dept i {
+    font-size: 0.7rem;
+    margin-right: 0.25rem;
+    opacity: 0.7;
+}
+
+/* Team Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-card--director {
+        min-width: unset;
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .team-director {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-card {
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+
+    .team-card__avatar {
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
+    }
+
+    .team-card--director .team-card__avatar {
+        width: 48px;
+        height: 48px;
+    }
+
+    .team-card__name {
+        font-size: 1rem;
+    }
+}

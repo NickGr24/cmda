@@ -132,7 +132,6 @@
 .org-card__dept-header {
     background: var(--bg-light);
     padding: 1.25rem;
-    border-bottom: 2px solid var(--primary-light);
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
