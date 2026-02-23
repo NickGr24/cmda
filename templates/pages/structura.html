@@ -140,9 +140,9 @@
         var rightX = Math.max.apply(null, xs);
         addPath('M ' + leftX + ' ' + midY + ' L ' + rightX + ' ' + midY);
 
-        // Vertical drops to each dept
+        // Vertical drops to each dept (stop just before card)
         pts.forEach(function(pt) {
-            addPath('M ' + pt.cx + ' ' + midY + ' L ' + pt.cx + ' ' + pt.top);
+            addPath('M ' + pt.cx + ' ' + midY + ' L ' + pt.cx + ' ' + (pt.top - 1));
         });
 
         // Set dasharray for animation
@@ -173,8 +173,13 @@
     }, { threshold: 0.15 });
 
     function init() {
-        drawConnectors();
-        observer.observe(chart);
+        // Delay to let AOS finish initial animations, then recalculate
+        setTimeout(function() {
+            drawConnectors();
+            observer.observe(chart);
+            // Second pass after all AOS animations complete
+            setTimeout(drawConnectors, 800);
+        }, 1000);
     }
 
     var resizeTimer;
