@@ -259,8 +259,8 @@
     "phone": "Phone",
     "email": "Email",
     "schedule": "Working Hours",
-    "schedule_hours": "Monday – Friday: 08:00 – 17:00",
-    "platform": "Online Platform",
+    "schedule_hours": "Monday – Friday: 08:30 – 17:30",
+    "platform": "Submit application",
     "send_message": "Send us a message",
     "form": {
       "full_name": "Full name",
