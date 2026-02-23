@@ -28,9 +28,6 @@
             <div class="despre-content">
                 <!-- About -->
                 <article class="content-block" data-aos="fade-up">
-                    <div class="team-image" data-aos="zoom-in" data-aos-delay="150">
-                        <img src="{% static 'img/team.webp' %}" alt="Echipa CMDA - Profesioniști dedicați dezvoltării antreprenoriatului" style="width: 100%; max-width: 800px; margin: 1.5rem auto; display: block; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    </div>
                     <p data-aos="fade-up" data-aos-delay="200">Instituția Publică Centrul Municipal pentru Dezvoltarea Antreprenoriatului (I. P. CMDA), este o instituție publică, necomercială, la autogestiune fondată de Consiliul Municipal Chișinău (Decizia nr. 5/3 din 06 iunie 2023) și înregistrată în Registrul de stat al persoanelor juridice în data de 13.09.2023.</p>
                     <p data-aos="fade-up" data-aos-delay="250">CMDA activează în subordinea Primăriei municipiului Chișinău, în colaborare cu autoritățile publice centrale și locale din domeniu, agenți economici, indiferent de tipul de proprietate și forma de organizare din Republica Moldova și din străinătate, precum și cu alte organizații și instituții relevante.</p>
                 </article>
@@ -57,35 +54,59 @@
                 <article class="content-block" data-aos="fade-up" data-aos-delay="200">
                     <h2 data-aos="fade-down" data-aos-delay="300">Domeniile de activitate ale I.P. CMDA</h2>
 
-                    <div class="info-cards">
-                        <div class="info-card" data-aos="fade-up" data-aos-delay="400">
-                            <h3><i class="fas fa-comments"></i> Consultanță, ghidare și mentorat</h3>
-                            <ul>
-                                <li>Stimularea și promovarea culturii și gândirii antreprenoriale</li>
-                                <li>Ghidare și mentorat în procesul de dezvoltare a activității antreprenoriat</li>
-                            </ul>
+                    <div class="accordion" data-aos="fade-up" data-aos-delay="400">
+                        <div class="accordion-item active">
+                            <button class="accordion-header" type="button">
+                                <span class="accordion-icon"><i class="fas fa-comments"></i></span>
+                                <span class="accordion-title">Consultanță, ghidare și mentorat</span>
+                                <i class="fas fa-chevron-down accordion-chevron"></i>
+                            </button>
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Stimularea și promovarea culturii și gândirii antreprenoriale</li>
+                                    <li>Ghidare și mentorat în procesul de dezvoltare a activității antreprenoriat</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="info-card" data-aos="fade-up" data-aos-delay="500">
-                            <h3><i class="fas fa-graduation-cap"></i> Educație antreprenorială</h3>
-                            <ul>
-                                <li>Creșterea competențelor antreprenoriale</li>
-                                <li>Creșterea gradului de dezvoltare a afacerii prin aplicarea cunoștințelor acumulate</li>
-                            </ul>
+                        <div class="accordion-item">
+                            <button class="accordion-header" type="button">
+                                <span class="accordion-icon"><i class="fas fa-graduation-cap"></i></span>
+                                <span class="accordion-title">Educație antreprenorială</span>
+                                <i class="fas fa-chevron-down accordion-chevron"></i>
+                            </button>
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Creșterea competențelor antreprenoriale</li>
+                                    <li>Creșterea gradului de dezvoltare a afacerii prin aplicarea cunoștințelor acumulate</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="info-card" data-aos="fade-up" data-aos-delay="600">
-                            <h3><i class="fas fa-hand-holding-dollar"></i> Facilitarea accesului la finanțare</h3>
-                            <ul>
-                                <li>Implementarea componentei suport financiar în cadrul diverselor programe de finanțare</li>
-                                <li>Subvenționarea</li>
-                                <li>Promovarea instrumentelor de suport existente, destinate antreprenorilor din municipiului Chișinău</li>
-                            </ul>
+                        <div class="accordion-item">
+                            <button class="accordion-header" type="button">
+                                <span class="accordion-icon"><i class="fas fa-hand-holding-dollar"></i></span>
+                                <span class="accordion-title">Facilitarea accesului la finanțare</span>
+                                <i class="fas fa-chevron-down accordion-chevron"></i>
+                            </button>
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Implementarea componentei suport financiar în cadrul diverselor programe de finanțare</li>
+                                    <li>Subvenționarea</li>
+                                    <li>Promovarea instrumentelor de suport existente, destinate antreprenorilor din municipiului Chișinău</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="info-card" data-aos="fade-up" data-aos-delay="700">
-                            <h3><i class="fas fa-building"></i> Dezvoltarea infrastructurii de suport în afaceri</h3>
-                            <ul>
-                                <li>Administrarea Incubatorului Municipal de Afaceri (IMA)</li>
-                                <li>Crearea rețelei de infrastructură municipală de suport în afaceri</li>
-                            </ul>
+                        <div class="accordion-item">
+                            <button class="accordion-header" type="button">
+                                <span class="accordion-icon"><i class="fas fa-building"></i></span>
+                                <span class="accordion-title">Dezvoltarea infrastructurii de suport în afaceri</span>
+                                <i class="fas fa-chevron-down accordion-chevron"></i>
+                            </button>
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Administrarea Incubatorului Municipal de Afaceri (IMA)</li>
+                                    <li>Crearea rețelei de infrastructură municipală de suport în afaceri</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -100,4 +121,29 @@
                 </div>
             </div>
         </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.querySelectorAll('.accordion-header').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        var item = this.parentElement;
+        var body = item.querySelector('.accordion-body');
+        if (item.classList.contains('active')) {
+            body.style.maxHeight = null;
+            item.classList.remove('active');
+        } else {
+            document.querySelectorAll('.accordion-item.active').forEach(function(open) {
+                open.querySelector('.accordion-body').style.maxHeight = null;
+                open.classList.remove('active');
+            });
+            item.classList.add('active');
+            body.style.maxHeight = body.scrollHeight + 'px';
+        }
+    });
+});
+document.querySelectorAll('.accordion-item.active .accordion-body').forEach(function(body) {
+    body.style.maxHeight = body.scrollHeight + 'px';
+});
+</script>
 {% endblock %}
