@@ -173,13 +173,11 @@
     }, { threshold: 0.15 });
 
     function init() {
-        // Delay to let AOS finish initial animations, then recalculate
+        // Single draw after AOS animations complete (800ms duration + 500ms max delay + buffer)
         setTimeout(function() {
             drawConnectors();
             observer.observe(chart);
-            // Second pass after all AOS animations complete
-            setTimeout(drawConnectors, 800);
-        }, 1000);
+        }, 1500);
     }
 
     var resizeTimer;
