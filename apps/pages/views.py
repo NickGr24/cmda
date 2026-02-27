@@ -187,3 +187,8 @@ class BugetView(PageView):
 class ProiecteView(PageView):
     template_name = 'pages/proiecte.html'
     active_page = 'proiecte'
+
+
+class LegislatieView(PageView):
+    template_name = 'pages/legislatie.html'
+    active_page = 'legislatie'

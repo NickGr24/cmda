@@ -25,4 +25,5 @@ urlpatterns = [
     path('echipa/', views.EchipaView.as_view(), name='echipa'),
     path('buget/', views.BugetView.as_view(), name='buget'),
     path('proiecte/', views.ProiecteView.as_view(), name='proiecte'),
+    path('legislatie/', views.LegislatieView.as_view(), name='legislatie'),
 ]
