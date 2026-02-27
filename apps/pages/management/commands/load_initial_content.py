@@ -317,8 +317,6 @@ class Command(BaseCommand):
                     'activi, devenind un exemplu de inovatie aplicata si scalabila.</p>'
                     '<p>Cristian este, de asemenea, speaker TEDx, invitat frecvent la emisiuni TV si podcasturi, '
                     'si un model inspirational pentru tinerii antreprenori din regiune.</p>'
-                    '<blockquote>"Visul meu este sa construiesc afaceri care ajuta oamenii sa creasca prin '
-                    'educatie si tehnologie." - Cristian Frunze</blockquote>'
                     '<p>Povestea lui Cristian Frunze nu este doar o reusita individuala, ci o sursa de inspiratie '
                     'pentru o intreaga generatie de tineri moldoveni care viseaza sa creeze, sa inoveze si sa '
                     'contribuie activ la dezvoltarea societatii prin educatie si tehnologie.</p>'
