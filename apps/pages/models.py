@@ -182,3 +182,44 @@ class News(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)[:500]
         super().save(*args, **kwargs)
+
+
+class Document(models.Model):
+    CATEGORY_CHOICES = [
+        ('planuri', 'Planuri și strategii'),
+        ('rapoarte', 'Rapoarte'),
+        ('achizitii_planuri', 'Achiziții — Planuri'),
+        ('achizitii_anunturi', 'Achiziții — Anunțuri'),
+        ('achizitii_rapoarte', 'Achiziții — Rapoarte'),
+    ]
+
+    title = models.CharField('Denumire', max_length=500)
+    category = models.CharField('Categorie', max_length=30, choices=CATEGORY_CHOICES)
+    file = models.FileField('Fișier', upload_to='documents/')
+    order = models.IntegerField('Ordine', default=0)
+    created_at = models.DateTimeField('Data încărcării', auto_now_add=True)
+
+    class Meta:
+        ordering = ['category', 'order', '-created_at']
+        verbose_name = 'Document'
+        verbose_name_plural = 'Documente'
+
+    def __str__(self):
+        return self.title
+
+    @property
+    def file_extension(self):
+        if self.file and '.' in self.file.name:
+            return self.file.name.rsplit('.', 1)[-1].upper()
+        return ''
+
+    @property
+    def icon_class(self):
+        ext = self.file_extension.lower()
+        if ext == 'pdf':
+            return 'fas fa-file-pdf'
+        elif ext in ('doc', 'docx'):
+            return 'fas fa-file-word'
+        elif ext in ('xls', 'xlsx'):
+            return 'fas fa-file-excel'
+        return 'fas fa-file-alt'

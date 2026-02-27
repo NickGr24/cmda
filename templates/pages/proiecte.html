@@ -1,0 +1,493 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Proiecte STARTUP — Lista proiectelor finanțate și depuse{% endblock %}
+{% block meta_description %}Lista completă a proiectelor investiționale aprobate spre finanțare și depuse în cadrul Programului Municipal STARTUP pentru Tineri și Migranți.{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/proiecte.css' %}">{% endblock %}
+{% block aos_config %}{ duration: 800, easing: 'ease-out', once: true, offset: 50 }{% endblock %}
+{% block content %}
+
+    <!-- Hero Section -->
+    <section class="proiecte-hero">
+        <div class="container">
+            <h1 data-aos="fade-down">Proiecte STARTUP</h1>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">Programul Municipal STARTUP pentru Tineri și Migranți — Ediția I 2025</p>
+            <div class="proiecte-stats" data-aos="fade-up" data-aos-delay="200">
+                <div class="proiecte-stat">
+                    <span class="proiecte-stat-value" data-count="117">0</span>
+                    <span class="proiecte-stat-label">proiecte depuse</span>
+                </div>
+                <div class="proiecte-stat">
+                    <span class="proiecte-stat-value" data-count="37">0</span>
+                    <span class="proiecte-stat-label">proiecte aprobate</span>
+                </div>
+                <div class="proiecte-stat">
+                    <span class="proiecte-stat-value">6.9 mil</span>
+                    <span class="proiecte-stat-label">lei finanțare totală</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tab Navigation -->
+    <nav class="proiecte-tabs" data-aos="fade-up">
+        <div class="container">
+            <button class="proiecte-tab active" data-tab="aprobate">
+                <i class="fas fa-check-circle"></i>
+                <span>Proiecte aprobate</span>
+                <span class="tab-count">37</span>
+            </button>
+            <button class="proiecte-tab" data-tab="depuse">
+                <i class="fas fa-folder-open"></i>
+                <span>Proiecte depuse</span>
+                <span class="tab-count">117</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <section class="proiecte-content">
+        <div class="container">
+
+            <!-- Panel: Approved Projects -->
+            <div class="proiecte-panel active" id="panel-aprobate">
+                <div class="proiecte-toolbar">
+                    <div class="proiecte-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-aprobate" placeholder="Caută după numele companiei sau proiectului...">
+                    </div>
+                    <span class="proiecte-result-count" id="count-aprobate">37 proiecte</span>
+                </div>
+
+                <div class="proiecte-table-wrapper">
+                    <table class="proiecte-table" id="table-aprobate">
+                        <thead>
+                            <tr>
+                                <th>Nr.</th>
+                                <th>Beneficiar</th>
+                                <th>Proiect / Activitate</th>
+                                <th>Grant (Lei)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="row-num">1</td>
+                                <td><span class="company-name">VALERIIA FLOWERS SRL</span></td>
+                                <td class="project-desc">Spațiu floral & coffee spot</td>
+                                <td class="grant-amount">214 305<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">2</td>
+                                <td><span class="company-name">CLEANTIME SRL</span><span class="company-beneficiary">Aurelia Lungul</span></td>
+                                <td class="project-desc">Servicii profesionale de curățenie</td>
+                                <td class="grant-amount">250 000<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">3</td>
+                                <td><span class="company-name">SCALELAW SOLUTIONS SRL</span><span class="company-beneficiary">Mircea Ursu</span></td>
+                                <td class="project-desc">LEGALIA — aplicație mobilă pentru educație juridică</td>
+                                <td class="grant-amount">229 131<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">4</td>
+                                <td><span class="company-name">DELTA TRADE SRL</span></td>
+                                <td class="project-desc">Accesorii din piele naturală handcrafted</td>
+                                <td class="grant-amount">56 253<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">5</td>
+                                <td><span class="company-name">CONFIRM SOLUTIONS SRL</span></td>
+                                <td class="project-desc">Soluții IT & AI pentru contabilitate</td>
+                                <td class="grant-amount">249 999<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">6</td>
+                                <td><span class="company-name">Denis Railean</span></td>
+                                <td class="project-desc">Design și producție mobilier la comandă</td>
+                                <td class="grant-amount">91 614<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">7</td>
+                                <td><span class="company-name">ELITE SUSHI SRL</span></td>
+                                <td class="project-desc">Restaurant japonez</td>
+                                <td class="grant-amount">183 160<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">8</td>
+                                <td><span class="company-name">CHRIS CANDELS SRL</span></td>
+                                <td class="project-desc">Articole decorative și produse de aromaterapie</td>
+                                <td class="grant-amount">141 690<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">9</td>
+                                <td><span class="company-name">NUTRIGO SRL</span></td>
+                                <td class="project-desc">Cafenea cu produse de patiserie</td>
+                                <td class="grant-amount">250 000<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">10</td>
+                                <td><span class="company-name">MIRA SWEETS NATURAL SRL</span></td>
+                                <td class="project-desc">Producerea pâinii și a produselor de patiserie</td>
+                                <td class="grant-amount">174 260<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">11</td>
+                                <td><span class="company-name">ZIUZEA SRL</span></td>
+                                <td class="project-desc">Sisteme de tratare a apelor cu insule plutitoare</td>
+                                <td class="grant-amount">250 000<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">12</td>
+                                <td><span class="company-name">VOFFLIGHT SRL</span></td>
+                                <td class="project-desc">Proiectarea sistemelor electrice și audituri energetice</td>
+                                <td class="grant-amount">146 985<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">13</td>
+                                <td><span class="company-name">SKYLINE AGENCY SRL</span></td>
+                                <td class="project-desc">Agenție de marketing digital</td>
+                                <td class="grant-amount">170 305<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">14</td>
+                                <td><span class="company-name">VECTOR ACADEMY SRL</span></td>
+                                <td class="project-desc">Platformă de instruire online</td>
+                                <td class="grant-amount">76 592<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">15</td>
+                                <td><span class="company-name">II ANA SOROCHINA</span></td>
+                                <td class="project-desc">Brutărie artizanală</td>
+                                <td class="grant-amount">250 000<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">16</td>
+                                <td><span class="company-name">TESLARI ORIGINS SRL</span></td>
+                                <td class="project-desc">Micro-fabrică de ciuperci</td>
+                                <td class="grant-amount">250 000<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">17</td>
+                                <td><span class="company-name">UPSTAIRS SRL</span></td>
+                                <td class="project-desc">Servicii de contabilitate</td>
+                                <td class="grant-amount">74 200<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">18</td>
+                                <td><span class="company-name">PROTOCOL GROUP SRL</span></td>
+                                <td class="project-desc">Organizare evenimente și training etichetă</td>
+                                <td class="grant-amount">250 000<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">19</td>
+                                <td><span class="company-name">NEO PROJECT GROUP SRL</span></td>
+                                <td class="project-desc">Servicii de design interior</td>
+                                <td class="grant-amount">85 898<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">20</td>
+                                <td><span class="company-name">NOBILIA DESIGN SRL</span></td>
+                                <td class="project-desc">Producere mobilier la comandă</td>
+                                <td class="grant-amount">230 000<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">21</td>
+                                <td><span class="company-name">ADDRESS BEAUTY SRL</span></td>
+                                <td class="project-desc">Salon de frumusețe și îngrijire corporală</td>
+                                <td class="grant-amount">250 000<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">22</td>
+                                <td><span class="company-name">VELARTPROD SRL</span></td>
+                                <td class="project-desc">Producere huse pentru instrumente muzicale</td>
+                                <td class="grant-amount">250 000<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">23</td>
+                                <td><span class="company-name">MARTS GROUP SRL</span><span class="company-beneficiary">Alexandr Mart</span></td>
+                                <td class="project-desc">Servicii de fitness și îngrijire corporală</td>
+                                <td class="grant-amount">245 549<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">24</td>
+                                <td><span class="company-name">PRO SPA SRL</span></td>
+                                <td class="project-desc">Salon de frumusețe</td>
+                                <td class="grant-amount">250 000<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">25</td>
+                                <td><span class="company-name">FITFELVIT SRL</span><span class="company-beneficiary">Alina Bodiu</span></td>
+                                <td class="project-desc">Studio de revitalizare fizică</td>
+                                <td class="grant-amount">250 000<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">26</td>
+                                <td><span class="company-name">AXA MENTORIS SRL</span></td>
+                                <td class="project-desc">Cursuri de matematică</td>
+                                <td class="grant-amount">124 828<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">27</td>
+                                <td><span class="company-name">WASHPILOT IM SRL</span></td>
+                                <td class="project-desc">Servicii autonome de curățare cu drone</td>
+                                <td class="grant-amount">240 000<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">28</td>
+                                <td><span class="company-name">Andries Nastas</span></td>
+                                <td class="project-desc">Tocarea și reciclarea deșeurilor lemnoase</td>
+                                <td class="grant-amount">244 010<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">29</td>
+                                <td><span class="company-name">FLEX WOOD SRL</span></td>
+                                <td class="project-desc">Prelucrarea lemnului și producerea articolelor</td>
+                                <td class="grant-amount">250 000<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">30</td>
+                                <td><span class="company-name">IDEA MUSIC STUDIO SRL</span></td>
+                                <td class="project-desc">Studio muzical</td>
+                                <td class="grant-amount">238 800<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">31</td>
+                                <td><span class="company-name">CORALEVA PRIM SRL</span></td>
+                                <td class="project-desc">Cafenea modernă to-go</td>
+                                <td class="grant-amount">250 000<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">32</td>
+                                <td><span class="company-name">BCARS DETAILING SRL</span></td>
+                                <td class="project-desc">Servicii auto detailing</td>
+                                <td class="grant-amount">51 000<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">33</td>
+                                <td><span class="company-name">M&A GROUP SRL</span></td>
+                                <td class="project-desc">Înghețată artizanală</td>
+                                <td class="grant-amount">250 000<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">34</td>
+                                <td><span class="company-name">Mircea Lazăr</span></td>
+                                <td class="project-desc">Producere piese auto din fibră de carbon</td>
+                                <td class="grant-amount">131 439<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">35</td>
+                                <td><span class="company-name">BABIES ATELIER SRL</span></td>
+                                <td class="project-desc">Producere articole textile pentru bebeluși</td>
+                                <td class="grant-amount">109 800<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">36</td>
+                                <td><span class="company-name">APALINA LIFE SRL</span></td>
+                                <td class="project-desc">Apă potabilă îmbuteliată</td>
+                                <td class="grant-amount">20 852<span class="grant-currency">Lei</span></td>
+                            </tr>
+                            <tr>
+                                <td class="row-num">37</td>
+                                <td><span class="company-name">MERCANTES TRADE SRL</span></td>
+                                <td class="project-desc">Servicii de comerț și consultanță</td>
+                                <td class="grant-amount">249 330<span class="grant-currency">Lei</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="proiecte-total">
+                        <span class="proiecte-total-label"><i class="fas fa-calculator"></i> Total finanțare acordată:</span>
+                        <span class="proiecte-total-value">~6 900 000 Lei</span>
+                    </div>
+                </div>
+
+                <div class="proiecte-no-results" id="no-results-aprobate">
+                    <i class="fas fa-search"></i>
+                    <p>Niciun proiect găsit. Încercați alt termen de căutare.</p>
+                </div>
+
+            </div>
+
+            <!-- Panel: Submitted Projects -->
+            <div class="proiecte-panel" id="panel-depuse">
+                <div class="proiecte-toolbar">
+                    <div class="proiecte-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-depuse" placeholder="Caută după numele beneficiarului...">
+                    </div>
+                    <span class="proiecte-result-count" id="count-depuse">117 proiecte</span>
+                </div>
+
+                <div class="proiecte-grid" id="grid-depuse">
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">1</span><span class="proiecte-grid-name">VALERIIA FLOWERS SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">2</span><span class="proiecte-grid-name">Dinu Ciobanu</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">3</span><span class="proiecte-grid-name">Aurelia Lungul</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">4</span><span class="proiecte-grid-name">Mircea Ursu</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">5</span><span class="proiecte-grid-name">DELTA TRADE SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">6</span><span class="proiecte-grid-name">Eleonora Filicovscaia</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">7</span><span class="proiecte-grid-name">Stepan Virlan</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">8</span><span class="proiecte-grid-name">Constantin Popescu</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">9</span><span class="proiecte-grid-name">CONFIRM SOLUTIONS SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">10</span><span class="proiecte-grid-name">CHRIS CANDELS SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">11</span><span class="proiecte-grid-name">NUTRIGO SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">12</span><span class="proiecte-grid-name">WASHPILOT IM SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">13</span><span class="proiecte-grid-name">MIRA SWEETS NATURAL SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">14</span><span class="proiecte-grid-name">ZIUZEA SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">15</span><span class="proiecte-grid-name">Radu-Ion Gorincioi</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">16</span><span class="proiecte-grid-name">VOFFLIGHT SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">17</span><span class="proiecte-grid-name">SKYLINE AGENCY SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">18</span><span class="proiecte-grid-name">VECTOR ACADEMY SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">19</span><span class="proiecte-grid-name">Ana Sorochina II</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">20</span><span class="proiecte-grid-name">TESLARI ORIGINS SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">21</span><span class="proiecte-grid-name">UPSTAIRS SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">22</span><span class="proiecte-grid-name">PROTOCOL GROUP SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">23</span><span class="proiecte-grid-name">Denis Railean</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">24</span><span class="proiecte-grid-name">Radu Luta</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">25</span><span class="proiecte-grid-name">NEO PROJECT GROUP SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">26</span><span class="proiecte-grid-name">ELITE SUSHI SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">27</span><span class="proiecte-grid-name">NOBILIA DESIGN SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">28</span><span class="proiecte-grid-name">ALMA CAPITAL GROUP SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">29</span><span class="proiecte-grid-name">ADDRESS BEAUTY SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">30</span><span class="proiecte-grid-name">VELARTPROD SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">31</span><span class="proiecte-grid-name">Alexandr Mart</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">32</span><span class="proiecte-grid-name">SANDEL FOODS SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">33</span><span class="proiecte-grid-name">PRO SPA SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">34</span><span class="proiecte-grid-name">Alina Bodiu</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">35</span><span class="proiecte-grid-name">AXA MENTORS SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">36</span><span class="proiecte-grid-name">Andries Nastas</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">37</span><span class="proiecte-grid-name">Iana Chiaburu</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">38</span><span class="proiecte-grid-name">FLEX WOOD SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">39</span><span class="proiecte-grid-name">IDEA MUSIC STUDIO SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">40</span><span class="proiecte-grid-name">CORALEVA PRIM SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">41</span><span class="proiecte-grid-name">MORARI MEDIA NETWORK SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">42</span><span class="proiecte-grid-name">BCARS DETAILING SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">43</span><span class="proiecte-grid-name">M&A GROUP SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">44</span><span class="proiecte-grid-name">Mircea Lazăr</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">45</span><span class="proiecte-grid-name">NOMICON GROUP SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">46</span><span class="proiecte-grid-name">DAIKIRI STUDIO SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">47</span><span class="proiecte-grid-name">BABIES ATELIER SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">48</span><span class="proiecte-grid-name">APALINA LIFE SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">49</span><span class="proiecte-grid-name">POTLOG MEDIA SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">50</span><span class="proiecte-grid-name">ROLMAX GROUP SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">51</span><span class="proiecte-grid-name">SPACE VISION STUDIO SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">52</span><span class="proiecte-grid-name">WOW LAND SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">53</span><span class="proiecte-grid-name">ROGOTE PLANT SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">54</span><span class="proiecte-grid-name">IURCONSULTING SOLUTIONS SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">55</span><span class="proiecte-grid-name">Catruc-Inculet Adriana</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">56</span><span class="proiecte-grid-name">ASIAN SISTERS SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">57</span><span class="proiecte-grid-name">RUSU ADRIANA SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">58</span><span class="proiecte-grid-name">SPY ELEMENT AGENCY SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">59</span><span class="proiecte-grid-name">MAGIC WOMAN SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">60</span><span class="proiecte-grid-name">KIMLAB GROUP SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">61</span><span class="proiecte-grid-name">Daniel Rusu</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">62</span><span class="proiecte-grid-name">Vitalie Calmîș</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">63</span><span class="proiecte-grid-name">Daniel Opatchi</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">64</span><span class="proiecte-grid-name">WHITE HUB SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">65</span><span class="proiecte-grid-name">Sergiu Slova</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">66</span><span class="proiecte-grid-name">PEAK POINT SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">67</span><span class="proiecte-grid-name">KREATIVE LABORATORY SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">68</span><span class="proiecte-grid-name">IRENEART SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">69</span><span class="proiecte-grid-name">OVERLINE-LOGISTIC SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">70</span><span class="proiecte-grid-name">Doina Plop</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">71</span><span class="proiecte-grid-name">COLȚUL LINIȘTII SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">72</span><span class="proiecte-grid-name">Veronica Ziziuchin</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">73</span><span class="proiecte-grid-name">SORAMED-PRIM SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">74</span><span class="proiecte-grid-name">KIVSHYK GROUP SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">75</span><span class="proiecte-grid-name">TAXI MAGIC KIDS SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">76</span><span class="proiecte-grid-name">REPACK COMPANY SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">77</span><span class="proiecte-grid-name">Ecaterina Țurcanu</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">78</span><span class="proiecte-grid-name">LAZY CRAZY GROUP SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">79</span><span class="proiecte-grid-name">CLARO PLUS SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">80</span><span class="proiecte-grid-name">ACADEMIA EMOȚIILOR SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">81</span><span class="proiecte-grid-name">Antonela Murgoci</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">82</span><span class="proiecte-grid-name">Cristin Bătrincea</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">83</span><span class="proiecte-grid-name">SANDEL FOODS SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">84</span><span class="proiecte-grid-name">PINSA PRO SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">85</span><span class="proiecte-grid-name">CORADO BULGACOV SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">86</span><span class="proiecte-grid-name">Adrian Bolea</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">87</span><span class="proiecte-grid-name">Stanislav Lesco</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">88</span><span class="proiecte-grid-name">Constantin Levitchi</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">89</span><span class="proiecte-grid-name">Anastasia Boldescu</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">90</span><span class="proiecte-grid-name">Anastasia Roșca</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">91</span><span class="proiecte-grid-name">Veaceslav Stoica</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">92</span><span class="proiecte-grid-name">Valentin Stratulat</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">93</span><span class="proiecte-grid-name">Adrian Crețul</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">94</span><span class="proiecte-grid-name">TRIO DOCERA SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">95</span><span class="proiecte-grid-name">Natalia Matoșa</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">96</span><span class="proiecte-grid-name">Maia Rotari</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">97</span><span class="proiecte-grid-name">GRAFIMIX SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">98</span><span class="proiecte-grid-name">EMOCARE SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">99</span><span class="proiecte-grid-name">CONACUL DRAGALINA SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">100</span><span class="proiecte-grid-name">DND ARTISAN COFFEE SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">101</span><span class="proiecte-grid-name">Ecaterina Catan</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">102</span><span class="proiecte-grid-name">Catalina Gobjila</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">103</span><span class="proiecte-grid-name">Bohaichuk Yana</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">104</span><span class="proiecte-grid-name">BENJUMEA N SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">105</span><span class="proiecte-grid-name">Anton Plîngău</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">106</span><span class="proiecte-grid-name">Ionuț Vîrlan</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">107</span><span class="proiecte-grid-name">Victor Zagaican</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">108</span><span class="proiecte-grid-name">VEROVISION SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">109</span><span class="proiecte-grid-name">VENTURE PICTURES SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">110</span><span class="proiecte-grid-name">SWEET BITE SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">111</span><span class="proiecte-grid-name">SERVICIUL-CUMĂTRUL SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">112</span><span class="proiecte-grid-name">PROSERV SOLUTIONS SRL</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">113</span><span class="proiecte-grid-name">Valeria Ovseanicova</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">114</span><span class="proiecte-grid-name">Nicoleta Calancea</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">115</span><span class="proiecte-grid-name">Renat Motricală</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">116</span><span class="proiecte-grid-name">Mihail Boaghe</span></div>
+                    <div class="proiecte-grid-item"><span class="proiecte-grid-num">117</span><span class="proiecte-grid-name">MERCANTES TRADE SRL</span></div>
+                </div>
+
+                <div class="proiecte-no-results" id="no-results-depuse">
+                    <i class="fas fa-search"></i>
+                    <p>Niciun beneficiar găsit. Încercați alt termen de căutare.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}
+{% block extra_js %}
+<script>
+    // Tab switching
+    document.querySelectorAll('.proiecte-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            document.querySelectorAll('.proiecte-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.proiecte-panel').forEach(p => p.classList.remove('active'));
+            this.classList.add('active');
+            document.getElementById('panel-' + this.dataset.tab).classList.add('active');
+        });
+    });
+
+    // Search: approved projects table
+    document.getElementById('search-aprobate').addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        const rows = document.querySelectorAll('#table-aprobate tbody tr');
+        let visible = 0;
+        rows.forEach(row => {
+            const text = row.textContent.toLowerCase();
+            const match = !query || text.includes(query);
+            row.style.display = match ? '' : 'none';
+            if (match) visible++;
+        });
+        document.getElementById('count-aprobate').textContent = visible + ' proiecte';
+        document.getElementById('no-results-aprobate').style.display = visible === 0 ? 'block' : 'none';
+        document.querySelector('.proiecte-table-wrapper').style.display = visible === 0 ? 'none' : '';
+    });
+
+    // Search: submitted projects grid
+    document.getElementById('search-depuse').addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        const items = document.querySelectorAll('#grid-depuse .proiecte-grid-item');
+        let visible = 0;
+        items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            const match = !query || text.includes(query);
+            item.style.display = match ? '' : 'none';
+            if (match) visible++;
+        });
+        document.getElementById('count-depuse').textContent = visible + ' proiecte';
+        document.getElementById('no-results-depuse').style.display = visible === 0 ? 'block' : 'none';
+    });
+</script>
+{% endblock %}

@@ -648,3 +648,10 @@
         font-size: 0.82rem;
     }
 }
+
+/* ── Document Cards ── */
+.doc-card:hover {
+    border-color: var(--primary-light) !important;
+    box-shadow: 0 2px 12px rgba(30, 64, 175, 0.08);
+    transform: translateX(4px);
+}

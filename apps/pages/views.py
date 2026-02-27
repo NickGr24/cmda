@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView, DetailView
-from .models import SuccessStory, Partner, EUProject, GalleryPhoto, Program, Statistic, Mentor, News
+from .models import SuccessStory, Partner, EUProject, GalleryPhoto, Program, Statistic, Mentor, News, Document
 
 
 class PageView(TemplateView):
@@ -126,15 +126,32 @@ class PlanuriView(PageView):
     template_name = 'pages/planuri.html'
     active_page = 'planuri'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['documents'] = Document.objects.filter(category='planuri')
+        return context
+
 
 class RapoarteView(PageView):
     template_name = 'pages/rapoarte.html'
     active_page = 'rapoarte'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['documents'] = Document.objects.filter(category='rapoarte')
+        return context
+
 
 class AchizitiiView(PageView):
     template_name = 'pages/achizitii.html'
     active_page = 'achizitii'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['planuri'] = Document.objects.filter(category='achizitii_planuri')
+        context['anunturi'] = Document.objects.filter(category='achizitii_anunturi')
+        context['rapoarte'] = Document.objects.filter(category='achizitii_rapoarte')
+        return context
 
 
 class CarieraView(PageView):
@@ -165,3 +182,8 @@ class EchipaView(PageView):
 class BugetView(PageView):
     template_name = 'pages/buget.html'
     active_page = 'buget'
+
+
+class ProiecteView(PageView):
+    template_name = 'pages/proiecte.html'
+    active_page = 'proiecte'

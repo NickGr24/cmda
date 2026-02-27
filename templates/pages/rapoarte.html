@@ -5,17 +5,28 @@
 {% block content %}
 <section class="page-header">
     <div class="container">
-        <h1 data-aos="fade-down" data-translate="nav.transparency_reports">Rapoarte</h1>
+        <h1 data-aos="fade-down">Rapoarte</h1>
         <p class="page-subtitle" data-aos="fade-down" data-aos-delay="200">Transparența CMDA</p>
     </div>
 </section>
-<section style="padding: 4rem 0;">
-    <div class="container">
+<section style="padding: 3rem 0 4rem;">
+    <div class="container" style="max-width: 800px;">
+        {% if documents %}
+        <div class="content-block" data-aos="fade-up">
+            <h2><i class="fas fa-chart-bar" style="margin-right: 0.5rem; color: var(--primary-color);"></i> Rapoarte și declarații</h2>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem;">
+                {% for doc in documents %}
+                {% include "partials/_document_card.html" with doc=doc %}
+                {% endfor %}
+            </div>
+        </div>
+        {% else %}
         <div class="placeholder-content" data-aos="fade-up">
             <i class="fas fa-chart-bar"></i>
-            <h2 data-translate="nav.transparency_reports">Rapoarte</h2>
-            <p data-translate="about_sidebar.placeholder">Pagina este în curs de dezvoltare.</p>
+            <h2>Rapoarte</h2>
+            <p>Momentan nu sunt documente încărcate.</p>
         </div>
+        {% endif %}
     </div>
 </section>
 {% endblock %}

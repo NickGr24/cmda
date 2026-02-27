@@ -24,4 +24,5 @@ urlpatterns = [
     path('structura/', views.StructuraView.as_view(), name='structura'),
     path('echipa/', views.EchipaView.as_view(), name='echipa'),
     path('buget/', views.BugetView.as_view(), name='buget'),
+    path('proiecte/', views.ProiecteView.as_view(), name='proiecte'),
 ]
