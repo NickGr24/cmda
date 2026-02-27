@@ -27,7 +27,7 @@
     height: 400px;
     bottom: -150px;
     left: -80px;
-    background: radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -74,7 +74,7 @@
 
 .leg-decision {
     padding: 2.5rem 0;
-    background: var(--gradient-bg-4);
+    background: var(--gradient-bg-2);
 }
 
 .leg-decision-card {
@@ -85,7 +85,7 @@
     border-radius: var(--radius-lg);
     padding: 2rem;
     box-shadow: var(--shadow-md);
-    border-left: 5px solid var(--secondary-color);
+    border-left: 5px solid var(--primary-light);
     text-decoration: none;
     color: inherit;
     transition: var(--transition-normal);
@@ -101,12 +101,12 @@
     width: 56px;
     height: 56px;
     border-radius: var(--radius-md);
-    background: rgba(249, 115, 22, 0.1);
+    background: rgba(30, 64, 175, 0.08);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .leg-decision-body h3 {
@@ -130,8 +130,8 @@
     margin-top: 0.75rem;
     padding: 0.3rem 0.75rem;
     border-radius: 20px;
-    background: rgba(249, 115, 22, 0.1);
-    color: var(--secondary-color);
+    background: rgba(30, 64, 175, 0.08);
+    color: var(--primary-color);
     font-size: 0.78rem;
     font-weight: 600;
 }
@@ -206,9 +206,9 @@
     color: var(--primary-color);
 }
 
-.leg-cat-icon.orange {
-    background: rgba(249, 115, 22, 0.08);
-    color: var(--secondary-color);
+.leg-cat-icon.indigo {
+    background: rgba(99, 102, 241, 0.08);
+    color: #6366f1;
 }
 
 .leg-cat-icon.green {
@@ -232,17 +232,6 @@
     color: var(--text-dark);
     margin: 0;
     line-height: 1.35;
-}
-
-.leg-cat-count {
-    margin-left: auto;
-    font-size: 0.72rem;
-    font-weight: 600;
-    padding: 0.2rem 0.55rem;
-    border-radius: 10px;
-    background: var(--bg-gray);
-    color: var(--text-medium);
-    white-space: nowrap;
 }
 
 .leg-cat-list {
