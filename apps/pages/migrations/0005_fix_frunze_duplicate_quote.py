@@ -4,15 +4,12 @@ from django.db import migrations
 
 
 def fix_duplicate_quote(apps, schema_editor):
+    import re
     SuccessStory = apps.get_model('pages', 'SuccessStory')
-    try:
-        story = SuccessStory.objects.get(company_name='Ken AI')
-    except SuccessStory.DoesNotExist:
-        return
-    old = '<blockquote>"Visul meu este sa construiesc afaceri care ajuta oamenii sa creasca prin educatie si tehnologie." - Cristian Frunze</blockquote>'
-    if old in story.content:
-        story.content = story.content.replace(old, '')
-        story.save(update_fields=['content'])
+    for story in SuccessStory.objects.all():
+        if story.content and '<blockquote>' in story.content:
+            story.content = re.sub(r'<blockquote>.*?</blockquote>', '', story.content, flags=re.DOTALL)
+            story.save(update_fields=['content'])
 
 
 class Migration(migrations.Migration):
