@@ -36,31 +36,6 @@
             </div>
         </section>
 
-        <section class="success-preview" data-aos="fade-up">
-            <div class="container">
-                <div class="success-preview-header">
-                    <h2 data-aos="fade-down" data-translate="success_preview.title">Istorii de succes</h2>
-                    <a href="{% url 'pages:istorii-de-succes' %}" class="success-preview-all" data-aos="fade-down" data-aos-delay="100" data-translate="success_preview.view_all">Toate istoriile →</a>
-                </div>
-                <div class="success-preview-track">
-                    {% for story in featured_stories %}
-                    <article class="success-preview-card" data-aos="fade-up" data-aos-delay="{{ forloop.counter }}00">
-                        <a href="{% url 'pages:story-detail' story.slug %}">
-                            <div class="success-preview-img">
-                                <img src="{{ story.image.url }}" alt="{{ story.company_name }}" loading="lazy" decoding="async">
-                                <span class="success-preview-tag">{{ story.category }}</span>
-                            </div>
-                            <div class="success-preview-body">
-                                <h3>{{ story.company_name }}</h3>
-                                <p>{{ story.short_description }}</p>
-                            </div>
-                        </a>
-                    </article>
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
-
         <section class="news-preview" data-aos="fade-up">
             <div class="container">
                 <div class="news-preview-header">
@@ -85,6 +60,31 @@
                                 <h3>{{ article.title }}</h3>
                                 <p>{{ article.excerpt|truncatewords:20 }}</p>
                                 <span class="news-preview-link">Citește mai mult <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="success-preview" data-aos="fade-up">
+            <div class="container">
+                <div class="success-preview-header">
+                    <h2 data-aos="fade-down" data-translate="success_preview.title">Istorii de succes</h2>
+                    <a href="{% url 'pages:istorii-de-succes' %}" class="success-preview-all" data-aos="fade-down" data-aos-delay="100" data-translate="success_preview.view_all">Toate istoriile →</a>
+                </div>
+                <div class="success-preview-track">
+                    {% for story in featured_stories %}
+                    <article class="success-preview-card" data-aos="fade-up" data-aos-delay="{{ forloop.counter }}00">
+                        <a href="{% url 'pages:story-detail' story.slug %}">
+                            <div class="success-preview-img">
+                                <img src="{{ story.image.url }}" alt="{{ story.company_name }}" loading="lazy" decoding="async">
+                                <span class="success-preview-tag">{{ story.category }}</span>
+                            </div>
+                            <div class="success-preview-body">
+                                <h3>{{ story.company_name }}</h3>
+                                <p>{{ story.short_description }}</p>
                             </div>
                         </a>
                     </article>
