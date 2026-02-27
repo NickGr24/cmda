@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Two crossed capsule shapes from CMDA logo -->
+  <!-- Dark green/teal capsule: top-left to bottom-right -->
+  <line x1="14" y1="14" x2="50" y2="50" stroke="#3a9e6e" stroke-width="14" stroke-linecap="round"/>
+  <!-- Light green capsule: top-right to bottom-left (on top) -->
+  <line x1="50" y1="14" x2="14" y2="50" stroke="#7bc67e" stroke-width="14" stroke-linecap="round"/>
+</svg>
