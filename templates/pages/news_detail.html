@@ -129,11 +129,93 @@
         color: #fff;
     }
 
+    /* Slider */
+    .news-slider {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        margin-bottom: 2.5rem;
+    }
+    .news-slider-track { position: relative; width: 100%; }
+    .news-slide { display: none; width: 100%; }
+    .news-slide.active { display: block; }
+    .news-slide img {
+        width: 100%;
+        max-height: 520px;
+        object-fit: cover;
+        display: block;
+    }
+    .news-slide-caption {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        background: linear-gradient(transparent, rgba(0,0,0,0.6));
+        color: #fff;
+        padding: 2rem 1.5rem 1rem;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+    .news-slider-prev,
+    .news-slider-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(255,255,255,0.25);
+        color: #fff;
+        width: 44px; height: 44px;
+        border-radius: 50%;
+        font-size: 0.95rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.25s;
+        z-index: 5;
+    }
+    .news-slider-prev { left: 1rem; }
+    .news-slider-next { right: 1rem; }
+    .news-slider-prev:hover,
+    .news-slider-next:hover { background: rgba(255,255,255,0.3); }
+    .news-slider-dots {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 0.5rem;
+        z-index: 5;
+    }
+    .news-slider-dot {
+        width: 10px; height: 10px;
+        border-radius: 50%;
+        border: 2px solid rgba(255,255,255,0.7);
+        background: transparent;
+        cursor: pointer;
+        padding: 0;
+        transition: background 0.25s;
+    }
+    .news-slider-dot.active { background: #fff; }
+    .news-slider-counter {
+        position: absolute;
+        top: 1rem; right: 1rem;
+        background: rgba(0,0,0,0.5);
+        color: #fff;
+        padding: 0.3rem 0.7rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        z-index: 5;
+    }
+
     @media (max-width: 768px) {
         .news-body { padding: 1.75rem 1.5rem; }
         .news-hero-image { max-height: 280px; border-radius: 12px; }
         .news-hero-image img { max-height: 280px; }
         .news-detail { padding: 2.5rem 0 3rem; }
+        .news-slider { border-radius: 12px; }
+        .news-slide img { max-height: 300px; }
+        .news-slider-prev, .news-slider-next { width: 36px; height: 36px; font-size: 0.85rem; }
     }
 </style>
 {% endblock %}
@@ -156,7 +238,28 @@
 
         <section class="news-detail">
             <div class="container">
-                {% if article.image %}
+                {% if gallery_images %}
+                <div class="news-slider" data-aos="fade-up">
+                    <div class="news-slider-track">
+                        {% for img in gallery_images %}
+                        <div class="news-slide{% if forloop.first %} active{% endif %}">
+                            <img src="{{ img.image.url }}" alt="{{ img.caption|default:article.title }}" loading="lazy">
+                            {% if img.caption %}<p class="news-slide-caption">{{ img.caption }}</p>{% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% if gallery_images|length > 1 %}
+                    <button class="news-slider-prev" aria-label="Precedenta"><i class="fas fa-chevron-left"></i></button>
+                    <button class="news-slider-next" aria-label="Următoarea"><i class="fas fa-chevron-right"></i></button>
+                    <span class="news-slider-counter">1 / {{ gallery_images|length }}</span>
+                    <div class="news-slider-dots">
+                        {% for img in gallery_images %}
+                        <button class="news-slider-dot{% if forloop.first %} active{% endif %}" data-index="{{ forloop.counter0 }}" aria-label="Imaginea {{ forloop.counter }}"></button>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% elif article.image %}
                 <div class="news-hero-image" data-aos="fade-up">
                     <img src="{{ article.image.url }}" alt="{{ article.title }}">
                 </div>
@@ -174,4 +277,9 @@
                 </div>
             </div>
         </section>
+{% endblock %}
+{% block extra_js %}
+{% if gallery_images|length > 1 %}
+<script src="{% static 'js/news-slider.js' %}" defer></script>
+{% endif %}
 {% endblock %}

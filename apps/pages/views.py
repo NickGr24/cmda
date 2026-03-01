@@ -116,9 +116,13 @@ class NewsDetailView(DetailView):
     template_name = 'pages/news_detail.html'
     context_object_name = 'article'
 
+    def get_queryset(self):
+        return super().get_queryset().prefetch_related('images')
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['active_page'] = 'comunicate'
+        context['gallery_images'] = self.object.images.all()
         return context
 
 

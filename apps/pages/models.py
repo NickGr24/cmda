@@ -184,6 +184,21 @@ class News(models.Model):
         super().save(*args, **kwargs)
 
 
+class NewsImage(models.Model):
+    news = models.ForeignKey(News, on_delete=models.CASCADE, related_name='images', verbose_name='Comunicat')
+    image = models.ImageField('Imagine', upload_to='news/')
+    caption = models.CharField('Descriere', max_length=300, blank=True)
+    order = models.IntegerField('Ordine', default=0)
+
+    class Meta:
+        ordering = ['order', 'pk']
+        verbose_name = 'Imagine comunicat'
+        verbose_name_plural = 'Imagini comunicat'
+
+    def __str__(self):
+        return self.caption or f'Imagine #{self.pk}'
+
+
 class Document(models.Model):
     CATEGORY_CHOICES = [
         ('planuri', 'Planuri și strategii'),

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import SuccessStory, Partner, EUProject, GalleryPhoto, Program, Statistic, Mentor, News, Document
+from .models import SuccessStory, Partner, EUProject, GalleryPhoto, Program, Statistic, Mentor, News, NewsImage, Document
 
 
 @admin.register(SuccessStory)
@@ -77,19 +77,38 @@ class MentorAdmin(admin.ModelAdmin):
     search_fields = ['name', 'specialization']
 
 
+class NewsImageInline(admin.TabularInline):
+    model = NewsImage
+    extra = 1
+    fields = ['image', 'caption', 'order', 'image_preview']
+    readonly_fields = ['image_preview']
+
+    def image_preview(self, obj):
+        if obj.image:
+            return format_html('<img src="{}" style="height:60px;border-radius:4px;">', obj.image.url)
+        return '-'
+    image_preview.short_description = 'Preview'
+
+
 @admin.register(News)
 class NewsAdmin(admin.ModelAdmin):
-    list_display = ['title', 'published_date', 'image_preview']
+    list_display = ['title', 'published_date', 'image_count', 'image_preview']
     list_filter = ['published_date']
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
     date_hierarchy = 'published_date'
+    inlines = [NewsImageInline]
 
     def image_preview(self, obj):
         if obj.image:
             return format_html('<img src="{}" style="height:40px;border-radius:4px;">', obj.image.url)
         return '-'
     image_preview.short_description = 'Foto'
+
+    def image_count(self, obj):
+        count = obj.images.count()
+        return f'{count} img' if count else '-'
+    image_count.short_description = 'Galerie'
 
 
 @admin.register(Document)

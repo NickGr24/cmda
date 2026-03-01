@@ -9,7 +9,7 @@ from django.core.files.base import ContentFile
 from django.core.management.base import BaseCommand
 from django.utils.text import slugify
 
-from apps.pages.models import News
+from apps.pages.models import News, NewsImage
 
 EVENTS = [
     {
@@ -38,7 +38,8 @@ EVENTS = [
 <p>Mai multe detalii despre program sunt disponibile pe platforma <a href="https://startup.chisinau.md" target="_blank">startup.chisinau.md</a>.</p>''',
         'published_date': date(2025, 1, 28),
         'source_url': 'https://www.facebook.com/photo/?fbid=766709916490148&set=a.648028491691625',
-        'image_file': 'grant_ceremony.jpg',
+        'image_file': 'grant_1.jpg',
+        'gallery_images': [f'grant_{i}.jpg' for i in range(1, 9)],
     },
     {
         'title': 'Lansarea proiectului EUroBRIDGE_UA_MD – Cooperare transfrontalieră pentru antreprenoriat',
@@ -60,7 +61,8 @@ EVENTS = [
 <p>Proiectul este implementat cu sprijinul <strong>Uniunii Europene</strong> și face parte din portofoliul de proiecte europene ale CMDA, care include și SOCIALCAP, DIGICROSS, CEDDI, GrowthUP Chișinău și altele.</p>''',
         'published_date': date(2025, 11, 8),
         'source_url': 'https://www.facebook.com/media/set/?set=a.705744499253357&type=3',
-        'image_file': 'eurobridge_1.jpg',
+        'image_file': 'euro_1.jpg',
+        'gallery_images': [f'euro_{i}.jpg' for i in range(1, 9)],
     },
     {
         'title': 'Incubatorul Municipal de Afaceri – platformă de creștere pentru antreprenori',
@@ -84,6 +86,7 @@ EVENTS = [
         'published_date': date(2025, 2, 22),
         'source_url': 'https://www.facebook.com/people/Centrul-Municipal-pentru-Dezvoltarea-Antreprenoriatului/100094534392601/',
         'image_file': 'grant_event_hall.jpg',
+        'gallery_images': ['grant_event_hall.jpg'],
     },
 ]
 
@@ -91,14 +94,34 @@ IMAGE_DIR = '/tmp/cmda_fb_news/optimized'
 
 
 class Command(BaseCommand):
-    help = 'Import news from Facebook page photos'
+    help = 'Import news from Facebook page photos with gallery images'
+
+    def add_arguments(self, parser):
+        parser.add_argument('--force-gallery', action='store_true',
+                            help='Re-import gallery images for existing articles')
 
     def handle(self, *args, **options):
         created = 0
+        gallery_added = 0
+        force_gallery = options.get('force_gallery', False)
+
         for event in EVENTS:
             slug = slugify(event['title'])[:500]
-            if News.objects.filter(slug=slug).exists():
-                self.stdout.write(f'Already exists: {event["title"][:60]}')
+            existing = News.objects.filter(slug=slug).first()
+
+            if existing and not force_gallery:
+                if not existing.images.exists():
+                    self._add_gallery(existing, event)
+                    gallery_added += 1
+                else:
+                    self.stdout.write(f'Already exists with gallery: {event["title"][:60]}')
+                continue
+
+            if existing and force_gallery:
+                existing.images.all().delete()
+                self._add_gallery(existing, event)
+                gallery_added += 1
+                self.stdout.write(self.style.SUCCESS(f'Gallery updated: {event["title"][:60]}'))
                 continue
 
             news = News(
@@ -114,12 +137,24 @@ class Command(BaseCommand):
             if os.path.exists(img_path):
                 with open(img_path, 'rb') as f:
                     news.image.save(event['image_file'], ContentFile(f.read()), save=False)
-                self.stdout.write(f'  Image attached: {event["image_file"]}')
-            else:
-                self.stdout.write(self.style.WARNING(f'  Image not found: {img_path}'))
+                self.stdout.write(f'  Cover image: {event["image_file"]}')
 
             news.save()
+            self._add_gallery(news, event)
             created += 1
             self.stdout.write(self.style.SUCCESS(f'Created: {event["title"][:60]}'))
 
-        self.stdout.write(self.style.SUCCESS(f'\nDone! Created {created} news articles.'))
+        self.stdout.write(self.style.SUCCESS(
+            f'\nDone! Created {created} articles, added gallery to {gallery_added} existing.'))
+
+    def _add_gallery(self, news, event):
+        for i, img_name in enumerate(event.get('gallery_images', [])):
+            img_path = os.path.join(IMAGE_DIR, img_name)
+            if os.path.exists(img_path):
+                ni = NewsImage(news=news, order=i)
+                with open(img_path, 'rb') as f:
+                    ni.image.save(img_name, ContentFile(f.read()), save=False)
+                ni.save()
+                self.stdout.write(f'  Gallery [{i+1}]: {img_name}')
+            else:
+                self.stdout.write(self.style.WARNING(f'  Not found: {img_path}'))
