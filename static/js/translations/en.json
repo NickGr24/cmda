@@ -72,7 +72,8 @@
     "view_all": "All stories →"
   },
   "gallery": {
-    "title": "Photo Gallery"
+    "title": "Photo Gallery",
+    "subtitle": "Moments from our activities and events"
   },
   "footer": {
     "organization": "I.P. Municipal Center for Entrepreneurship Development (CMDA)",

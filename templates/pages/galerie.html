@@ -1,24 +1,44 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Galerie foto - CMDA Chișinău{% endblock %}
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/index.css' %}">{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/galerie.css' %}">{% endblock %}
 {% block content %}
-        <section class="gallery-3d-section">
-            <div class="gallery-3d-heading">
-                <h2 data-translate="gallery.title">Galerie foto</h2>
-            </div>
-            <div class="grid grid--gallery">
-                <div class="grid-wrap">
+        <section class="gallery-section">
+            <div class="container">
+                <div class="gallery-header">
+                    <h2 data-translate="gallery.title">Galerie foto</h2>
+                    <p class="gallery-subtitle" data-translate="gallery.subtitle">Momente din activitățile și evenimentele noastre</p>
+                </div>
+                <div class="gallery-masonry">
                     {% for photo in photos %}
-                    <div class="grid__item"><div class="grid__item-inner" style="background-image: url('{{ photo.image.url }}');"></div></div>
+                    <div class="gallery-item" style="--i: {{ forloop.counter0 }}">
+                        <img src="{{ photo.image.url }}" alt="{{ photo.caption|default:'CMDA foto' }}" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <button class="gallery-zoom-btn" aria-label="Mărește imaginea">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                            {% if photo.caption %}
+                            <span class="gallery-caption">{{ photo.caption }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
                     {% endfor %}
                 </div>
             </div>
         </section>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vizualizare foto">
+            <button class="lightbox-close" aria-label="Închide">&times;</button>
+            <button class="lightbox-prev" aria-label="Precedenta"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-next" aria-label="Următoarea"><i class="fas fa-chevron-right"></i></button>
+            <div class="lightbox-content">
+                <img src="" alt="" id="lightbox-img">
+                <p class="lightbox-caption" id="lightbox-caption"></p>
+            </div>
+            <div class="lightbox-counter" id="lightbox-counter"></div>
+        </div>
 {% endblock %}
 {% block extra_js %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js" defer></script>
-<script src="{% static 'js/gallery-3d.js' %}" defer></script>
+<script src="{% static 'js/gallery.js' %}" defer></script>
 {% endblock %}

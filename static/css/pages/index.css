@@ -806,64 +806,6 @@
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
-.gallery-3d-section {
-  position: relative;
-  width: 100%;
-  background: #f0f0f0;
-  margin-bottom: 0;
-  overflow: hidden;
-  --perspective: 1000px;
-  --grid-item-ratio: 1;
-  --grid-width: 105%;
-  --grid-height: auto;
-  --grid-gap: 2vw;
-  --grid-columns: 6;
-  --grid-inner-scale: 0.8;
-}
-.gallery-3d-heading {
-  text-align: center;
-  padding: 4rem 0 2rem;
-  background: #f0f0f0;
-}
-.gallery-3d-heading h2 {
-  color: var(--text-dark);
-  margin-bottom: 0;
-  letter-spacing: -0.02em;
-}
-.grid {
-  display: grid;
-  place-items: center;
-  padding: 2rem;
-  width: 100%;
-  perspective: var(--perspective);
-}
-.grid-wrap {
-  height: var(--grid-height);
-  width: var(--grid-width);
-  display: grid;
-  grid-template-columns: repeat(var(--grid-columns), 1fr);
-  gap: var(--grid-gap);
-  transform-style: preserve-3d;
-}
-.grid__item {
-  aspect-ratio: var(--grid-item-ratio);
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  position: relative;
-  border-radius: 8px;
-  display: grid;
-  place-items: center;
-  will-change: transform;
-  backface-visibility: hidden;
-  contain: layout style paint;
-}
-.grid__item-inner {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: 50% 50%;
-}
 .partners-preview {
   padding: 5rem 0;
   width: 100%;
@@ -1037,57 +979,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-}
-@media (max-width: 1024px) {
-  .gallery-3d-section {
-    --grid-columns: 4;
-    --perspective: 800px;
-  }
-}
-@media (max-width: 768px) {
-  .gallery-3d-section {
-    --grid-columns: 3;
-    --grid-width: 100%;
-    --grid-gap: 2vw;
-    --perspective: 600px;
-    margin-bottom: 0;
-  }
-  .gallery-3d-heading {
-    padding: 2.5rem 0 1.5rem;
-  }
-  .grid {
-    padding: 1rem;
-  }
-}
-@media (max-width: 480px) {
-  .gallery-3d-section {
-    --grid-columns: 3;
-    --grid-width: 100%;
-    --grid-gap: 1.5vw;
-    --grid-item-ratio: 0.85;
-    --perspective: 400px;
-    margin-bottom: 0;
-  }
-  .gallery-3d-heading {
-    padding: 2rem 0 1rem;
-  }
-  .gallery-3d-heading h2 {
-    font-size: 1.5rem;
-  }
-  .grid {
-    padding: 0.5rem;
-  }
-  .grid__item {
-    border-radius: 4px;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .grid-wrap,
-  .grid__item {
-    animation: none !important;
-    transition: none !important;
-    will-change: auto !important;
-  }
 }
 @media (max-width: 1024px) {
   .hero-content {
