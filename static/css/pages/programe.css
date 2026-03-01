@@ -228,6 +228,10 @@
     box-shadow: 0 2px 8px rgba(30, 64, 175, 0.4);
 }
 
+.program-block-badge.mentoring {
+    background: #7c3aed;
+}
+
 .program-block-badge.education {
     background: #059669;
 }

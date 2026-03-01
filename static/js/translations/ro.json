@@ -117,6 +117,14 @@
   "programs_page": {
     "title": "Programe și Servicii",
     "subtitle": "CMDA implementează programe integrate de suport antreprenorial, de la idee de afacere până la dezvoltare și extindere.",
+    "mentoring": {
+      "title": "Consultanță, ghidare și mentorat",
+      "badge": "Ghidare",
+      "description": "Stimularea și promovarea culturii și gândirii antreprenoriale prin ghidare și mentorat în procesul de dezvoltare a activității antreprenoriale.",
+      "feature1": "Stimularea și promovarea culturii și gândirii antreprenoriale.",
+      "feature2": "Ghidare și mentorat în procesul de dezvoltare a activității antreprenoriale.",
+      "cta": "Solicită ghidare"
+    },
     "consultation": {
       "title": "Program municipal de consultanță și mentorat în afaceri",
       "badge": "Consultanță",

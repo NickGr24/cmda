@@ -117,6 +117,14 @@
   "programs_page": {
     "title": "Programs and Services",
     "subtitle": "CMDA implements integrated entrepreneurial support programs, from business idea to development and expansion.",
+    "mentoring": {
+      "title": "Consulting, guidance and mentoring",
+      "badge": "Guidance",
+      "description": "Stimulating and promoting entrepreneurial culture and thinking through guidance and mentoring in the development of entrepreneurial activity.",
+      "feature1": "Stimulating and promoting entrepreneurial culture and thinking.",
+      "feature2": "Guidance and mentoring in the development of entrepreneurial activity.",
+      "cta": "Request guidance"
+    },
     "consultation": {
       "title": "Municipal Business Consulting and Mentoring Program",
       "badge": "Consulting",

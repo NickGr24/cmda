@@ -48,6 +48,10 @@
         <nav class="programs-nav" data-aos="fade-up">
             <div class="container">
                 <div class="programs-nav-inner">
+                    <a href="#ghidare" class="programs-nav-pill">
+                        <i class="fas fa-compass"></i>
+                        <span data-translate="programs_page.mentoring.badge">Ghidare</span>
+                    </a>
                     <a href="#consultanta" class="programs-nav-pill">
                         <i class="fas fa-comments"></i>
                         <span data-translate="programs_page.consultation.badge">Consultanță</span>
@@ -72,8 +76,26 @@
         <section class="programs-section">
             <div class="container">
 
+                <!-- Program 0: Ghidare și Mentorat -->
+                <article class="program-block" id="ghidare" data-aos="fade-up">
+                    <div class="program-block-visual">
+                        <img src="{% static 'img/photo_6_2026-02-08_01-46-56.webp' %}" alt="Ghidare și mentorat CMDA" loading="lazy">
+                        <div class="program-block-badge mentoring" data-translate="programs_page.mentoring.badge">Ghidare</div>
+                    </div>
+                    <div class="program-block-content">
+                        <h2 data-translate="programs_page.mentoring.title">Consultanță, ghidare și mentorat</h2>
+                        <p class="program-block-lead" data-translate="programs_page.mentoring.description">Stimularea și promovarea culturii și gândirii antreprenoriale prin ghidare și mentorat în procesul de dezvoltare a activității antreprenoriale.</p>
+
+                        <ul class="program-block-features">
+                            <li data-translate="programs_page.mentoring.feature1">Stimularea și promovarea culturii și gândirii antreprenoriale.</li>
+                            <li data-translate="programs_page.mentoring.feature2">Ghidare și mentorat în procesul de dezvoltare a activității antreprenoriale.</li>
+                        </ul>
+                        <a href="{% url 'pages:contacte' %}" class="btn btn-primary" data-translate="programs_page.mentoring.cta">Solicită ghidare</a>
+                    </div>
+                </article>
+
                 <!-- Program 1: Consultanta -->
-                <article class="program-block" id="consultanta" data-aos="fade-up">
+                <article class="program-block reverse" id="consultanta" data-aos="fade-up">
                     <div class="program-block-visual">
                         <img src="{% static 'img/program-educatie.webp' %}" alt="Consultanță antreprenorială CMDA" loading="lazy">
                         <div class="program-block-badge" data-translate="programs_page.consultation.badge">Consultanță</div>
@@ -96,7 +118,7 @@
                 </article>
 
                 <!-- Program 2: Educatie -->
-                <article class="program-block reverse" id="educatie" data-aos="fade-up">
+                <article class="program-block" id="educatie" data-aos="fade-up">
                     <div class="program-block-visual">
                         <img src="{% static 'img/programeducatieantreprenoriala.webp' %}" alt="Educație antreprenorială CMDA" loading="lazy">
                         <div class="program-block-badge education" data-translate="programs_page.education.badge">Educație</div>
