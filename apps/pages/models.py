@@ -73,7 +73,32 @@ class EUProject(models.Model):
         return self.title
 
 
+class GalleryEvent(models.Model):
+    title = models.CharField('Titlu', max_length=300)
+    slug = models.SlugField('Slug', max_length=300, unique=True)
+    cover_image = models.ImageField('Imagine copertă', upload_to='gallery/events/')
+    description = models.TextField('Descriere', blank=True)
+    event_date = models.DateField('Data evenimentului', null=True, blank=True)
+    order = models.IntegerField('Ordine', default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['order', '-event_date']
+        verbose_name = 'Eveniment galerie'
+        verbose_name_plural = 'Evenimente galerie'
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)[:300]
+        super().save(*args, **kwargs)
+
+
 class GalleryPhoto(models.Model):
+    event = models.ForeignKey(GalleryEvent, on_delete=models.CASCADE, related_name='photos',
+                              verbose_name='Eveniment', null=True, blank=True)
     image = models.ImageField('Imagine', upload_to='gallery/')
     caption = models.CharField('Descriere', max_length=200, blank=True)
     order = models.IntegerField('Ordine', default=0)

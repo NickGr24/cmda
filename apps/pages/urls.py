@@ -10,6 +10,7 @@ urlpatterns = [
     path('ima/', views.ImaView.as_view(), name='ima'),
     path('contacte/', views.ContacteView.as_view(), name='contacte'),
     path('galerie/', views.GalerieView.as_view(), name='galerie'),
+    path('galerie/<slug:slug>/', views.GalleryEventDetailView.as_view(), name='gallery-event'),
     path('istorii-de-succes/', views.IstoriiView.as_view(), name='istorii-de-succes'),
     path('istorii-de-succes/<slug:slug>/', views.SuccessStoryDetailView.as_view(), name='story-detail'),
     path('parteneri/', views.ParteneriView.as_view(), name='parteneri'),

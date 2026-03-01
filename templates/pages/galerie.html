@@ -3,42 +3,37 @@
 {% block title %}Galerie foto - CMDA Chișinău{% endblock %}
 {% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/galerie.css' %}">{% endblock %}
 {% block content %}
+        <section class="page-header">
+            <div class="container">
+                <h1 data-aos="fade-down" data-translate="gallery.title">Galerie foto</h1>
+                <p class="page-subtitle" data-aos="fade-down" data-aos-delay="200" data-translate="gallery.subtitle">Momente din activitățile și evenimentele noastre</p>
+            </div>
+        </section>
+
         <section class="gallery-section">
             <div class="container">
-                <div class="gallery-header">
-                    <h2 data-translate="gallery.title">Galerie foto</h2>
-                    <p class="gallery-subtitle" data-translate="gallery.subtitle">Momente din activitățile și evenimentele noastre</p>
-                </div>
-                <div class="gallery-masonry">
-                    {% for photo in photos %}
-                    <div class="gallery-item" style="--i: {{ forloop.counter0 }}">
-                        <img src="{{ photo.image.url }}" alt="{{ photo.caption|default:'CMDA foto' }}" loading="lazy">
-                        <div class="gallery-item-overlay">
-                            <button class="gallery-zoom-btn" aria-label="Mărește imaginea">
-                                <i class="fas fa-expand"></i>
-                            </button>
-                            {% if photo.caption %}
-                            <span class="gallery-caption">{{ photo.caption }}</span>
-                            {% endif %}
-                        </div>
-                    </div>
+                <div class="events-grid">
+                    {% for event in events %}
+                    <article class="event-card" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|divisibleby:2|yesno:'0,100' }}">
+                        <a href="{% url 'pages:gallery-event' event.slug %}">
+                            <div class="event-image">
+                                <img src="{{ event.cover_image.url }}" alt="{{ event.title }}" loading="lazy" decoding="async">
+                                <span class="event-photo-count"><i class="fas fa-images"></i> {{ event.photo_count }} foto</span>
+                                {% if event.event_date %}
+                                <span class="event-date"><i class="far fa-calendar-alt"></i> {{ event.event_date|date:"d.m.Y" }}</span>
+                                {% endif %}
+                            </div>
+                            <div class="event-content">
+                                <h2>{{ event.title }}</h2>
+                                {% if event.description %}<p>{{ event.description|truncatewords:25 }}</p>{% endif %}
+                                <span class="event-view-more">Vezi fotografiile <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </article>
+                    {% empty %}
+                    <p style="text-align: center; grid-column: 1 / -1; padding: 3rem 0; color: var(--text-medium);">Nu sunt evenimente disponibile momentan.</p>
                     {% endfor %}
                 </div>
             </div>
         </section>
-
-        <!-- Lightbox -->
-        <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vizualizare foto">
-            <button class="lightbox-close" aria-label="Închide">&times;</button>
-            <button class="lightbox-prev" aria-label="Precedenta"><i class="fas fa-chevron-left"></i></button>
-            <button class="lightbox-next" aria-label="Următoarea"><i class="fas fa-chevron-right"></i></button>
-            <div class="lightbox-content">
-                <img src="" alt="" id="lightbox-img">
-                <p class="lightbox-caption" id="lightbox-caption"></p>
-            </div>
-            <div class="lightbox-counter" id="lightbox-counter"></div>
-        </div>
-{% endblock %}
-{% block extra_js %}
-<script src="{% static 'js/gallery.js' %}" defer></script>
 {% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ event.title }} - Galerie - CMDA{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/galerie.css' %}">{% endblock %}
+{% block content %}
+        <section class="page-header">
+            <div class="container">
+                <nav class="gallery-breadcrumb" data-aos="fade-down">
+                    <a href="{% url 'pages:index' %}">CMDA</a>
+                    <span class="breadcrumb-sep">→</span>
+                    <a href="{% url 'pages:galerie' %}">Galerie</a>
+                    <span class="breadcrumb-sep">→</span>
+                    <span class="breadcrumb-current">{{ event.title|truncatewords:8 }}</span>
+                </nav>
+                <h1 data-aos="fade-down" data-aos-delay="100">{{ event.title }}</h1>
+                {% if event.event_date %}
+                <span class="event-header-date" data-aos="fade-down" data-aos-delay="200">
+                    <i class="far fa-calendar-alt"></i> {{ event.event_date|date:"d F Y" }}
+                </span>
+                {% endif %}
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="container">
+                {% if event.description %}
+                <div class="event-description" data-aos="fade-up">
+                    <p>{{ event.description }}</p>
+                </div>
+                {% endif %}
+
+                <div class="gallery-masonry">
+                    {% for photo in photos %}
+                    <div class="gallery-item" style="--i: {{ forloop.counter0 }}">
+                        <img src="{{ photo.image.url }}" alt="{{ photo.caption|default:event.title }}" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <button class="gallery-zoom-btn" aria-label="Mărește imaginea">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                            {% if photo.caption %}
+                            <span class="gallery-caption">{{ photo.caption }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="gallery-back-nav">
+                    <a href="{% url 'pages:galerie' %}" class="btn-outline">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Toate evenimentele</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vizualizare foto">
+            <button class="lightbox-close" aria-label="Închide">&times;</button>
+            <button class="lightbox-prev" aria-label="Precedenta"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-next" aria-label="Următoarea"><i class="fas fa-chevron-right"></i></button>
+            <div class="lightbox-content">
+                <img src="" alt="" id="lightbox-img">
+                <p class="lightbox-caption" id="lightbox-caption"></p>
+            </div>
+            <div class="lightbox-counter" id="lightbox-counter"></div>
+        </div>
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'js/gallery.js' %}" defer></script>
+{% endblock %}

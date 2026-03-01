@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import SuccessStory, Partner, EUProject, GalleryPhoto, Program, Statistic, Mentor, News, NewsImage, Document
+from .models import SuccessStory, Partner, EUProject, GalleryEvent, GalleryPhoto, Program, Statistic, Mentor, News, NewsImage, Document
 
 
 @admin.register(SuccessStory)
@@ -40,16 +40,37 @@ class EUProjectAdmin(admin.ModelAdmin):
     search_fields = ['title', 'description']
 
 
-@admin.register(GalleryPhoto)
-class GalleryPhotoAdmin(admin.ModelAdmin):
-    list_display = ['__str__', 'order', 'created_at', 'image_preview']
-    list_editable = ['order']
+class GalleryPhotoInline(admin.TabularInline):
+    model = GalleryPhoto
+    extra = 1
+    fields = ['image', 'caption', 'order', 'image_preview']
+    readonly_fields = ['image_preview']
 
     def image_preview(self, obj):
         if obj.image:
-            return format_html('<img src="{}" style="height:40px;border-radius:4px;">', obj.image.url)
+            return format_html('<img src="{}" style="height:60px;border-radius:4px;">', obj.image.url)
         return '-'
-    image_preview.short_description = 'Foto'
+    image_preview.short_description = 'Preview'
+
+
+@admin.register(GalleryEvent)
+class GalleryEventAdmin(admin.ModelAdmin):
+    list_display = ['title', 'event_date', 'photo_count', 'order', 'cover_preview']
+    list_editable = ['order']
+    search_fields = ['title', 'description']
+    prepopulated_fields = {'slug': ('title',)}
+    inlines = [GalleryPhotoInline]
+
+    def cover_preview(self, obj):
+        if obj.cover_image:
+            return format_html('<img src="{}" style="height:40px;border-radius:4px;">', obj.cover_image.url)
+        return '-'
+    cover_preview.short_description = 'Copertă'
+
+    def photo_count(self, obj):
+        count = obj.photos.count()
+        return f'{count} foto' if count else '-'
+    photo_count.short_description = 'Fotografii'
 
 
 @admin.register(Program)

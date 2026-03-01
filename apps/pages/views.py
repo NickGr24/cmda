@@ -1,5 +1,6 @@
+from django.db.models import Count
 from django.views.generic import TemplateView, DetailView
-from .models import SuccessStory, Partner, EUProject, GalleryPhoto, Program, Statistic, Mentor, News, Document
+from .models import SuccessStory, Partner, EUProject, GalleryEvent, GalleryPhoto, Program, Statistic, Mentor, News, Document
 
 
 class PageView(TemplateView):
@@ -64,7 +65,22 @@ class GalerieView(PageView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['photos'] = GalleryPhoto.objects.all()
+        context['events'] = GalleryEvent.objects.annotate(photo_count=Count('photos'))
+        return context
+
+
+class GalleryEventDetailView(DetailView):
+    model = GalleryEvent
+    template_name = 'pages/galerie_event.html'
+    context_object_name = 'event'
+
+    def get_queryset(self):
+        return super().get_queryset().prefetch_related('photos')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['active_page'] = 'galerie'
+        context['photos'] = self.object.photos.all()
         return context
 
 
