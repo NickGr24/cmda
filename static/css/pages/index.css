@@ -96,6 +96,19 @@
   transform: scale(1.06);
 }
 
+/* Blurred background for mobile contain mode */
+.news-slide-bg-blur {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(18px);
+  opacity: 0.45;
+  transform: scale(1.15);
+  z-index: 0;
+}
+
 /* Placeholder when no image */
 .news-slide-placeholder {
   width: 100%;
@@ -1023,8 +1036,14 @@
   .news-slider-section {
     height: 70vh;
   }
+  .news-slide-bg-blur {
+    display: block;
+  }
   .news-slide-img {
-    object-position: center 15%;
+    object-fit: contain;
+    object-position: center;
+    position: relative;
+    z-index: 1;
   }
   .news-slide-content {
     padding: 1.75rem 1.5rem;

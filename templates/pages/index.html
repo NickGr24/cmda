@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}CMDA - Centrul Municipal pentru Dezvoltarea Antreprenoriatului Chișinău{% endblock %}
 {% block meta_description %}Sprijin pentru antreprenorii din Chișinău. Consultanță, instruire, finanțare și infrastructură pentru tinerii antreprenori, migranți și IMM-uri.{% endblock %}
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/index.css' %}?v=8">{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/index.css' %}?v=9">{% endblock %}
 {% block aos_config %}{ duration: 800, easing: 'ease-out', once: true, offset: 50 }{% endblock %}
 {% block content %}
         <section class="news-slider-section" data-aos="fade-up">
@@ -13,6 +13,7 @@
                         <div class="news-slide{% if forloop.first %} active{% endif %}" data-index="{{ forloop.counter0 }}">
                             <a href="{% url 'pages:news-detail' article.slug %}" class="news-slide-link">
                                 {% if article.image %}
+                                <div class="news-slide-bg-blur" style="background-image: url('{{ article.image.url }}')"></div>
                                 <img src="{{ article.image.url }}" alt="{{ article.title }}" class="news-slide-img" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}" decoding="async">
                                 {% else %}
                                 <div class="news-slide-placeholder">
