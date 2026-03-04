@@ -2,9 +2,10 @@
 {% load static %}
 {% block title %}CMDA - Centrul Municipal pentru Dezvoltarea Antreprenoriatului Chișinău{% endblock %}
 {% block meta_description %}Sprijin pentru antreprenorii din Chișinău. Consultanță, instruire, finanțare și infrastructură pentru tinerii antreprenori, migranți și IMM-uri.{% endblock %}
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/index.css' %}?v=10">{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/index.css' %}?v=11">{% endblock %}
 {% block aos_config %}{ duration: 800, easing: 'ease-out', once: true, offset: 50 }{% endblock %}
 {% block content %}
+        <div class="page-index-bg">
         <section class="news-slider-section" data-aos="fade-up">
             <div class="container">
                 <div class="news-slider" role="region" aria-label="Ultimele noutăți">
@@ -224,6 +225,7 @@
                 <a href="https://startup.chisinau.md/finantarea/" target="_blank" class="btn btn-primary btn-large" data-aos="zoom-in" data-aos-delay="200" data-translate="cta.button">Completează dosarul STARTUP pentru TINERI și MIGRANȚI</a>
             </div>
         </section>
+        </div>
 {% endblock %}
 {% block extra_js %}
 <script>
