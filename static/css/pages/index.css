@@ -1,13 +1,14 @@
 /* ===== PAGE BACKGROUND — Gradient + Noise ===== */
 .page-index-bg {
   background:
-    linear-gradient(135deg,
-      #2a4a9a 0%,
-      #3058b4 20%,
-      #3b6fd4 40%,
-      #4a80e0 60%,
-      #3b6fd4 80%,
-      #2a4a9a 100%
+    linear-gradient(180deg,
+      #d0ddf5 0%,
+      #dce6f8 15%,
+      #e4ecfa 30%,
+      #dae3f7 50%,
+      #cdd9f3 70%,
+      #bfceed 85%,
+      #b3c4e8 100%
     );
   position: relative;
 }
@@ -17,7 +18,7 @@
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
   background-size: 180px 180px;
-  opacity: 0.05;
+  opacity: 0.035;
   pointer-events: none;
   z-index: 0;
 }
@@ -358,7 +359,7 @@
   width: 100%;
   overflow: hidden;
   position: relative;
-  background: rgba(255, 255, 255, 0.92);
+  background: transparent;
 }
 .success-preview-header {
   display: flex;
@@ -526,7 +527,7 @@
   width: 100%;
   overflow: hidden;
   position: relative;
-  background: rgba(255, 255, 255, 0.88);
+  background: transparent;
 }
 .programs-preview::before {
   content: "";
@@ -695,7 +696,7 @@
 /* ===== IMPACT ===== */
 .impact {
   padding: 6rem 0;
-  background: rgba(255, 255, 255, 0.92);
+  background: transparent;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -858,7 +859,7 @@
   padding: 5rem 0;
   width: 100%;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.88);
+  background: transparent;
 }
 .partners-preview h2 {
   text-align: center;
@@ -997,20 +998,9 @@
   text-align: center;
   width: 100%;
   overflow: hidden;
-  color: #fff;
 }
 .final-cta h2 {
   margin-bottom: 2rem;
-  color: #fff;
-}
-.final-cta a.btn {
-  background: #fff;
-  color: var(--primary-color);
-  border-color: #fff;
-  font-weight: 700;
-}
-.final-cta a.btn:hover {
-  background: rgba(255, 255, 255, 0.9);
 }
 
 /* ===== RESPONSIVE ===== */
