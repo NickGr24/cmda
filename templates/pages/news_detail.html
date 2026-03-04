@@ -225,7 +225,7 @@
                 <nav class="news-breadcrumb" data-aos="fade-down">
                     <a href="{% url 'pages:index' %}">CMDA</a>
                     <span class="breadcrumb-sep">→</span>
-                    <a href="{% url 'pages:comunicate' %}">Comunicate</a>
+                    <a href="{% url 'pages:comunicate' %}" data-translate="nav.media_press">Comunicate</a>
                     <span class="breadcrumb-sep">→</span>
                     <span class="breadcrumb-current">{{ article.title|truncatewords:8 }}</span>
                 </nav>
@@ -272,7 +272,7 @@
                 <div class="news-back-nav">
                     <a href="{% url 'pages:comunicate' %}" class="btn-outline">
                         <i class="fas fa-arrow-left"></i>
-                        <span>Toate comunicatele</span>
+                        <span data-translate="news_page.all_news">Toate comunicatele</span>
                     </a>
                 </div>
             </div>

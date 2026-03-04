@@ -17,6 +17,8 @@
     "transparency_travel": "Deplasări de serviciu",
     "transparency_integrity": "Integritate",
     "contacts": "Contacte",
+    "transparency_projects": "Proiecte STARTUP",
+    "transparency_legislation": "Legislație aplicabilă",
     "apply": "Accesează programele",
     "menu_toggle": "Deschide meniul"
   },
@@ -112,7 +114,31 @@
     "ready": "Ești pregătit să-ți dezvolți afacerea?",
     "join": "Alătură-te comunității de antreprenori susținuți de CMDA",
     "see_programs": "Vezi programele disponibile",
-    "contact_us": "Contactează-ne"
+    "contact_us": "Contactează-ne",
+    "description1": "Instituția Publică Centrul Municipal pentru Dezvoltarea Antreprenoriatului (I. P. CMDA), este o instituție publică, necomercială, la autogestiune fondată de Consiliul Municipal Chișinău (Decizia nr. 5/3 din 06 iunie 2023) și înregistrată în Registrul de stat al persoanelor juridice în data de 13.09.2023.",
+    "description2": "CMDA activează în subordinea Primăriei municipiului Chișinău, în colaborare cu autoritățile publice centrale și locale din domeniu, agenți economici, indiferent de tipul de proprietate și forma de organizare din Republica Moldova și din străinătate, precum și cu alte organizații și instituții relevante.",
+    "mission_title": "Misiune",
+    "mission_text": "Misiunea CMDA este de a realiza politicele municipale în domeniul susținerii și dezvoltării mediului de afaceri prin implementarea programelor de suport antreprenorial.",
+    "objectives_title": "Obiectivele Centrului",
+    "objective1": "Facilitarea accesului la servicii de consultanță și asistență în afaceri.",
+    "objective2": "Dezvoltarea capitalului uman prin promovarea competențelor și culturii antreprenoriale.",
+    "objective3": "Facilitarea accesului la finanțare în rândul IMM-urilor din municipiul Chișinău.",
+    "objective4": "Dezvoltarea infrastructurii de suport antreprenorial.",
+    "objective5": "Participarea la elaborarea documentelor strategice și facilitarea dialogului privat.",
+    "domains_title": "Domeniile de activitate ale I.P. CMDA",
+    "domain1_title": "Consultanță, ghidare și mentorat",
+    "domain1_item1": "Stimularea și promovarea culturii și gândirii antreprenoriale",
+    "domain1_item2": "Ghidare și mentorat în procesul de dezvoltare a activității antreprenoriat",
+    "domain2_title": "Educație antreprenorială",
+    "domain2_item1": "Creșterea competențelor antreprenoriale",
+    "domain2_item2": "Creșterea gradului de dezvoltare a afacerii prin aplicarea cunoștințelor acumulate",
+    "domain3_title": "Facilitarea accesului la finanțare",
+    "domain3_item1": "Implementarea componentei suport financiar în cadrul diverselor programe de finanțare",
+    "domain3_item2": "Subvenționarea",
+    "domain3_item3": "Promovarea instrumentelor de suport existente, destinate antreprenorilor din municipiului Chișinău",
+    "domain4_title": "Dezvoltarea infrastructurii de suport în afaceri",
+    "domain4_item1": "Administrarea Incubatorului Municipal de Afaceri (IMA)",
+    "domain4_item2": "Crearea rețelei de infrastructură municipală de suport în afaceri"
   },
   "programs_page": {
     "title": "Programe și Servicii",
@@ -148,7 +174,10 @@
       "badge": "Granturi",
       "highlight": "Granturi pentru lansarea și dezvoltarea afacerilor",
       "offers_title": "Programul oferă:",
-      "cta": "Aplică la program"
+      "cta": "Aplică la program",
+      "offer1": "Consultanță și asistență antreprenorială.",
+      "offer2": "Cursuri gratuite de instruire antreprenorială.",
+      "offer3": "Suport financiar nerambursabil (granturi) pentru proiecte investiționale."
     },
     "additional_services": {
       "title": "Servicii suplimentare",
@@ -170,7 +199,8 @@
       "title": "Nu știi de unde să începi?",
       "description": "Echipa CMDA te va ghida să alegi programul potrivit pentru tine",
       "button": "Contactează-ne pentru consultanță"
-    }
+    },
+    "hero_label": "Suport antreprenorial integrat"
   },
   "infrastructure_page": {
     "title": "Incubatorul Municipal de Afaceri",
@@ -183,7 +213,17 @@
       "growth_detail": "de la 247 896 la 1 863 878 lei",
       "residents": "Rezidenți activi",
       "applications": "Aplicații primite",
-      "offers_title": "Ce oferim:"
+      "offers_title": "Ce oferim:",
+      "offer1": "Suport intensiv pentru întreprinderi micro, mici și mijlocii",
+      "offer2": "Acces la spații modulare de lucru și utilități",
+      "offer3": "Consultanță de inovare, consultanță tehnologică și sprijin managerial",
+      "offer4": "Perioadă de incubare de până la 24 de luni",
+      "offer5": "Evenimente de networking și dezvoltare profesională",
+      "priority_sectors": "Sectoare prioritare:",
+      "sector1": "Industrii Creative",
+      "sector2": "Industrii Culturale",
+      "sector3": "Sector IT",
+      "sector4": "Inovație"
     },
     "how_to_apply": {
       "title": "Cum poți deveni rezident?",
@@ -205,7 +245,8 @@
       "networking_desc": "Evenimente regulate, oportunități de colaborare cu alți rezidenți",
       "consulting": "Consultanță continuă",
       "consulting_desc": "Acces la mentori și consultanți specializați pe diverse domenii"
-    }
+    },
+    "hero_label": "Spații pentru afaceri"
   },
   "partners_page": {
     "title": "Parteneriate",
@@ -264,5 +305,134 @@
     "infrastructure_desc": "Incubatorul Municipal de Afaceri",
     "apply_online": "Aplică online",
     "apply_online_desc": "Completează dosarul pe platformă"
+  },
+  "slider": {
+    "read_article": "Citește articolul",
+    "prev": "Anteriorul",
+    "next": "Următorul"
+  },
+  "legislation_page": {
+    "title": "Legislație aplicabilă",
+    "subtitle": "Cadrul normativ-legislativ relevant pentru activitatea CMDA",
+    "stat_laws": "Acte legislative",
+    "stat_codes": "Coduri",
+    "stat_decision": "Decizie CMC",
+    "decision_title": "Decizia Consiliului municipal Chișinău cu privire la aprobarea Programului municipal pilot «Start-up pentru tineri și migranți» nr. 9/14 din 21.07.2022",
+    "decision_desc": "Documentul fondator al Programului municipal de stimulare a spiritului antreprenorial în rândul tinerilor și migranților din municipiul Chișinău.",
+    "decision_badge": "Descarcă PDF — chisinau.md",
+    "framework_title": "Cadrul normativ-legislativ aplicabil",
+    "framework_subtitle": "Legislația Republicii Moldova relevantă pentru activitatea antreprenorială și funcționarea CMDA",
+    "cat1_title": "Antreprenoriat și investiții",
+    "cat2_title": "Forme juridice și înregistrare",
+    "cat3_title": "Coduri ale Republicii Moldova",
+    "cat4_title": "Reglementare și control",
+    "cat5_title": "Administrație municipală și acces la informație",
+    "law1_title": "Legea nr. 81-XV din 2004",
+    "law1_desc": "Cu privire la investițiile în activitatea de întreprinzător",
+    "law2_title": "Legea nr. 845 din 1992",
+    "law2_desc": "Cu privire la antreprenoriat și întreprinderi",
+    "law3_title": "Legea nr. 179 din 2016",
+    "law3_desc": "Cu privire la întreprinderile mici și mijlocii",
+    "law4_title": "Legea nr. 135 din 2007",
+    "law4_desc": "Privind societățile cu răspundere limitată",
+    "law5_title": "Legea nr. 1134 din 1997",
+    "law5_desc": "Privind societățile pe acțiuni",
+    "law6_title": "Legea nr. 220 din 2007",
+    "law6_desc": "Privind înregistrarea de stat a persoanelor juridice și a întreprinzătorilor individuali",
+    "law7_title": "Legea nr. 1353 din 2000",
+    "law7_desc": "Privind gospodăriile țărănești (de fermier)",
+    "code1_title": "Codul fiscal al Republicii Moldova",
+    "code1_desc": "Reglementarea impozitelor, taxelor și altor plăți obligatorii",
+    "code2_title": "Codul contravențional al Republicii Moldova",
+    "code2_desc": "Reglementarea răspunderii contravenționale",
+    "code3_title": "Codul administrativ al Republicii Moldova",
+    "code3_desc": "Proceduri administrative și contenciosul administrativ",
+    "law8_title": "Legea nr. 160 din 2011",
+    "law8_desc": "Privind reglementarea prin autorizare a activității de întreprinzător",
+    "law9_title": "Legea nr. 131 din 2012",
+    "law9_desc": "Privind controlul de stat asupra activității de întreprinzător",
+    "law10_title": "Legea nr. 136 din 2016",
+    "law10_desc": "Privind statutul municipiului Chișinău",
+    "law11_title": "Legea nr. 148 din 2023",
+    "law11_desc": "Privind accesul la informațiile de interes public"
+  },
+  "projects_page": {
+    "title": "Proiecte STARTUP",
+    "subtitle": "Programul Municipal STARTUP pentru Tineri și Migranți — Ediția I 2025",
+    "stat_submitted": "proiecte depuse",
+    "stat_approved": "proiecte aprobate",
+    "stat_funding": "lei finanțare totală",
+    "tab_approved": "Proiecte aprobate",
+    "tab_submitted": "Proiecte depuse",
+    "search_projects": "Caută după numele companiei sau proiectului...",
+    "search_beneficiary": "Caută după numele beneficiarului...",
+    "th_num": "Nr.",
+    "th_beneficiary": "Beneficiar",
+    "th_project": "Proiect / Activitate",
+    "th_grant": "Grant (Lei)",
+    "total_label": "Total finanțare acordată:",
+    "no_results_projects": "Niciun proiect găsit. Încercați alt termen de căutare.",
+    "no_results_beneficiary": "Niciun beneficiar găsit. Încercați alt termen de căutare.",
+    "projects_word": "proiecte"
+  },
+  "gallery_page": {
+    "photos": "foto",
+    "view_photos": "Vezi fotografiile",
+    "no_events": "Nu sunt evenimente disponibile momentan.",
+    "all_events": "Toate evenimentele",
+    "zoom": "Mărește imaginea",
+    "close": "Închide",
+    "view_photo": "Vizualizare foto",
+    "prev": "Precedenta",
+    "next": "Următoarea"
+  },
+  "success_stories_page": {
+    "title": "Istorii de succes",
+    "subtitle": "Antreprenori care au transformat ideile în afaceri de succes cu sprijinul CMDA",
+    "read_more": "Citește mai mult",
+    "cta_title": "Vrei să scrii propria poveste de succes?",
+    "cta_button": "Aplică la program",
+    "all_stories": "Toate istoriile de succes"
+  },
+  "news_page": {
+    "subtitle": "Informații actualizate despre activitățile și proiectele CMDA",
+    "read_more": "Citește mai mult",
+    "no_news": "Nu sunt comunicate disponibile momentan.",
+    "all_news": "Toate comunicatele",
+    "prev": "Precedenta",
+    "next": "Următoarea"
+  },
+  "transparency": {
+    "subtitle": "Transparența CMDA",
+    "no_documents": "Momentan nu sunt documente încărcate.",
+    "no_announcements": "Momentan nu sunt anunțuri publicate."
+  },
+  "achizitii_page": {
+    "title": "Achiziții publice",
+    "plans": "Planuri",
+    "announcements": "Anunțuri",
+    "reports": "Rapoarte"
+  },
+  "planuri_page": {
+    "title": "Planuri și strategii",
+    "action_plans": "Planuri de acțiuni"
+  },
+  "rapoarte_page": {
+    "title": "Rapoarte",
+    "reports_declarations": "Rapoarte și declarații"
+  },
+  "team_page": {
+    "director": "Director",
+    "accountant": "Contabil",
+    "lawyer": "Jurist",
+    "lead_specialist": "Specialist principal",
+    "specialist": "Specialist",
+    "dept_head": "Șef direcție",
+    "dept_accounting": "Direcția contabilitate și managementul administrativ",
+    "dept_legal": "Direcția juridică, achiziții și resurse umane",
+    "dept_evaluation": "Direcția de evaluarea și finanțarea proiectelor investiționale",
+    "dept_infrastructure": "Direcția infrastructura de suport in afaceri",
+    "dept_infrastructure_full": "Direcția infrastructura de suport in afaceri (incubatorul de afaceri)",
+    "dept_communication": "Direcția de comunicare și relații cu beneficiarii"
   }
 }

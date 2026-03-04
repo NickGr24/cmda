@@ -7,7 +7,8 @@ const LanguageSwitcher = (function() {
     const languages = [
         { code: 'ro', label: 'Română' },
         { code: 'en', label: 'English' },
-        { code: 'ru', label: 'Русский' }
+        { code: 'ru', label: 'Русский' },
+        { code: 'uk', label: 'Українська' }
     ];
 
     // Load translation files — current language first, others in background
@@ -16,7 +17,7 @@ const LanguageSwitcher = (function() {
             const staticBase = window.STATIC_URL || '/static/';
             const response = await fetch(`${staticBase}js/translations/${currentLanguage}.json`);
             translations[currentLanguage] = await response.json();
-            const others = ['ro', 'en', 'ru'].filter(l => l !== currentLanguage);
+            const others = ['ro', 'en', 'ru', 'uk'].filter(l => l !== currentLanguage);
             Promise.all(others.map(lang =>
                 fetch(`${staticBase}js/translations/${lang}.json`)
                     .then(r => r.json())
@@ -57,11 +58,13 @@ const LanguageSwitcher = (function() {
             }
         }
 
-        document.documentElement.lang = lang === 'ru' ? 'ru' : lang === 'en' ? 'en' : 'ro';
+        document.documentElement.lang = lang === 'ru' ? 'ru' : lang === 'en' ? 'en' : lang === 'uk' ? 'uk' : 'ro';
     }
 
     // Initialize language switcher
     function init() {
+        // Sync cookie with stored language on every page load
+        setDjangoCookie(currentLanguage);
         loadTranslations().then(() => {
             if (!document.querySelector('.language-switcher')) {
                 addLanguageSwitcher();
@@ -194,16 +197,28 @@ const LanguageSwitcher = (function() {
         });
     }
 
+    // Set django_language cookie for server-side translations
+    function setDjangoCookie(lang) {
+        document.cookie = `django_language=${lang};path=/;max-age=${365 * 24 * 60 * 60};SameSite=Lax`;
+    }
+
     // Switch language
     function switchLanguage(lang) {
+        const prevLang = currentLanguage;
         currentLanguage = lang;
         localStorage.setItem('selectedLanguage', lang);
+        setDjangoCookie(lang);
         updatePageContent(lang);
 
         // Update all switcher instances
         document.querySelectorAll('.language-switcher').forEach(sw => {
             rebuildOptions(sw);
         });
+
+        // Reload page so Django serves DB content in the new language
+        if (prevLang !== lang) {
+            window.location.reload();
+        }
     }
 
     // Public API

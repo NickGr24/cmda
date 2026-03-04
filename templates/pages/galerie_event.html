@@ -8,7 +8,7 @@
                 <nav class="gallery-breadcrumb" data-aos="fade-down">
                     <a href="{% url 'pages:index' %}">CMDA</a>
                     <span class="breadcrumb-sep">→</span>
-                    <a href="{% url 'pages:galerie' %}">Galerie</a>
+                    <a href="{% url 'pages:galerie' %}" data-translate="gallery.title">Galerie</a>
                     <span class="breadcrumb-sep">→</span>
                     <span class="breadcrumb-current">{{ event.title|truncatewords:8 }}</span>
                 </nav>
@@ -48,7 +48,7 @@
                 <div class="gallery-back-nav">
                     <a href="{% url 'pages:galerie' %}" class="btn-outline">
                         <i class="fas fa-arrow-left"></i>
-                        <span>Toate evenimentele</span>
+                        <span data-translate="gallery_page.all_events">Toate evenimentele</span>
                     </a>
                 </div>
             </div>

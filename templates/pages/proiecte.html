@@ -9,20 +9,20 @@
     <!-- Hero Section -->
     <section class="proiecte-hero">
         <div class="container">
-            <h1 data-aos="fade-down">Proiecte STARTUP</h1>
-            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">Programul Municipal STARTUP pentru Tineri și Migranți — Ediția I 2025</p>
+            <h1 data-aos="fade-down" data-translate="projects_page.title">Proiecte STARTUP</h1>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100" data-translate="projects_page.subtitle">Programul Municipal STARTUP pentru Tineri și Migranți — Ediția I 2025</p>
             <div class="proiecte-stats" data-aos="fade-up" data-aos-delay="200">
                 <div class="proiecte-stat">
                     <span class="proiecte-stat-value" data-count="117">0</span>
-                    <span class="proiecte-stat-label">proiecte depuse</span>
+                    <span class="proiecte-stat-label" data-translate="projects_page.stat_submitted">proiecte depuse</span>
                 </div>
                 <div class="proiecte-stat">
                     <span class="proiecte-stat-value" data-count="37">0</span>
-                    <span class="proiecte-stat-label">proiecte aprobate</span>
+                    <span class="proiecte-stat-label" data-translate="projects_page.stat_approved">proiecte aprobate</span>
                 </div>
                 <div class="proiecte-stat">
                     <span class="proiecte-stat-value">6.9 mil</span>
-                    <span class="proiecte-stat-label">lei finanțare totală</span>
+                    <span class="proiecte-stat-label" data-translate="projects_page.stat_funding">lei finanțare totală</span>
                 </div>
             </div>
         </div>
@@ -33,12 +33,12 @@
         <div class="container">
             <button class="proiecte-tab active" data-tab="aprobate">
                 <i class="fas fa-check-circle"></i>
-                <span>Proiecte aprobate</span>
+                <span data-translate="projects_page.tab_approved">Proiecte aprobate</span>
                 <span class="tab-count">37</span>
             </button>
             <button class="proiecte-tab" data-tab="depuse">
                 <i class="fas fa-folder-open"></i>
-                <span>Proiecte depuse</span>
+                <span data-translate="projects_page.tab_submitted">Proiecte depuse</span>
                 <span class="tab-count">117</span>
             </button>
         </div>
@@ -53,7 +53,7 @@
                 <div class="proiecte-toolbar">
                     <div class="proiecte-search">
                         <i class="fas fa-search"></i>
-                        <input type="text" id="search-aprobate" placeholder="Caută după numele companiei sau proiectului...">
+                        <input type="text" id="search-aprobate" data-translate="projects_page.search_projects" placeholder="Caută după numele companiei sau proiectului...">
                     </div>
                     <span class="proiecte-result-count" id="count-aprobate">37 proiecte</span>
                 </div>
@@ -62,10 +62,10 @@
                     <table class="proiecte-table" id="table-aprobate">
                         <thead>
                             <tr>
-                                <th>Nr.</th>
-                                <th>Beneficiar</th>
-                                <th>Proiect / Activitate</th>
-                                <th>Grant (Lei)</th>
+                                <th data-translate="projects_page.th_num">Nr.</th>
+                                <th data-translate="projects_page.th_beneficiary">Beneficiar</th>
+                                <th data-translate="projects_page.th_project">Proiect / Activitate</th>
+                                <th data-translate="projects_page.th_grant">Grant (Lei)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -294,14 +294,14 @@
                         </tbody>
                     </table>
                     <div class="proiecte-total">
-                        <span class="proiecte-total-label"><i class="fas fa-calculator"></i> Total finanțare acordată:</span>
+                        <span class="proiecte-total-label" data-translate="projects_page.total_label"><i class="fas fa-calculator"></i> Total finanțare acordată:</span>
                         <span class="proiecte-total-value">~6 900 000 Lei</span>
                     </div>
                 </div>
 
                 <div class="proiecte-no-results" id="no-results-aprobate">
                     <i class="fas fa-search"></i>
-                    <p>Niciun proiect găsit. Încercați alt termen de căutare.</p>
+                    <p data-translate="projects_page.no_results_projects">Niciun proiect găsit. Încercați alt termen de căutare.</p>
                 </div>
 
             </div>
@@ -311,7 +311,7 @@
                 <div class="proiecte-toolbar">
                     <div class="proiecte-search">
                         <i class="fas fa-search"></i>
-                        <input type="text" id="search-depuse" placeholder="Caută după numele beneficiarului...">
+                        <input type="text" id="search-depuse" data-translate="projects_page.search_beneficiary" placeholder="Caută după numele beneficiarului...">
                     </div>
                     <span class="proiecte-result-count" id="count-depuse">117 proiecte</span>
                 </div>
@@ -438,7 +438,7 @@
 
                 <div class="proiecte-no-results" id="no-results-depuse">
                     <i class="fas fa-search"></i>
-                    <p>Niciun beneficiar găsit. Încercați alt termen de căutare.</p>
+                    <p data-translate="projects_page.no_results_beneficiary">Niciun beneficiar găsit. Încercați alt termen de căutare.</p>
                 </div>
 
             </div>

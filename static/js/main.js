@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const langs = [
                     { code: 'ro', label: 'RO' },
                     { code: 'en', label: 'EN' },
-                    { code: 'ru', label: 'RU' }
+                    { code: 'ru', label: 'RU' },
+                    { code: 'uk', label: 'UK' }
                 ];
                 const currentLang = (typeof LanguageSwitcher !== 'undefined')
                     ? LanguageSwitcher.getCurrentLanguage()

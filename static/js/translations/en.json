@@ -17,6 +17,8 @@
     "transparency_travel": "Business Travel",
     "transparency_integrity": "Integrity",
     "contacts": "Contacts",
+    "transparency_projects": "STARTUP Projects",
+    "transparency_legislation": "Applicable Legislation",
     "apply": "Access the programs",
     "menu_toggle": "Open menu"
   },
@@ -112,7 +114,31 @@
     "ready": "Are you ready to develop your business?",
     "join": "Join the community of entrepreneurs supported by CMDA",
     "see_programs": "See available programs",
-    "contact_us": "Contact us"
+    "contact_us": "Contact us",
+    "description1": "The Public Institution Municipal Center for Entrepreneurship Development (I.P. CMDA) is a public, non-commercial, self-managed institution founded by the Chisinau Municipal Council (Decision No. 5/3 of June 6, 2023) and registered in the State Register of Legal Entities on September 13, 2023.",
+    "description2": "CMDA operates under the Chisinau City Hall, in collaboration with central and local public authorities, economic agents regardless of the type of ownership and form of organization from the Republic of Moldova and abroad, as well as other relevant organizations and institutions.",
+    "mission_title": "Mission",
+    "mission_text": "The mission of CMDA is to implement municipal policies in the field of business environment support and development through entrepreneurial support programs.",
+    "objectives_title": "Center Objectives",
+    "objective1": "Facilitating access to business consulting and assistance services.",
+    "objective2": "Developing human capital through promoting entrepreneurial skills and culture.",
+    "objective3": "Facilitating access to financing for SMEs in Chisinau municipality.",
+    "objective4": "Developing entrepreneurial support infrastructure.",
+    "objective5": "Participating in the development of strategic documents and facilitating private dialogue.",
+    "domains_title": "Activity Domains of I.P. CMDA",
+    "domain1_title": "Consulting, guidance and mentoring",
+    "domain1_item1": "Stimulating and promoting entrepreneurial culture and thinking",
+    "domain1_item2": "Guidance and mentoring in the development of entrepreneurial activity",
+    "domain2_title": "Entrepreneurial education",
+    "domain2_item1": "Increasing entrepreneurial skills",
+    "domain2_item2": "Increasing business development through applying acquired knowledge",
+    "domain3_title": "Facilitating access to financing",
+    "domain3_item1": "Implementing the financial support component within various financing programs",
+    "domain3_item2": "Subsidizing",
+    "domain3_item3": "Promoting existing support instruments for entrepreneurs in Chisinau municipality",
+    "domain4_title": "Developing business support infrastructure",
+    "domain4_item1": "Managing the Municipal Business Incubator (IMA)",
+    "domain4_item2": "Creating a municipal business support infrastructure network"
   },
   "programs_page": {
     "title": "Programs and Services",
@@ -148,7 +174,10 @@
       "badge": "Grants",
       "highlight": "Grants for launching and developing businesses",
       "offers_title": "The program offers:",
-      "cta": "Apply to program"
+      "cta": "Apply to program",
+      "offer1": "Entrepreneurial consulting and assistance.",
+      "offer2": "Free entrepreneurial training courses.",
+      "offer3": "Non-reimbursable financial support (grants) for investment projects."
     },
     "additional_services": {
       "title": "Additional Services",
@@ -170,7 +199,8 @@
       "title": "Don't know where to start?",
       "description": "The CMDA team will guide you to choose the right program for you",
       "button": "Contact us for consultation"
-    }
+    },
+    "hero_label": "Integrated entrepreneurial support"
   },
   "infrastructure_page": {
     "title": "Municipal Business Incubator",
@@ -215,7 +245,8 @@
       "networking_desc": "Regular events, collaboration opportunities with other residents",
       "consulting": "Continuous consulting",
       "consulting_desc": "Access to mentors and consultants specialized in various fields"
-    }
+    },
+    "hero_label": "Business spaces"
   },
   "partners_page": {
     "title": "Partnerships",
@@ -274,5 +305,134 @@
     "infrastructure_desc": "Municipal Business Incubator",
     "apply_online": "Apply online",
     "apply_online_desc": "Complete the application on the platform"
+  },
+  "slider": {
+    "read_article": "Read the article",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "legislation_page": {
+    "title": "Applicable Legislation",
+    "subtitle": "Normative-legislative framework relevant for CMDA activity",
+    "stat_laws": "Legislative acts",
+    "stat_codes": "Codes",
+    "stat_decision": "CMC Decision",
+    "decision_title": "Decision of the Chisinau Municipal Council on the approval of the municipal pilot program «Start-up for youth and migrants» No. 9/14 of 21.07.2022",
+    "decision_desc": "The founding document of the Municipal Program for stimulating entrepreneurial spirit among youth and migrants in Chisinau municipality.",
+    "decision_badge": "Download PDF — chisinau.md",
+    "framework_title": "Applicable normative-legislative framework",
+    "framework_subtitle": "Legislation of the Republic of Moldova relevant for entrepreneurial activity and CMDA functioning",
+    "cat1_title": "Entrepreneurship and investments",
+    "cat2_title": "Legal forms and registration",
+    "cat3_title": "Codes of the Republic of Moldova",
+    "cat4_title": "Regulation and control",
+    "cat5_title": "Municipal administration and access to information",
+    "law1_title": "Law No. 81-XV of 2004",
+    "law1_desc": "On investments in entrepreneurial activity",
+    "law2_title": "Law No. 845 of 1992",
+    "law2_desc": "On entrepreneurship and enterprises",
+    "law3_title": "Law No. 179 of 2016",
+    "law3_desc": "On small and medium enterprises",
+    "law4_title": "Law No. 135 of 2007",
+    "law4_desc": "On limited liability companies",
+    "law5_title": "Law No. 1134 of 1997",
+    "law5_desc": "On joint-stock companies",
+    "law6_title": "Law No. 220 of 2007",
+    "law6_desc": "On state registration of legal entities and individual entrepreneurs",
+    "law7_title": "Law No. 1353 of 2000",
+    "law7_desc": "On peasant (farmer) households",
+    "code1_title": "Tax Code of the Republic of Moldova",
+    "code1_desc": "Regulation of taxes, fees and other mandatory payments",
+    "code2_title": "Contravention Code of the Republic of Moldova",
+    "code2_desc": "Regulation of contravention liability",
+    "code3_title": "Administrative Code of the Republic of Moldova",
+    "code3_desc": "Administrative procedures and administrative litigation",
+    "law8_title": "Law No. 160 of 2011",
+    "law8_desc": "On regulation by authorization of entrepreneurial activity",
+    "law9_title": "Law No. 131 of 2012",
+    "law9_desc": "On state control over entrepreneurial activity",
+    "law10_title": "Law No. 136 of 2016",
+    "law10_desc": "On the status of Chisinau municipality",
+    "law11_title": "Law No. 148 of 2023",
+    "law11_desc": "On access to information of public interest"
+  },
+  "projects_page": {
+    "title": "STARTUP Projects",
+    "subtitle": "Municipal STARTUP Program for Youth and Migrants — Edition I 2025",
+    "stat_submitted": "projects submitted",
+    "stat_approved": "projects approved",
+    "stat_funding": "lei total funding",
+    "tab_approved": "Approved projects",
+    "tab_submitted": "Submitted projects",
+    "search_projects": "Search by company or project name...",
+    "search_beneficiary": "Search by beneficiary name...",
+    "th_num": "No.",
+    "th_beneficiary": "Beneficiary",
+    "th_project": "Project / Activity",
+    "th_grant": "Grant (Lei)",
+    "total_label": "Total funding awarded:",
+    "no_results_projects": "No projects found. Try a different search term.",
+    "no_results_beneficiary": "No beneficiaries found. Try a different search term.",
+    "projects_word": "projects"
+  },
+  "gallery_page": {
+    "photos": "photos",
+    "view_photos": "View photos",
+    "no_events": "No events available at the moment.",
+    "all_events": "All events",
+    "zoom": "Zoom image",
+    "close": "Close",
+    "view_photo": "Photo viewer",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "success_stories_page": {
+    "title": "Success Stories",
+    "subtitle": "Entrepreneurs who turned ideas into successful businesses with CMDA support",
+    "read_more": "Read more",
+    "cta_title": "Want to write your own success story?",
+    "cta_button": "Apply to program",
+    "all_stories": "All success stories"
+  },
+  "news_page": {
+    "subtitle": "Updated information about CMDA activities and projects",
+    "read_more": "Read more",
+    "no_news": "No press releases available at the moment.",
+    "all_news": "All press releases",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "transparency": {
+    "subtitle": "CMDA Transparency",
+    "no_documents": "No documents uploaded at the moment.",
+    "no_announcements": "No announcements published at the moment."
+  },
+  "achizitii_page": {
+    "title": "Public Procurement",
+    "plans": "Plans",
+    "announcements": "Announcements",
+    "reports": "Reports"
+  },
+  "planuri_page": {
+    "title": "Plans and Strategies",
+    "action_plans": "Action plans"
+  },
+  "rapoarte_page": {
+    "title": "Reports",
+    "reports_declarations": "Reports and declarations"
+  },
+  "team_page": {
+    "director": "Director",
+    "accountant": "Accountant",
+    "lawyer": "Lawyer",
+    "lead_specialist": "Lead Specialist",
+    "specialist": "Specialist",
+    "dept_head": "Department Head",
+    "dept_accounting": "Accounting and Administrative Management Department",
+    "dept_legal": "Legal, Procurement and Human Resources Department",
+    "dept_evaluation": "Project Evaluation and Financing Department",
+    "dept_infrastructure": "Business Support Infrastructure Department",
+    "dept_infrastructure_full": "Business Support Infrastructure Department (Business Incubator)",
+    "dept_communication": "Communication and Beneficiary Relations Department"
   }
 }

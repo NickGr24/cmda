@@ -6,8 +6,8 @@
 {% block content %}
         <section class="page-header">
             <div class="container">
-                <h1 data-aos="fade-down">Istorii de succes</h1>
-                <p class="page-subtitle" data-aos="fade-down" data-aos-delay="200">Antreprenori care au transformat ideile în afaceri de succes cu sprijinul CMDA</p>
+                <h1 data-aos="fade-down" data-translate="success_stories_page.title">Istorii de succes</h1>
+                <p class="page-subtitle" data-aos="fade-down" data-aos-delay="200" data-translate="success_stories_page.subtitle">Antreprenori care au transformat ideile în afaceri de succes cu sprijinul CMDA</p>
             </div>
         </section>
 
@@ -23,7 +23,7 @@
                             <span class="success-preview-tag">{{ story.category }}</span>
                             <h2>{{ story.title }}</h2>
                             {{ story.short_description|linebreaksbr }}
-                            <a href="{% url 'pages:story-detail' story.slug %}" class="btn btn-outline">Citește mai mult</a>
+                            <a href="{% url 'pages:story-detail' story.slug %}" class="btn btn-outline" data-translate="success_stories_page.read_more">Citește mai mult</a>
                         </div>
                     </article>
                     {% endfor %}
@@ -33,8 +33,8 @@
 
         <section class="final-cta">
             <div class="container">
-                <h2>Vrei să scrii propria poveste de succes?</h2>
-                <a href="https://startup.chisinau.md/finantarea/" target="_blank" class="btn btn-primary btn-large">Aplică la program</a>
+                <h2 data-translate="success_stories_page.cta_title">Vrei să scrii propria poveste de succes?</h2>
+                <a href="https://startup.chisinau.md/finantarea/" target="_blank" class="btn btn-primary btn-large" data-translate="success_stories_page.cta_button">Aplică la program</a>
             </div>
         </section>
 {% endblock %}

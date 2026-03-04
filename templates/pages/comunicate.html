@@ -7,7 +7,7 @@
         <section class="page-header">
             <div class="container">
                 <h1 data-aos="fade-down" data-translate="nav.media_press">Comunicate și noutăți</h1>
-                <p class="page-subtitle" data-aos="fade-down" data-aos-delay="200">Informații actualizate despre activitățile și proiectele CMDA</p>
+                <p class="page-subtitle" data-aos="fade-down" data-aos-delay="200" data-translate="news_page.subtitle">Informații actualizate despre activitățile și proiectele CMDA</p>
             </div>
         </section>
 
@@ -30,12 +30,12 @@
                             <div class="news-content">
                                 <h2>{{ article.title }}</h2>
                                 <p>{{ article.excerpt|truncatewords:30 }}</p>
-                                <span class="news-read-more">Citește mai mult <i class="fas fa-arrow-right"></i></span>
+                                <span class="news-read-more" data-translate="news_page.read_more">Citește mai mult <i class="fas fa-arrow-right"></i></span>
                             </div>
                         </a>
                     </article>
                     {% empty %}
-                    <p style="text-align: center; grid-column: 1 / -1; padding: 3rem 0; color: var(--text-medium);">Nu sunt comunicate disponibile momentan.</p>
+                    <p style="text-align: center; grid-column: 1 / -1; padding: 3rem 0; color: var(--text-medium);" data-translate="news_page.no_news">Nu sunt comunicate disponibile momentan.</p>
                     {% endfor %}
                 </div>
             </div>

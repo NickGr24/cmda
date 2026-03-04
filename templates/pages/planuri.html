@@ -5,15 +5,15 @@
 {% block content %}
 <section class="page-header">
     <div class="container">
-        <h1 data-aos="fade-down">Planuri și strategii</h1>
-        <p class="page-subtitle" data-aos="fade-down" data-aos-delay="200">Transparența CMDA</p>
+        <h1 data-aos="fade-down" data-translate="planuri_page.title">Planuri și strategii</h1>
+        <p class="page-subtitle" data-aos="fade-down" data-aos-delay="200" data-translate="transparency.subtitle">Transparența CMDA</p>
     </div>
 </section>
 <section style="padding: 3rem 0 4rem;">
     <div class="container" style="max-width: 800px;">
         {% if documents %}
         <div class="content-block" data-aos="fade-up">
-            <h2><i class="fas fa-clipboard-list" style="margin-right: 0.5rem; color: var(--primary-color);"></i> Planuri de acțiuni</h2>
+            <h2 data-translate="planuri_page.action_plans"><i class="fas fa-clipboard-list" style="margin-right: 0.5rem; color: var(--primary-color);"></i> Planuri de acțiuni</h2>
             <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem;">
                 {% for doc in documents %}
                 {% include "partials/_document_card.html" with doc=doc %}
@@ -23,8 +23,8 @@
         {% else %}
         <div class="placeholder-content" data-aos="fade-up">
             <i class="fas fa-clipboard-list"></i>
-            <h2>Planuri și strategii</h2>
-            <p>Momentan nu sunt documente încărcate.</p>
+            <h2 data-translate="planuri_page.title">Planuri și strategii</h2>
+            <p data-translate="transparency.no_documents">Momentan nu sunt documente încărcate.</p>
         </div>
         {% endif %}
     </div>

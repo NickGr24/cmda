@@ -18,7 +18,7 @@
                         <a href="{% url 'pages:gallery-event' event.slug %}">
                             <div class="event-image">
                                 <img src="{{ event.cover_image.url }}" alt="{{ event.title }}" loading="lazy" decoding="async">
-                                <span class="event-photo-count"><i class="fas fa-images"></i> {{ event.photo_count }} foto</span>
+                                <span class="event-photo-count"><i class="fas fa-images"></i> {{ event.photo_count }} <span data-translate="gallery_page.photos">foto</span></span>
                                 {% if event.event_date %}
                                 <span class="event-date"><i class="far fa-calendar-alt"></i> {{ event.event_date|date:"d.m.Y" }}</span>
                                 {% endif %}
@@ -26,12 +26,12 @@
                             <div class="event-content">
                                 <h2>{{ event.title }}</h2>
                                 {% if event.description %}<p>{{ event.description|truncatewords:25 }}</p>{% endif %}
-                                <span class="event-view-more">Vezi fotografiile <i class="fas fa-arrow-right"></i></span>
+                                <span class="event-view-more" data-translate="gallery_page.view_photos">Vezi fotografiile <i class="fas fa-arrow-right"></i></span>
                             </div>
                         </a>
                     </article>
                     {% empty %}
-                    <p style="text-align: center; grid-column: 1 / -1; padding: 3rem 0; color: var(--text-medium);">Nu sunt evenimente disponibile momentan.</p>
+                    <p style="text-align: center; grid-column: 1 / -1; padding: 3rem 0; color: var(--text-medium);" data-translate="gallery_page.no_events">Nu sunt evenimente disponibile momentan.</p>
                     {% endfor %}
                 </div>
             </div>

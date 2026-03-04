@@ -5,8 +5,8 @@
 {% block content %}
 <section class="page-header">
     <div class="container">
-        <h1 data-aos="fade-down">Achiziții publice</h1>
-        <p class="page-subtitle" data-aos="fade-down" data-aos-delay="200">Transparența CMDA</p>
+        <h1 data-aos="fade-down" data-translate="achizitii_page.title">Achiziții publice</h1>
+        <p class="page-subtitle" data-aos="fade-down" data-aos-delay="200" data-translate="transparency.subtitle">Transparența CMDA</p>
     </div>
 </section>
 <section style="padding: 3rem 0 4rem;">
@@ -14,7 +14,7 @@
 
         <!-- Planuri -->
         <div class="content-block" data-aos="fade-up">
-            <h2><i class="fas fa-clipboard-list" style="margin-right: 0.5rem; color: var(--primary-color);"></i> Planuri</h2>
+            <h2 data-translate="achizitii_page.plans"><i class="fas fa-clipboard-list" style="margin-right: 0.5rem; color: var(--primary-color);"></i> Planuri</h2>
             {% if planuri %}
             <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem;">
                 {% for doc in planuri %}
@@ -23,14 +23,14 @@
             </div>
             {% else %}
             <div style="padding: 2rem; background: var(--bg-light); border-radius: var(--radius-lg); border: 2px dashed var(--border-color); text-align: center; margin-top: 1.5rem;">
-                <p style="color: var(--text-medium); margin: 0; font-size: 0.95rem;">Momentan nu sunt documente încărcate.</p>
+                <p style="color: var(--text-medium); margin: 0; font-size: 0.95rem;" data-translate="transparency.no_documents">Momentan nu sunt documente încărcate.</p>
             </div>
             {% endif %}
         </div>
 
         <!-- Anunțuri -->
         <div class="content-block" data-aos="fade-up" data-aos-delay="100">
-            <h2><i class="fas fa-bullhorn" style="margin-right: 0.5rem; color: var(--primary-color);"></i> Anunțuri</h2>
+            <h2 data-translate="achizitii_page.announcements"><i class="fas fa-bullhorn" style="margin-right: 0.5rem; color: var(--primary-color);"></i> Anunțuri</h2>
             {% if anunturi %}
             <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem;">
                 {% for doc in anunturi %}
@@ -39,14 +39,14 @@
             </div>
             {% else %}
             <div style="padding: 2rem; background: var(--bg-light); border-radius: var(--radius-lg); border: 2px dashed var(--border-color); text-align: center; margin-top: 1.5rem;">
-                <p style="color: var(--text-medium); margin: 0; font-size: 0.95rem;">Momentan nu sunt anunțuri publicate.</p>
+                <p style="color: var(--text-medium); margin: 0; font-size: 0.95rem;" data-translate="transparency.no_announcements">Momentan nu sunt anunțuri publicate.</p>
             </div>
             {% endif %}
         </div>
 
         <!-- Rapoarte -->
         <div class="content-block" data-aos="fade-up" data-aos-delay="200">
-            <h2><i class="fas fa-chart-pie" style="margin-right: 0.5rem; color: var(--primary-color);"></i> Rapoarte</h2>
+            <h2 data-translate="achizitii_page.reports"><i class="fas fa-chart-pie" style="margin-right: 0.5rem; color: var(--primary-color);"></i> Rapoarte</h2>
             {% if rapoarte %}
             <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem;">
                 {% for doc in rapoarte %}
@@ -55,7 +55,7 @@
             </div>
             {% else %}
             <div style="padding: 2rem; background: var(--bg-light); border-radius: var(--radius-lg); border: 2px dashed var(--border-color); text-align: center; margin-top: 1.5rem;">
-                <p style="color: var(--text-medium); margin: 0; font-size: 0.95rem;">Momentan nu sunt documente încărcate.</p>
+                <p style="color: var(--text-medium); margin: 0; font-size: 0.95rem;" data-translate="transparency.no_documents">Momentan nu sunt documente încărcate.</p>
             </div>
             {% endif %}
         </div>
