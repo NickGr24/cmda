@@ -42,13 +42,14 @@
     0 20px 50px -12px rgba(30, 64, 175, 0.18);
   background: #0f172a;
   outline: none;
+  aspect-ratio: 21 / 9;
 }
 
 /* Viewport holds all slides stacked */
 .news-slider-viewport {
   position: relative;
   width: 100%;
-  aspect-ratio: 21 / 9;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -953,7 +954,7 @@
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  .news-slider-viewport {
+  .news-slider {
     aspect-ratio: 16 / 9;
   }
   .news-slide-content h3 {
@@ -1015,7 +1016,7 @@
   .news-slider {
     border-radius: 18px;
   }
-  .news-slider-viewport {
+  .news-slider {
     aspect-ratio: 4 / 5;
   }
   .news-slide-content {
@@ -1099,7 +1100,7 @@
   .news-slider {
     border-radius: 14px;
   }
-  .news-slider-viewport {
+  .news-slider {
     aspect-ratio: 3 / 4;
   }
   .news-slide-content {
