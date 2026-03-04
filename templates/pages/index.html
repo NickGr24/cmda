@@ -2,68 +2,53 @@
 {% load static %}
 {% block title %}CMDA - Centrul Municipal pentru Dezvoltarea Antreprenoriatului Chișinău{% endblock %}
 {% block meta_description %}Sprijin pentru antreprenorii din Chișinău. Consultanță, instruire, finanțare și infrastructură pentru tinerii antreprenori, migranți și IMM-uri.{% endblock %}
-{% block preload %}<link rel="preload" href="{% static 'video/background.mp4' %}" as="video" type="video/mp4">{% endblock %}
 {% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/index.css' %}">{% endblock %}
-{% block critical_css %}
-<style>
-.hero{color:#fff;position:relative;width:100%;overflow:hidden;height:75vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1e40af 0,#1e3a8a 100%)}
-.hero-video{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;object-fit:cover;object-position:center 20%}
-.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.3);z-index:1}
-.hero-content{display:flex;align-items:center;justify-content:center;width:100%;text-align:center;position:relative;z-index:2;margin-top:-6vh}
-.hero-text h1{font-size:2.5rem;margin-bottom:1.5rem;color:#fff}
-.hero-subtitle{font-size:1.25rem;margin-bottom:2rem;opacity:.95}
-.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
-</style>
-{% endblock %}
 {% block aos_config %}{ duration: 800, easing: 'ease-out', once: true, offset: 50 }{% endblock %}
 {% block content %}
-        <section class="hero">
-            <video autoplay muted loop playsinline class="hero-video" preload="auto" poster="{% static 'img/hero-poster.webp' %}">
-                <source src="{% static 'video/background.mp4' %}" type="video/mp4">
-            </video>
-            <div class="hero-overlay"></div>
+        <section class="news-slider-section" data-aos="fade-up">
             <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text" data-aos="fade-up">
-                        <h1 data-translate="hero.title">CMDA – sistemul municipal de creștere a afacerilor</h1>
-                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100" data-translate="hero.subtitle">Programe, finanțări, incubare și comunitate</p>
-                        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
-                            <a href="{% url 'pages:programe' %}" class="btn btn-primary" data-translate="hero.cta_programs">Accesează programele</a>
-                            <a href="{% url 'pages:istorii-de-succes' %}" class="btn btn-secondary" data-translate="hero.cta_impact">Vezi impactul</a>
+                <div class="news-slider-header">
+                    <h2 data-translate="news_preview.title">Comunicate și noutăți</h2>
+                    <a href="{% url 'pages:comunicate' %}" class="news-slider-all" data-translate="news_preview.view_all">Toate comunicatele <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="news-slider" role="region" aria-label="Ultimele noutăți">
+                    <div class="news-slider-viewport">
+                        {% for article in latest_news %}
+                        <div class="news-slide{% if forloop.first %} active{% endif %}" data-index="{{ forloop.counter0 }}">
+                            <a href="{% url 'pages:news-detail' article.slug %}" class="news-slide-link">
+                                {% if article.image %}
+                                <img src="{{ article.image.url }}" alt="{{ article.title }}" class="news-slide-img" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}" decoding="async">
+                                {% else %}
+                                <div class="news-slide-placeholder">
+                                    <i class="fas fa-newspaper"></i>
+                                </div>
+                                {% endif %}
+                                <div class="news-slide-overlay"></div>
+                                <div class="news-slide-content">
+                                    <span class="news-slide-date"><i class="far fa-calendar-alt"></i> {{ article.published_date|date:"d.m.Y" }}</span>
+                                    <h3>{{ article.title }}</h3>
+                                    <p>{{ article.excerpt|truncatewords:25 }}</p>
+                                    <span class="news-slide-cta">Citește articolul <i class="fas fa-long-arrow-alt-right"></i></span>
+                                </div>
+                            </a>
                         </div>
+                        {% endfor %}
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <section class="news-preview" data-aos="fade-up">
-            <div class="container">
-                <div class="news-preview-header">
-                    <h2 data-aos="fade-down" data-translate="news_preview.title">Comunicate și noutăți</h2>
-                    <a href="{% url 'pages:comunicate' %}" class="news-preview-all" data-aos="fade-down" data-aos-delay="100" data-translate="news_preview.view_all">Toate comunicatele →</a>
-                </div>
-                <div class="news-preview-grid">
-                    {% for article in latest_news %}
-                    <article class="news-preview-card" data-aos="fade-up" data-aos-delay="{{ forloop.counter }}00">
-                        <a href="{% url 'pages:news-detail' article.slug %}">
-                            {% if article.image %}
-                            <div class="news-preview-img">
-                                <img src="{{ article.image.url }}" alt="{{ article.title }}" loading="lazy" decoding="async">
-                                <span class="news-preview-date"><i class="far fa-calendar-alt"></i> {{ article.published_date|date:"d.m.Y" }}</span>
-                            </div>
-                            {% else %}
-                            <div class="news-preview-img news-preview-placeholder">
-                                <i class="fas fa-newspaper"></i>
-                            </div>
-                            {% endif %}
-                            <div class="news-preview-body">
-                                <h3>{{ article.title }}</h3>
-                                <p>{{ article.excerpt|truncatewords:20 }}</p>
-                                <span class="news-preview-link">Citește mai mult <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </a>
-                    </article>
-                    {% endfor %}
+                    <button class="news-slider-arrow news-slider-prev" aria-label="Anteriorul">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="news-slider-arrow news-slider-next" aria-label="Următorul">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <div class="news-slider-dots">
+                        {% for article in latest_news %}
+                        <button class="news-slider-dot{% if forloop.first %} active{% endif %}" data-index="{{ forloop.counter0 }}" aria-label="Slide {{ forloop.counter }}">
+                            <svg viewBox="0 0 36 36"><circle class="dot-bg" cx="18" cy="18" r="16"/><circle class="dot-progress" cx="18" cy="18" r="16"/></svg>
+                        </button>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </section>
@@ -245,73 +230,108 @@
 {% endblock %}
 {% block extra_js %}
 <script>
-    // Slider: auto-scroll + drag to manually scroll
+    /* ── News Slider ── */
+    (function() {
+        const slider = document.querySelector('.news-slider');
+        if (!slider) return;
+
+        const slides = slider.querySelectorAll('.news-slide');
+        const dots   = slider.querySelectorAll('.news-slider-dot');
+        const prev   = slider.querySelector('.news-slider-prev');
+        const next   = slider.querySelector('.news-slider-next');
+        const total  = slides.length;
+        let current  = 0;
+        let timer    = null;
+        const INTERVAL = 6000;
+
+        function goTo(idx, resetTimer) {
+            slides[current].classList.remove('active');
+            dots[current].classList.remove('active');
+            current = (idx + total) % total;
+            slides[current].classList.add('active');
+            dots[current].classList.add('active');
+            if (resetTimer !== false) restartTimer();
+        }
+
+        function restartTimer() {
+            clearInterval(timer);
+            timer = setInterval(function() { goTo(current + 1, false); }, INTERVAL);
+        }
+
+        prev.addEventListener('click', function() { goTo(current - 1); });
+        next.addEventListener('click', function() { goTo(current + 1); });
+        dots.forEach(function(dot) {
+            dot.addEventListener('click', function() { goTo(+this.dataset.index); });
+        });
+
+        /* Swipe on touch */
+        let touchStartX = 0;
+        slider.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+        slider.addEventListener('touchend', function(e) {
+            var dx = e.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(dx) > 50) goTo(current + (dx < 0 ? 1 : -1));
+        });
+
+        /* Pause on hover */
+        slider.addEventListener('mouseenter', function() { clearInterval(timer); });
+        slider.addEventListener('mouseleave', restartTimer);
+
+        /* Keyboard */
+        slider.setAttribute('tabindex', '0');
+        slider.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') goTo(current - 1);
+            if (e.key === 'ArrowRight') goTo(current + 1);
+        });
+
+        restartTimer();
+    })();
+
+    /* ── Partner logo slider ── */
     (function() {
         const track = document.querySelector('.slider-track');
         if (!track) return;
 
-        // Set explicit track width so CSS animation -50% works reliably
-        const slides = track.querySelectorAll('.slide');
-        const slideWidth = 180; // matches .slide { flex: 0 0 180px }
+        var slides = track.querySelectorAll('.slide');
+        var slideWidth = 180;
         track.style.width = (slides.length * slideWidth) + 'px';
 
-        let isDown = false, startX, currentTranslate = 0;
+        var isDown = false, startX, currentTranslate = 0;
 
         function getTranslateX() {
-            const style = getComputedStyle(track);
-            const matrix = new DOMMatrix(style.transform);
+            var matrix = new DOMMatrix(getComputedStyle(track).transform);
             return matrix.m41;
         }
 
-        track.addEventListener('mousedown', (e) => {
-            isDown = true;
-            track.classList.add('dragging');
-            startX = e.pageX;
-            currentTranslate = getTranslateX();
+        track.addEventListener('mousedown', function(e) {
+            isDown = true; track.classList.add('dragging');
+            startX = e.pageX; currentTranslate = getTranslateX();
             track.style.animation = 'none';
-            track.style.transform = `translateX(${currentTranslate}px)`;
+            track.style.transform = 'translateX(' + currentTranslate + 'px)';
         });
-
-        track.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const dx = e.pageX - startX;
-            track.style.transform = `translateX(${currentTranslate + dx}px)`;
+        track.addEventListener('mousemove', function(e) {
+            if (!isDown) return; e.preventDefault();
+            track.style.transform = 'translateX(' + (currentTranslate + e.pageX - startX) + 'px)';
         });
-
         function endDrag() {
-            if (!isDown) return;
-            isDown = false;
-            track.classList.remove('dragging');
-            const half = track.scrollWidth / 2;
-            let pos = getTranslateX();
-            if (pos > 0) pos = pos - half;
-            if (pos < -half) pos = pos + half;
-            const progress = Math.abs(pos) / half;
+            if (!isDown) return; isDown = false; track.classList.remove('dragging');
+            var half = track.scrollWidth / 2, pos = getTranslateX();
+            if (pos > 0) pos -= half; if (pos < -half) pos += half;
             track.style.transform = '';
             track.style.animation = 'slider-scroll 25s linear infinite';
-            track.style.animationDelay = `-${progress * 25}s`;
+            track.style.animationDelay = '-' + (Math.abs(pos) / half * 25) + 's';
         }
-
         track.addEventListener('mouseup', endDrag);
         track.addEventListener('mouseleave', endDrag);
-
-        // Touch support
-        track.addEventListener('touchstart', (e) => {
-            isDown = true;
-            track.classList.add('dragging');
-            startX = e.touches[0].pageX;
-            currentTranslate = getTranslateX();
+        track.addEventListener('touchstart', function(e) {
+            isDown = true; track.classList.add('dragging');
+            startX = e.touches[0].pageX; currentTranslate = getTranslateX();
             track.style.animation = 'none';
-            track.style.transform = `translateX(${currentTranslate}px)`;
+            track.style.transform = 'translateX(' + currentTranslate + 'px)';
         }, { passive: true });
-
-        track.addEventListener('touchmove', (e) => {
+        track.addEventListener('touchmove', function(e) {
             if (!isDown) return;
-            const dx = e.touches[0].pageX - startX;
-            track.style.transform = `translateX(${currentTranslate + dx}px)`;
+            track.style.transform = 'translateX(' + (currentTranslate + e.touches[0].pageX - startX) + 'px)';
         }, { passive: true });
-
         track.addEventListener('touchend', endDrag);
     })();
 </script>

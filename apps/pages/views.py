@@ -23,7 +23,7 @@ class IndexView(PageView):
         context['partners'] = Partner.objects.filter(is_active=True)
         context['programs'] = Program.objects.all()
         context['stats'] = {s.key: s for s in Statistic.objects.all()}
-        context['latest_news'] = News.objects.all()[:4]
+        context['latest_news'] = News.objects.all()[:5]
         return context
 
 
