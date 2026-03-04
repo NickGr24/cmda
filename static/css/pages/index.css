@@ -873,7 +873,8 @@
 .partners-globe-layout {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 1.5rem;
+  margin-left: -5rem;
 }
 .globe-container {
   position: relative;
@@ -1159,6 +1160,7 @@
   .partners-globe-layout {
     flex-direction: column;
     gap: 2rem;
+    margin-left: 0;
   }
   .globe-container {
     width: 100%;
