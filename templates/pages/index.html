@@ -7,10 +7,6 @@
 {% block content %}
         <section class="news-slider-section" data-aos="fade-up">
             <div class="container">
-                <div class="news-slider-header">
-                    <h2 data-translate="news_preview.title">Comunicate și noutăți</h2>
-                    <a href="{% url 'pages:comunicate' %}" class="news-slider-all" data-translate="news_preview.view_all">Toate comunicatele <i class="fas fa-arrow-right"></i></a>
-                </div>
                 <div class="news-slider" role="region" aria-label="Ultimele noutăți">
                     <div class="news-slider-viewport">
                         {% for article in latest_news %}
