@@ -1003,9 +1003,14 @@
   margin-bottom: 2rem;
   color: #fff;
 }
-.final-cta a {
+.final-cta a.btn {
   background: #fff;
   color: var(--primary-color);
+  border-color: #fff;
+  font-weight: 700;
+}
+.final-cta a.btn:hover {
+  background: rgba(255, 255, 255, 0.9);
 }
 
 /* ===== RESPONSIVE ===== */
