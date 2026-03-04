@@ -1,8 +1,15 @@
 /* ===== NEWS SLIDER — Editorial Magazine Style ===== */
 .news-slider-section {
-  padding: 2.5rem 0 4rem;
   position: relative;
   overflow: hidden;
+  height: 85vh;
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: stretch;
+}
+.news-slider-section .container {
+  display: flex;
+  flex-direction: column;
 }
 .news-slider-header {
   display: flex;
@@ -42,7 +49,7 @@
     0 20px 50px -12px rgba(30, 64, 175, 0.18);
   background: #0f172a;
   outline: none;
-  aspect-ratio: 21 / 9;
+  flex: 1;
 }
 
 /* Viewport holds all slides stacked */
@@ -954,9 +961,6 @@
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  .news-slider {
-    aspect-ratio: 16 / 9;
-  }
   .news-slide-content h3 {
     font-size: 1.3rem;
     max-width: 75%;
@@ -1016,8 +1020,8 @@
   .news-slider {
     border-radius: 18px;
   }
-  .news-slider {
-    aspect-ratio: 4 / 5;
+  .news-slider-section {
+    height: 70vh;
   }
   .news-slide-content {
     padding: 1.75rem 1.5rem;
@@ -1100,8 +1104,8 @@
   .news-slider {
     border-radius: 14px;
   }
-  .news-slider {
-    aspect-ratio: 3 / 4;
+  .news-slider-section {
+    height: 60vh;
   }
   .news-slide-content {
     padding: 1.25rem;
