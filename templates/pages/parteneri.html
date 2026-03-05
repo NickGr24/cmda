@@ -21,8 +21,13 @@
                     </div>
                     <div class="partner-stat-card" data-aos="zoom-in" data-aos-delay="200">
                         <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
-                        <h2>{{ stats.projects_value.value|default:"~70 mil. lei" }}</h2>
-                        <p data-translate="partners.projects">{{ stats.projects_value.label|default:"Proiecte și propuneri" }}</p>
+                        <h2>{{ stats.partners_projects_submitted.value|default:"17" }}</h2>
+                        <p data-translate="partners.projects_submitted">{{ stats.partners_projects_submitted.label|default:"Proiecte depuse spre finanțare" }}</p>
+                    </div>
+                    <div class="partner-stat-card" data-aos="zoom-in" data-aos-delay="250">
+                        <div class="stat-icon"><i class="fas fa-euro-sign"></i></div>
+                        <h2>{{ stats.partners_budget.value|default:"cca. 22 mln Euro" }}</h2>
+                        <p data-translate="partners.budget">{{ stats.partners_budget.label|default:"Buget proiecte depuse" }}</p>
                     </div>
                     <div class="partner-stat-card" data-aos="zoom-in" data-aos-delay="300">
                         <div class="stat-icon"><i class="fas fa-handshake"></i></div>
