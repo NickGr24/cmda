@@ -205,7 +205,7 @@ header, .site-header {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 0;
+    gap: 0.25rem;
     margin: 0;
     background: var(--bg-light);
     border-radius: 10px;
