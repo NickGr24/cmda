@@ -148,7 +148,7 @@ class PlanuriView(PageView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['documents'] = Document.objects.filter(category='planuri')
+        context['documents'] = Document.objects.filter(category='planuri').order_by('-order')
         return context
 
 
@@ -158,7 +158,7 @@ class RapoarteView(PageView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['documents'] = Document.objects.filter(category='rapoarte')
+        context['documents'] = Document.objects.filter(category='rapoarte').order_by('-order')
         return context
 
 
@@ -168,9 +168,9 @@ class AchizitiiView(PageView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['planuri'] = Document.objects.filter(category='achizitii_planuri')
-        context['anunturi'] = Document.objects.filter(category='achizitii_anunturi')
-        context['rapoarte'] = Document.objects.filter(category='achizitii_rapoarte')
+        context['planuri'] = Document.objects.filter(category='achizitii_planuri').order_by('-order')
+        context['anunturi'] = Document.objects.filter(category='achizitii_anunturi').order_by('-order')
+        context['rapoarte'] = Document.objects.filter(category='achizitii_rapoarte').order_by('-order')
         return context
 
 
