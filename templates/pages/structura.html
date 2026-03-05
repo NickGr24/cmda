@@ -26,59 +26,73 @@
         </nav>
     </aside>
     <div class="despre-content">
-        <div class="orgchart" id="orgchart">
-            <svg class="orgchart-connectors" id="orgchart-svg" aria-hidden="true"></svg>
 
-            <!-- Director -->
-            <div class="orgchart-director" id="org-director" data-aos="fade-down">
-                <div class="org-card org-card--director">
-                    <div class="org-card__icon"><i class="fas fa-user-tie"></i></div>
-                    <div class="org-card__info">
-                        <span class="org-card__role" data-translate="team_page.director">Director</span>
-                    </div>
+        <h2 class="org-title" data-translate="structure_page.page_title">Organigrama</h2>
+
+        <div class="orgchart" id="orgchart">
+            <svg class="orgchart-svg" id="orgchart-svg" aria-hidden="true"></svg>
+
+            <!-- Fondatorul -->
+            <div class="orgchart-node" data-aos="fade-down">
+                <div class="org-card org-card--top">
+                    <div class="org-card__icon"><i class="fas fa-landmark"></i></div>
+                    <span class="org-card__role" data-translate="structure_page.founder">Fondatorul</span>
                 </div>
             </div>
+            <div class="org-vline"></div>
 
-            <!-- Departments -->
-            <div class="orgchart-departments" id="org-departments">
-
-                <div class="org-dept" data-aos="fade-up" data-aos-delay="100">
-                    <div class="org-card org-card--dept">
-                        <div class="org-card__dept-header">
-                            <i class="fas fa-calculator"></i>
-                            <h4 class="org-card__dept-name" data-translate="team_page.dept_accounting">Direcția contabilitate și managementul administrativ</h4>
-                        </div>
-                    </div>
+            <!-- Consiliul de Coordonare -->
+            <div class="orgchart-node" data-aos="fade-down" data-aos-delay="100">
+                <div class="org-card org-card--top">
+                    <div class="org-card__icon"><i class="fas fa-users-rectangle"></i></div>
+                    <span class="org-card__role" data-translate="structure_page.council">Consiliul de Coordonare</span>
                 </div>
+            </div>
+            <div class="org-vline"></div>
 
-                <div class="org-dept" data-aos="fade-up" data-aos-delay="200">
+            <!-- Director (centered) + right side branches (absolute) -->
+            <div class="orgchart-director-section" data-aos="fade-up" data-aos-delay="200">
+                <div class="org-card org-card--top">
+                    <div class="org-card__icon"><i class="fas fa-user-tie"></i></div>
+                    <span class="org-card__role" data-translate="team_page.director">Director</span>
+                </div>
+                <!-- Right-side departments positioned absolutely -->
+                <div class="org-right-branch">
                     <div class="org-card org-card--dept">
                         <div class="org-card__dept-header">
                             <i class="fas fa-scale-balanced"></i>
                             <h4 class="org-card__dept-name" data-translate="team_page.dept_legal">Direcția juridică, achiziții și resurse umane</h4>
                         </div>
                     </div>
-                </div>
-
-                <div class="org-dept" data-aos="fade-up" data-aos-delay="300">
-                    <div class="org-card org-card--dept">
-                        <div class="org-card__dept-header">
-                            <i class="fas fa-chart-line"></i>
-                            <h4 class="org-card__dept-name" data-translate="team_page.dept_evaluation">Direcția de evaluarea și finanțarea proiectelor investiționale</h4>
+                    <div class="org-right-sub-row">
+                        <div class="org-card org-card--dept">
+                            <div class="org-card__dept-header">
+                                <i class="fas fa-calculator"></i>
+                                <h4 class="org-card__dept-name" data-translate="team_page.dept_accounting">Contabilitate și managementul administrativ</h4>
+                            </div>
+                        </div>
+                        <div class="org-card org-card--dept org-card--sub">
+                            <div class="org-card__dept-header">
+                                <i class="fas fa-tools"></i>
+                                <h4 class="org-card__dept-name" data-translate="structure_page.dept_admin_service">Serviciu administrativ și tehnic</h4>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="org-vline"></div>
 
-                <div class="org-dept" data-aos="fade-up" data-aos-delay="400">
+            <!-- Bottom departments -->
+            <div class="orgchart-departments" data-aos="fade-up" data-aos-delay="400">
+                <div class="org-dept">
                     <div class="org-card org-card--dept">
                         <div class="org-card__dept-header">
                             <i class="fas fa-building"></i>
-                            <h4 class="org-card__dept-name" data-translate="team_page.dept_infrastructure_full">Direcția infrastructura de suport in afaceri (incubatorul de afaceri)</h4>
+                            <h4 class="org-card__dept-name" data-translate="team_page.dept_infrastructure_full">Direcția infrastructura de suport în afaceri</h4>
                         </div>
                     </div>
                 </div>
-
-                <div class="org-dept" data-aos="fade-up" data-aos-delay="500">
+                <div class="org-dept">
                     <div class="org-card org-card--dept">
                         <div class="org-card__dept-header">
                             <i class="fas fa-bullhorn"></i>
@@ -86,8 +100,24 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="org-dept">
+                    <div class="org-card org-card--dept">
+                        <div class="org-card__dept-header">
+                            <i class="fas fa-chart-line"></i>
+                            <h4 class="org-card__dept-name" data-translate="team_page.dept_evaluation">Direcția evaluare și finanțare a proiectelor investiționale</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="org-dept">
+                    <div class="org-card org-card--dept">
+                        <div class="org-card__dept-header">
+                            <i class="fas fa-clipboard-check"></i>
+                            <h4 class="org-card__dept-name" data-translate="structure_page.dept_monitoring">Direcția monitorizare a proiectelor finanțate</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 </div>
@@ -99,82 +129,135 @@
     var chart = document.getElementById('orgchart');
     if (!svg || !chart) return;
 
-    function getPos(el) {
+    function p(el) {
         var cr = chart.getBoundingClientRect();
         var er = el.getBoundingClientRect();
         return {
             cx: er.left + er.width / 2 - cr.left,
+            cy: er.top + er.height / 2 - cr.top,
+            top: er.top - cr.top,
             bottom: er.bottom - cr.top,
-            top: er.top - cr.top
+            left: er.left - cr.left,
+            right: er.right - cr.left
         };
     }
 
-    function drawConnectors() {
-        var dirEl = document.getElementById('org-director');
-        var depts = document.querySelectorAll('.org-dept');
-        if (!dirEl || !depts.length) return;
+    function line(x1, y1, x2, y2) {
+        var el = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        el.setAttribute('x1', x1);
+        el.setAttribute('y1', y1);
+        el.setAttribute('x2', x2);
+        el.setAttribute('y2', y2);
+        el.classList.add('org-svg-line');
+        var len = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        el.style.strokeDasharray = len;
+        el.style.setProperty('--line-len', len);
+        svg.appendChild(el);
+        return el;
+    }
 
+    function draw() {
         var cr = chart.getBoundingClientRect();
         svg.setAttribute('width', cr.width);
         svg.setAttribute('height', cr.height);
-        svg.style.width = cr.width + 'px';
-        svg.style.height = cr.height + 'px';
         svg.innerHTML = '';
+        svg.classList.remove('orgchart-svg--animate');
 
-        var dir = getPos(dirEl);
-        var midY = dir.bottom + 30;
+        var topCards = chart.querySelectorAll('.orgchart-node .org-card');
+        var dirCard = chart.querySelector('.orgchart-director-section .org-card--top');
+        var juridica = chart.querySelector('.org-right-branch > .org-card--dept');
+        var subRow = chart.querySelector('.org-right-sub-row');
+        var contabCard = subRow ? subRow.querySelector('.org-card--dept:not(.org-card--sub)') : null;
+        var servCard = chart.querySelector('.org-card--sub');
+        var depts = chart.querySelectorAll('.org-dept .org-card--dept');
 
-        var pts = [];
-        for (var i = 0; i < depts.length; i++) {
-            pts.push(getPos(depts[i]));
-        }
+        if (topCards.length < 2 || !dirCard) return;
 
-        // Vertical from director to mid
-        addPath('M ' + dir.cx + ' ' + dir.bottom + ' L ' + dir.cx + ' ' + midY);
+        var L = [];
+        var d = 0;
+        var s = 0.35;
 
-        // Horizontal across departments
-        var xs = pts.map(function(p) { return p.cx; });
-        var leftX = Math.min.apply(null, xs);
-        var rightX = Math.max.apply(null, xs);
-        addPath('M ' + leftX + ' ' + midY + ' L ' + rightX + ' ' + midY);
+        var fond = p(topCards[0]);
+        var cons = p(topCards[1]);
+        var dir = p(dirCard);
 
-        // Vertical drops to each dept (stop just before card)
-        pts.forEach(function(pt) {
-            addPath('M ' + pt.cx + ' ' + midY + ' L ' + pt.cx + ' ' + (pt.top - 1));
-        });
+        // 1) Fondatorul -> Consiliul (vertical, center to center)
+        L.push({ el: line(fond.cx, fond.bottom, fond.cx, cons.top), delay: d }); d += s;
 
-        // Set dasharray for animation
-        var paths = svg.querySelectorAll('.org-connector');
-        for (var j = 0; j < paths.length; j++) {
-            var len = paths[j].getTotalLength();
-            paths[j].style.strokeDasharray = len;
-            paths[j].style.strokeDashoffset = len;
-            paths[j].style.animationDelay = (j * 0.15) + 's';
-        }
-    }
+        // 2) Consiliul -> Director (vertical, center to center)
+        L.push({ el: line(cons.cx, cons.bottom, cons.cx, dir.top), delay: d }); d += s;
 
-    function addPath(d) {
-        var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        p.setAttribute('d', d);
-        p.classList.add('org-connector');
-        svg.appendChild(p);
-    }
+        // 3) Director -> right side branches
+        // Horizontal from Director, vertical trunk, horizontal ticks to each card
+        if (juridica && contabCard) {
+            var jur = p(juridica);
+            var ctb = p(contabCard);
+            var srv = servCard ? p(servCard) : null;
 
-    // Trigger animation on scroll
-    var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                svg.classList.add('orgchart-connectors--animate');
-                observer.unobserve(entry.target);
+            // Trunk X position: left edge of cards minus gap
+            var trunkX = jur.left - 10;
+
+            // Bottom of trunk: Serviciu if present, otherwise Contabilitate
+            var trunkBottom = srv ? srv.cy : ctb.cy;
+
+            // Horizontal from Director right to trunk
+            L.push({ el: line(dir.right, dir.cy, trunkX, dir.cy), delay: d }); d += s;
+
+            // Vertical trunk from Juridica level down to last card level
+            L.push({ el: line(trunkX, jur.cy, trunkX, trunkBottom), delay: d }); d += s;
+
+            // Horizontal tick to Juridica
+            L.push({ el: line(trunkX, jur.cy, jur.left, jur.cy), delay: d }); d += s * 0.5;
+
+            // Horizontal tick to Contabilitate
+            L.push({ el: line(trunkX, ctb.cy, ctb.left, ctb.cy), delay: d }); d += s * 0.5;
+
+            // Horizontal tick to Serviciu
+            if (srv) {
+                L.push({ el: line(trunkX, srv.cy, srv.left, srv.cy), delay: d }); d += s * 0.5;
             }
+        }
+
+        // 5) Director -> bottom departments
+        if (depts.length > 0) {
+            var firstD = p(depts[0]);
+            var lastD = p(depts[depts.length - 1]);
+            // Horizontal bar sits just above the department cards
+            var barY = firstD.top - 15;
+
+            // Vertical from Director bottom down to horizontal bar
+            L.push({ el: line(dir.cx, dir.bottom, dir.cx, barY), delay: d }); d += s;
+
+            // Horizontal bar spanning all departments
+            L.push({ el: line(firstD.cx, barY, lastD.cx, barY), delay: d }); d += s;
+
+            // Vertical drops from bar down to each department card top
+            for (var i = 0; i < depts.length; i++) {
+                var dp = p(depts[i]);
+                L.push({ el: line(dp.cx, barY, dp.cx, dp.top), delay: d }); d += s * 0.25;
+            }
+        }
+
+        // Apply delays and trigger animation
+        L.forEach(function(item) {
+            item.el.style.animationDelay = item.delay + 's';
         });
-    }, { threshold: 0.15 });
+
+        requestAnimationFrame(function() {
+            svg.classList.add('orgchart-svg--animate');
+        });
+    }
+
+    var drawn = false;
 
     function init() {
-        // Single draw after AOS animations complete (800ms duration + 500ms max delay + buffer)
+        // Wait for AOS animations to fully complete before drawing lines
+        // AOS duration is 800ms + max delay 400ms + buffer
         setTimeout(function() {
-            drawConnectors();
-            observer.observe(chart);
+            if (!drawn) {
+                drawn = true;
+                draw();
+            }
         }, 1500);
     }
 
@@ -182,17 +265,12 @@
     window.addEventListener('resize', function() {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function() {
-            var wasAnimated = svg.classList.contains('orgchart-connectors--animate');
-            drawConnectors();
-            if (wasAnimated) svg.classList.add('orgchart-connectors--animate');
-        }, 150);
+            if (drawn) draw();
+        }, 200);
     });
 
-    if (document.readyState === 'complete') {
-        init();
-    } else {
-        window.addEventListener('load', init);
-    }
+    if (document.readyState === 'complete') init();
+    else window.addEventListener('load', init);
 })();
 </script>
 {% endblock %}

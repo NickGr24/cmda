@@ -22,7 +22,6 @@ urlpatterns = [
     path('cariera/', views.CarieraView.as_view(), name='cariera'),
     path('deplasari/', views.DeplasariView.as_view(), name='deplasari'),
     path('protectia-datelor/', views.ProtectiaDatelorView.as_view(), name='protectia-datelor'),
-    path('integritate/', views.IntegritateView.as_view(), name='integritate'),
     path('structura/', views.StructuraView.as_view(), name='structura'),
     path('echipa/', views.EchipaView.as_view(), name='echipa'),
     path('buget/', views.BugetView.as_view(), name='buget'),

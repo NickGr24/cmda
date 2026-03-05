@@ -14,7 +14,6 @@
     "transparency_procurement": "Procurement",
     "transparency_vacancies": "Job Vacancies",
     "transparency_data_protection": "Personal Data Protection",
-    "transparency_integrity": "Integrity",
     "contacts": "Contacts",
     "transparency_projects": "STARTUP Projects",
     "transparency_legislation": "Applicable Legislation",
@@ -202,6 +201,17 @@
       "button": "Contact us for consultation"
     },
     "hero_label": "Integrated entrepreneurial support"
+  },
+  "structure_page": {
+    "founder": "Founder",
+    "council": "Coordination Council",
+    "dept_admin_service": "Administrative and Technical Service",
+    "dept_monitoring": "Funded Projects Monitoring Department",
+    "page_title": "Organizational Chart",
+    "page_subtitle": "Public Institution Municipal Center for Entrepreneurship Development"
+  },
+  "vacancies_page": {
+    "no_vacancies": "There are no public vacancies to display."
   },
   "infrastructure_page": {
     "title": "Municipal Business Incubator",

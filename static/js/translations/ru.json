@@ -14,7 +14,6 @@
     "transparency_procurement": "Закупки",
     "transparency_vacancies": "Вакансии",
     "transparency_data_protection": "Защита персональных данных",
-    "transparency_integrity": "Добросовестность",
     "contacts": "Контакты",
     "transparency_projects": "Проекты STARTUP",
     "transparency_legislation": "Действующее законодательство",
@@ -202,6 +201,17 @@
       "button": "Свяжитесь с нами для консультации"
     },
     "hero_label": "Интегрированная предпринимательская поддержка"
+  },
+  "structure_page": {
+    "founder": "Учредитель",
+    "council": "Координационный совет",
+    "dept_admin_service": "Административно-техническая служба",
+    "dept_monitoring": "Отдел мониторинга финансируемых проектов",
+    "page_title": "Органиграмма",
+    "page_subtitle": "Публичного учреждения Муниципальный центр развития предпринимательства"
+  },
+  "vacancies_page": {
+    "no_vacancies": "Нет публичных вакансий для отображения."
   },
   "infrastructure_page": {
     "title": "Муниципальный бизнес-инкубатор",

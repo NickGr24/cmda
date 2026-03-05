@@ -194,10 +194,6 @@ class ProtectiaDatelorView(PageView):
     active_page = 'protectia-datelor'
 
 
-class IntegritateView(PageView):
-    template_name = 'pages/integritate.html'
-    active_page = 'integritate'
-
 
 class StructuraView(PageView):
     template_name = 'pages/structura.html'

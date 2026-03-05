@@ -455,6 +455,7 @@ class Command(BaseCommand):
                 'description': 'Program de cooperare transfrontaliera',
                 'partner_type': 'international',
                 'order': 4,
+                'is_active': False,
             },
             {
                 'name': 'FINEDU',

@@ -14,7 +14,6 @@
     "transparency_procurement": "Закупівлі",
     "transparency_vacancies": "Вакансії",
     "transparency_data_protection": "Захист персональних даних",
-    "transparency_integrity": "Доброчесність",
     "transparency_projects": "Проєкти STARTUP",
     "transparency_legislation": "Чинне законодавство",
     "contacts": "Контакти",
@@ -202,6 +201,17 @@
       "button": "Зв'яжіться з нами для консультації"
     },
     "hero_label": "Інтегрована підприємницька підтримка"
+  },
+  "structure_page": {
+    "founder": "Засновник",
+    "council": "Координаційна рада",
+    "dept_admin_service": "Адміністративно-технічна служба",
+    "dept_monitoring": "Відділ моніторингу фінансованих проектів",
+    "page_title": "Органіграма",
+    "page_subtitle": "Публічної установи Муніципальний центр розвитку підприємництва"
+  },
+  "vacancies_page": {
+    "no_vacancies": "Немає публічних вакансій для відображення."
   },
   "infrastructure_page": {
     "title": "Муніципальний бізнес-інкубатор",

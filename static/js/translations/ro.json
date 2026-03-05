@@ -14,7 +14,6 @@
     "transparency_procurement": "Achiziții",
     "transparency_vacancies": "Funcții vacante",
     "transparency_data_protection": "Protecția datelor cu caracter personal",
-    "transparency_integrity": "Integritate",
     "contacts": "Contacte",
     "transparency_projects": "Proiecte STARTUP",
     "transparency_legislation": "Legislație aplicabilă",
@@ -202,6 +201,17 @@
       "button": "Contactează-ne pentru consultanță"
     },
     "hero_label": "Suport antreprenorial integrat"
+  },
+  "structure_page": {
+    "founder": "Fondatorul",
+    "council": "Consiliul de Coordonare",
+    "dept_admin_service": "Serviciu administrativ și tehnic",
+    "dept_monitoring": "Direcția monitorizare a proiectelor finanțate",
+    "page_title": "Organigrama",
+    "page_subtitle": "Instituției publice Centrul Municipal pentru Dezvoltarea Antreprenoriatului"
+  },
+  "vacancies_page": {
+    "no_vacancies": "Nu sunt funcții publice vacante de afișat."
   },
   "infrastructure_page": {
     "title": "Incubatorul Municipal de Afaceri",
@@ -435,11 +445,11 @@
     "lead_specialist": "Specialist principal",
     "specialist": "Specialist",
     "dept_head": "Șef direcție",
-    "dept_accounting": "Direcția contabilitate și managementul administrativ",
+    "dept_accounting": "Contabilitate și managementul administrativ",
     "dept_legal": "Direcția juridică, achiziții și resurse umane",
-    "dept_evaluation": "Direcția de evaluarea și finanțarea proiectelor investiționale",
-    "dept_infrastructure": "Direcția infrastructura de suport in afaceri",
-    "dept_infrastructure_full": "Direcția infrastructura de suport in afaceri (incubatorul de afaceri)",
+    "dept_evaluation": "Direcția evaluare și finanțare a proiectelor investiționale",
+    "dept_infrastructure": "Direcția infrastructura de suport în afaceri",
+    "dept_infrastructure_full": "Direcția infrastructura de suport în afaceri",
     "dept_communication": "Direcția de comunicare și relații cu beneficiarii"
   }
 }
