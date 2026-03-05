@@ -72,14 +72,19 @@ class Command(BaseCommand):
                 'label_uk': 'хакатонів та AI School', 'suffix_uk': '',
             },
             13: {
-                'label_en': 'Partners from 8 European countries', 'suffix_en': '',
-                'label_ru': 'Партнёры из 8 европейских стран', 'suffix_ru': '',
-                'label_uk': 'Партнери з 8 європейських країн', 'suffix_uk': '',
+                'label_en': 'Partners from 6 European countries', 'suffix_en': '',
+                'label_ru': 'Партнёры из 6 европейских стран', 'suffix_ru': '',
+                'label_uk': 'Партнери з 6 європейських країн', 'suffix_uk': '',
             },
-            14: {
-                'label_en': 'Projects and proposals', 'suffix_en': ' mil. MDL',
-                'label_ru': 'Проекты и предложения', 'suffix_ru': ' млн. лей',
-                'label_uk': 'Проєкти та пропозиції', 'suffix_uk': ' млн. лей',
+            16: {
+                'label_en': 'Projects submitted for funding', 'suffix_en': '',
+                'label_ru': 'Проекты, поданные на финансирование', 'suffix_ru': '',
+                'label_uk': 'Проєкти подані на фінансування', 'suffix_uk': '',
+            },
+            17: {
+                'label_en': 'Budget of submitted projects', 'suffix_en': '',
+                'label_ru': 'Бюджет поданных проектов', 'suffix_ru': '',
+                'label_uk': 'Бюджет поданих проєктів', 'suffix_uk': '',
             },
             15: {
                 'label_en': 'Active programs', 'suffix_en': '+',
