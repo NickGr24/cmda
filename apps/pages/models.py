@@ -226,8 +226,9 @@ class NewsImage(models.Model):
 
 class Document(models.Model):
     CATEGORY_CHOICES = [
-        ('planuri', 'Planuri și strategii'),
+        ('planuri', 'Planuri'),
         ('rapoarte', 'Rapoarte'),
+        ('declaratii', 'Declarații'),
         ('achizitii_planuri', 'Achiziții — Planuri'),
         ('achizitii_anunturi', 'Achiziții — Anunțuri'),
         ('achizitii_rapoarte', 'Achiziții — Rapoarte'),

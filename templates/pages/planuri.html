@@ -1,32 +1,56 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Planuri și strategii - CMDA Chișinău{% endblock %}
+{% block title %}Planuri/ Rapoarte/ Declarații - CMDA Chișinău{% endblock %}
 {% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/despre.css' %}">{% endblock %}
 {% block content %}
 <section class="page-header">
     <div class="container">
-        <h1 data-aos="fade-down" data-translate="planuri_page.title">Planuri și strategii</h1>
+        <h1 data-aos="fade-down" data-translate="planuri_page.title">Planuri/ Rapoarte/ Declarații</h1>
         <p class="page-subtitle" data-aos="fade-down" data-aos-delay="200" data-translate="transparency.subtitle">Transparența CMDA</p>
     </div>
 </section>
 <section style="padding: 3rem 0 4rem;">
     <div class="container" style="max-width: 800px;">
-        {% if documents %}
+
         <div class="content-block" data-aos="fade-up">
-            <h2 data-translate="planuri_page.action_plans"><i class="fas fa-clipboard-list" style="margin-right: 0.5rem; color: var(--primary-color);"></i> Planuri de acțiuni</h2>
+            <h2><i class="fas fa-clipboard-list" style="margin-right: 0.5rem; color: var(--primary-color);"></i> <span data-translate="planuri_page.plans">Planuri</span></h2>
+            {% if planuri %}
             <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem;">
-                {% for doc in documents %}
+                {% for doc in planuri %}
                 {% include "partials/_document_card.html" with doc=doc %}
                 {% endfor %}
             </div>
+            {% else %}
+            <p style="color: var(--text-medium); margin-top: 1rem;" data-translate="transparency.no_documents">Momentan nu sunt documente încărcate.</p>
+            {% endif %}
         </div>
-        {% else %}
-        <div class="placeholder-content" data-aos="fade-up">
-            <i class="fas fa-clipboard-list"></i>
-            <h2 data-translate="planuri_page.title">Planuri și strategii</h2>
-            <p data-translate="transparency.no_documents">Momentan nu sunt documente încărcate.</p>
+
+        <div class="content-block" data-aos="fade-up" style="margin-top: 3rem;">
+            <h2><i class="fas fa-chart-bar" style="margin-right: 0.5rem; color: var(--primary-color);"></i> <span data-translate="planuri_page.reports">Rapoarte</span></h2>
+            {% if rapoarte %}
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem;">
+                {% for doc in rapoarte %}
+                {% include "partials/_document_card.html" with doc=doc %}
+                {% endfor %}
+            </div>
+            {% else %}
+            <p style="color: var(--text-medium); margin-top: 1rem;" data-translate="transparency.no_documents">Momentan nu sunt documente încărcate.</p>
+            {% endif %}
         </div>
-        {% endif %}
+
+        <div class="content-block" data-aos="fade-up" style="margin-top: 3rem;">
+            <h2><i class="fas fa-file-signature" style="margin-right: 0.5rem; color: var(--primary-color);"></i> <span data-translate="planuri_page.declarations">Declarații</span></h2>
+            {% if declaratii %}
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem;">
+                {% for doc in declaratii %}
+                {% include "partials/_document_card.html" with doc=doc %}
+                {% endfor %}
+            </div>
+            {% else %}
+            <p style="color: var(--text-medium); margin-top: 1rem;" data-translate="transparency.no_documents">Momentan nu sunt documente încărcate.</p>
+            {% endif %}
+        </div>
+
     </div>
 </section>
 {% endblock %}

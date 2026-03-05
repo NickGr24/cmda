@@ -10,11 +10,10 @@
     "media_press": "Press Releases",
     "media_gallery": "Gallery",
     "transparency": "Transparency",
-    "transparency_plans": "Plans & Strategies",
-    "transparency_reports": "Reports",
+    "transparency_plans": "Plans/ Reports/ Declarations",
     "transparency_procurement": "Procurement",
     "transparency_vacancies": "Job Vacancies",
-    "transparency_travel": "Business Travel",
+    "transparency_data_protection": "Personal Data Protection",
     "transparency_integrity": "Integrity",
     "contacts": "Contacts",
     "transparency_projects": "STARTUP Projects",
@@ -415,12 +414,18 @@
     "reports": "Reports"
   },
   "planuri_page": {
-    "title": "Plans and Strategies",
-    "action_plans": "Action plans"
+    "title": "Plans/ Reports/ Declarations",
+    "plans": "Plans",
+    "reports": "Reports",
+    "declarations": "Declarations"
   },
-  "rapoarte_page": {
-    "title": "Reports",
-    "reports_declarations": "Reports and declarations"
+  "data_protection_page": {
+    "title": "Personal Data Protection",
+    "p1": "The Municipal Center for Entrepreneurship Development informs individuals and legal entities that personal data is processed in strict compliance with Law No. 133 of 08.07.2011 on the protection of personal data, and the requirements for ensuring the security of personal data during processing within personal data information systems, approved by Government Decision No. 1123 of December 14, 2010.",
+    "p2": "In fulfilling its duties, the Municipal Center for Entrepreneurship Development implements organizational and technical measures to ensure the protection of personal data.",
+    "p3": "The processing of personal data, with the exceptions expressly stipulated in Law No. 133 of July 8, 2011 on the protection of personal data, is carried out only with the consent of the personal data subject.",
+    "p4": "In order to exercise the rights provided by law, the personal data subject has the right to submit a written request to the Municipal Center for Entrepreneurship Development.",
+    "p5": "Requests from applicants regarding the processing of personal data are examined in the manner and within the deadlines established by Law No. 982/2000 of the Republic of Moldova on access to information."
   },
   "team_page": {
     "director": "Director",

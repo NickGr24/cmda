@@ -149,17 +149,21 @@ class PlanuriView(PageView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['documents'] = Document.objects.filter(category='planuri').order_by('-order')
+        context['planuri'] = Document.objects.filter(category='planuri').order_by('-order')
+        context['rapoarte'] = Document.objects.filter(category='rapoarte').order_by('-order')
+        context['declaratii'] = Document.objects.filter(category='declaratii').order_by('-order')
         return context
 
 
 class RapoarteView(PageView):
-    template_name = 'pages/rapoarte.html'
-    active_page = 'rapoarte'
+    template_name = 'pages/planuri.html'
+    active_page = 'planuri'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['documents'] = Document.objects.filter(category='rapoarte').order_by('-order')
+        context['planuri'] = Document.objects.filter(category='planuri').order_by('-order')
+        context['rapoarte'] = Document.objects.filter(category='rapoarte').order_by('-order')
+        context['declaratii'] = Document.objects.filter(category='declaratii').order_by('-order')
         return context
 
 
@@ -183,6 +187,11 @@ class CarieraView(PageView):
 class DeplasariView(PageView):
     template_name = 'pages/deplasari.html'
     active_page = 'deplasari'
+
+
+class ProtectiaDatelorView(PageView):
+    template_name = 'pages/protectia-datelor.html'
+    active_page = 'protectia-datelor'
 
 
 class IntegritateView(PageView):

@@ -10,11 +10,10 @@
     "media_press": "Comunicate",
     "media_gallery": "Galerie",
     "transparency": "Transparența",
-    "transparency_plans": "Planuri și strategii",
-    "transparency_reports": "Rapoarte",
+    "transparency_plans": "Planuri/ Rapoarte/ Declarații",
     "transparency_procurement": "Achiziții",
     "transparency_vacancies": "Funcții vacante",
-    "transparency_travel": "Deplasări de serviciu",
+    "transparency_data_protection": "Protecția datelor cu caracter personal",
     "transparency_integrity": "Integritate",
     "contacts": "Contacte",
     "transparency_projects": "Proiecte STARTUP",
@@ -415,12 +414,18 @@
     "reports": "Rapoarte"
   },
   "planuri_page": {
-    "title": "Planuri și strategii",
-    "action_plans": "Planuri de acțiuni"
+    "title": "Planuri/ Rapoarte/ Declarații",
+    "plans": "Planuri",
+    "reports": "Rapoarte",
+    "declarations": "Declarații"
   },
-  "rapoarte_page": {
-    "title": "Rapoarte",
-    "reports_declarations": "Rapoarte și declarații"
+  "data_protection_page": {
+    "title": "Protecția datelor cu caracter personal",
+    "p1": "Centrul Municipal pentru Dezvoltarea Antreprenoratului aduce la cunoștință persoanelor fizice și juridice despre faptul că datele cu caracter personal se prelucrează în strictă conformitate cu prevederile Legii nr.133 din 08.07.2011 privind protecția datelor cu caracter personal, cerințelor față de asigurarea securității datelor cu caracter personal la prelucrarea acestora în cadrul sistemelor informaționale de date cu caracter personal, aprobate prin Hotărîrea Guvernului nr.1123 din 14 decembrie 2010.",
+    "p2": "În îndeplinirea atribuțiilor sale, Centrul Municipal pentru Dezvoltarea Antreprenoratului, implementează măsuri organizatorice și tehnice pentru asigurarea protecției datelor cu caracter personal.",
+    "p3": "Prelucrarea datelor cu caracter personal, cu excepțiile stipulate expres în Legea nr.133 din 08 iulie 2011 privind protecția datelor cu caracter personal, se efectuează numai cu consimțămîntul subiectului datelor cu caracter personal.",
+    "p4": "În scopul exercitării drepturilor prevăzute de lege, subiectul datelor cu caracter personal este în drept să se adreseze cu o cerere scrisă către Centrul Municipal pentru Dezvoltarea Antreprenoratului.",
+    "p5": "Adresările solicitanţilor privind prelucrarea datelor cu caracter personal se examinează în modul şi termenele stabilite prin Legea Republicii Moldova nr. 982/2000 privind accesul la informaţie."
   },
   "team_page": {
     "director": "Director",
