@@ -216,16 +216,16 @@
 /* Stats Row */
 .infra-stats-row {
     display: flex;
+    flex-wrap: wrap;
     gap: 1.25rem;
 }
 
 .infra-stat-item {
-    flex: 1;
+    flex: 1 1 200px;
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1.5rem 1.75rem;
-    min-width: 0;
+    padding: 1.5rem 1.5rem;
     background: var(--bg-light);
     border-radius: 12px;
     border: 1px solid var(--border-color);
@@ -242,8 +242,8 @@
 }
 
 .infra-stat-icon {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     border-radius: 12px;
     background: linear-gradient(135deg, rgba(30, 64, 175, 0.08), rgba(59, 130, 246, 0.06));
     color: var(--primary-color);
@@ -256,7 +256,7 @@
 
 .infra-stat-data strong {
     display: block;
-    font-size: 1.6rem;
+    font-size: 1.65rem;
     font-weight: 800;
     color: var(--primary-color);
     letter-spacing: -0.02em;
@@ -265,7 +265,7 @@
 
 .infra-stat-data span {
     display: block;
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     color: var(--text-medium);
     font-weight: 500;
     line-height: 1.35;
