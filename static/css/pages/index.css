@@ -384,11 +384,45 @@
   color: var(--primary-dark);
   transform: translateX(4px);
 }
-.success-preview-track {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+.success-slider-wrapper {
+  position: relative;
+  overflow: hidden;
 }
+.success-preview-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.success-preview-card {
+  flex: 0 0 calc((100% - 4.5rem) / 4);
+  min-width: 0;
+}
+.success-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.95);
+  border: 1px solid var(--border-color);
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.success-slider-arrow:hover {
+  background: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}
+.success-slider-prev { left: -8px; }
+.success-slider-next { right: -8px; }
 .success-preview-card {
   background: var(--bg-white);
   border: 1px solid var(--border-color);
@@ -472,9 +506,8 @@
 }
 
 @media (max-width: 1024px) {
-  .success-preview-track {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+  .success-preview-card {
+    flex: 0 0 calc((100% - 1.5rem) / 2);
   }
 }
 @media (max-width: 768px) {
@@ -487,8 +520,10 @@
   .success-preview .container {
     padding-right: 0;
   }
+  .success-slider-wrapper {
+    overflow: visible;
+  }
   .success-preview-track {
-    display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -496,6 +531,7 @@
     padding-right: 20px;
     padding-bottom: 1rem;
     scrollbar-width: none;
+    transition: none;
   }
   .success-preview-track::-webkit-scrollbar {
     display: none;
@@ -507,6 +543,9 @@
   }
   .success-preview-img {
     height: 160px;
+  }
+  .success-slider-arrow {
+    display: none;
   }
 }
 @media (max-width: 480px) {
