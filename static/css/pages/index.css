@@ -474,7 +474,7 @@
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
-  background: var(--primary-color);
+  background: #4A9571;
   color: #fff;
   font-size: 0.72rem;
   font-weight: 700;
@@ -482,10 +482,6 @@
   border-radius: 6px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  box-shadow: 0 2px 8px rgba(30, 64, 175, 0.3);
-}
-.success-preview-tag.tag-edtech {
-  background: #4A9571;
   box-shadow: 0 2px 8px rgba(74, 149, 113, 0.3);
 }
 .success-preview-body {

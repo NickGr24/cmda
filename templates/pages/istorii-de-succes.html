@@ -20,7 +20,7 @@
                             <img src="{{ story.image.url }}" alt="{{ story.company_name }}">
                         </div>
                         <div class="story-content">
-                            <span class="success-preview-tag{% if 'EdTech' in story.category %} tag-edtech{% endif %}">{{ story.category }}</span>
+                            <span class="success-preview-tag">{{ story.category }}</span>
                             <h2>{{ story.title }}</h2>
                             {{ story.short_description|linebreaksbr }}
                             <a href="{% url 'pages:story-detail' story.slug %}" class="btn btn-outline" data-translate="success_stories_page.read_more">Citește mai mult</a>

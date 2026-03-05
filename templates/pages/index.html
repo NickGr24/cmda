@@ -80,7 +80,7 @@
                             <a href="{% url 'pages:story-detail' story.slug %}">
                                 <div class="success-preview-img">
                                     <img src="{{ story.image.url }}" alt="{{ story.company_name }}" loading="lazy" decoding="async">
-                                    <span class="success-preview-tag{% if 'EdTech' in story.category %} tag-edtech{% endif %}">{{ story.category }}</span>
+                                    <span class="success-preview-tag">{{ story.category }}</span>
                                 </div>
                                 <div class="success-preview-body">
                                     <h3>{{ story.company_name }}</h3>
