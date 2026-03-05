@@ -13,16 +13,17 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: var(--text-dark);
-    background: linear-gradient(
-        135deg,
-        var(--gradient-bg-1),
-        var(--gradient-bg-2),
-        var(--gradient-bg-3),
-        var(--gradient-bg-4),
-        var(--gradient-bg-1)
-    );
-    background-size: 400% 400%;
-    animation: gradientShift 20s ease infinite;
+    background:
+        linear-gradient(180deg,
+            #d0ddf5 0%,
+            #dce6f8 15%,
+            #e4ecfa 30%,
+            #dae3f7 50%,
+            #cdd9f3 70%,
+            #bfceed 85%,
+            #b3c4e8 100%
+        );
     overflow-x: hidden;
     width: 100%;
+    position: relative;
 }
