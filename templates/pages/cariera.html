@@ -13,19 +13,17 @@
     <aside class="despre-sidebar">
         <nav class="sidebar-nav">
             <ul>
-                <li><a href="{% url 'pages:despre' %}" data-translate="about_sidebar.about"><i class="fas fa-building-columns"></i> Centrul Municipal pentru Dezvoltarea Antreprenoriatului</a></li>
-                <li><a href="{% url 'pages:echipa' %}" data-translate="about_sidebar.team"><i class="fas fa-users"></i> Echipa CMDA</a></li>
-                <li><a href="{% url 'pages:structura' %}" data-translate="about_sidebar.structure"><i class="fas fa-sitemap"></i> Structura CMDA</a></li>
-                <li><a href="{% url 'pages:cariera' %}" class="active" data-translate="about_sidebar.career"><i class="fas fa-briefcase"></i> Carieră</a></li>
-                <li><a href="{% url 'pages:achizitii' %}" data-translate="about_sidebar.procurement"><i class="fas fa-file-contract"></i> Achiziții</a></li>
-                <li><a href="{% url 'pages:buget' %}" data-translate="about_sidebar.budget"><i class="fas fa-coins"></i> Bugetul CMDA</a></li>
+                <li><a href="{% url 'pages:despre' %}"><i class="fas fa-building-columns"></i> <span data-translate="about_sidebar.about">Centrul Municipal pentru Dezvoltarea Antreprenoriatului</span></a></li>
+                <li><a href="{% url 'pages:echipa' %}"><i class="fas fa-users"></i> <span data-translate="about_sidebar.team">Echipa CMDA</span></a></li>
+                <li><a href="{% url 'pages:structura' %}"><i class="fas fa-sitemap"></i> <span data-translate="about_sidebar.structure">Structura CMDA</span></a></li>
+                <li><a href="{% url 'pages:cariera' %}" class="active"><i class="fas fa-briefcase"></i> <span data-translate="about_sidebar.vacancies">Funcții vacante</span></a></li>
             </ul>
         </nav>
     </aside>
     <div class="despre-content">
         <div class="placeholder-content" data-aos="fade-up">
             <i class="fas fa-briefcase"></i>
-            <h2 data-translate="about_sidebar.career">Carieră</h2>
+            <h2 data-translate="about_sidebar.vacancies">Funcții vacante</h2>
             <p data-translate="about_sidebar.placeholder">Pagina este în curs de dezvoltare.</p>
         </div>
     </div>
