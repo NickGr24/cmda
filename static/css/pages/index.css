@@ -484,6 +484,10 @@
   text-transform: uppercase;
   box-shadow: 0 2px 8px rgba(30, 64, 175, 0.3);
 }
+.success-preview-tag.tag-edtech {
+  background: #4A9571;
+  box-shadow: 0 2px 8px rgba(74, 149, 113, 0.3);
+}
 .success-preview-body {
   padding: 1.5rem;
   display: flex;

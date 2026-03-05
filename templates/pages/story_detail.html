@@ -159,7 +159,7 @@
                     <span class="breadcrumb-current">{{ story.company_name }}</span>
                 </nav>
                 <h1 data-aos="fade-down" data-aos-delay="100">{{ story.title }}</h1>
-                <span class="success-preview-tag" data-aos="fade-down" data-aos-delay="200">{{ story.category }}</span>
+                <span class="success-preview-tag{% if 'EdTech' in story.category %} tag-edtech{% endif %}" data-aos="fade-down" data-aos-delay="200">{{ story.category }}</span>
             </div>
         </section>
 
